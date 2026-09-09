@@ -39,3 +39,13 @@ Modo: [simulación o ejecución autorizada]
 - [ ] Permisos mínimos y secretos separados.
 - [ ] Dry-run, logs, límites y reversión definidos.
 - [ ] Pruebas ejecutadas sin publicar ni desplegar.
+
+## Runner asociado
+
+- **Runner:** `toolkit/phase-4-automatizacion/proteccion-contra-comandos-destructivos/run.py`
+- **Motor:** `toolkit/phase_4_engine.py`
+- **Entrada de ejemplo:** `toolkit/phase-4-automatizacion/proteccion-contra-comandos-destructivos/input.example.json`
+- **Esquema de salida:** `toolkit/phase-4-automatizacion/proteccion-contra-comandos-destructivos/output.schema.json`
+- **Prueba smoke:** `toolkit/phase-4-automatizacion/proteccion-contra-comandos-destructivos/tests/test_smoke.py`
+
+La documentación debe mantenerse sincronizada con el runner, el catálogo de la fase y el contrato JSON. El runner local no debe interpretarse como una ejecución externa, publicación o despliegue.

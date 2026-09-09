@@ -129,3 +129,82 @@ La nueva ruta trata la primera implementación como el módulo inicial del toolk
 ### Pendiente deliberado
 
 El README raíz y algunas referencias históricas todavía contienen la ruta antigua. Se actualizarán en la parte de documentación y asociaciones de módulos, después de estabilizar la generación y auditoría de las 304 skills.
+
+## Parte 2B: documentación y asociación de las 304 herramientas
+
+**Estado:** completada el 2026-09-09.
+
+### Implementación
+
+- Se crearon 57 `SKILL.md` para las herramientas de `phase-2-datos`.
+- Se auditaron y asociaron 89 documentos de `phase-3-programming`.
+- Se auditaron y asociaron 23 documentos de `phase-4-automatizacion`.
+- Se auditaron y asociaron 34 documentos de `phase-5-negocios`.
+- Se auditaron y asociaron 49 documentos de `phase-6-medios`.
+- Se completaron 52 documentos de `phase-1-content-toolkit` con `resources/README.md`, `tests/test_smoke.py` y la sección `Runner asociado`.
+- Se añadieron listas de control a 83 documentos existentes que carecían de esa sección.
+
+Cada herramienta quedó asociada documentalmente con:
+
+```text
+SKILL.md → catálogo → run.py → motor de fase → input.example.json
+        → output.schema.json → tests/test_smoke.py
+```
+
+### Validaciones
+
+- Documentos auditados: 304.
+- Errores documentales y de contrato: 0.
+- Smoke contracts ejecutados con ejemplos: 304/304 exitosos.
+- Suite base: 13/13 exitosa.
+- Fase 2: 57/57 exitosas.
+- Fase 3: 89/89 exitosas.
+- Fase 4: 23/23 exitosas.
+- Fase 5: 34/34 exitosas.
+- Fase 6: 49/49 exitosas.
+
+### Observación de entorno
+
+`pytest` no está instalado en el entorno. Para no añadir dependencias, los 304 smoke tests se ejecutaron mediante un arnés estándar de Python que reproduce su contrato: carga `input.example.json`, ejecuta `run.py`, valida JSON, comprueba `status: ready` y verifica el slug.
+
+La orden de compilación histórica `python3 -m compileall -q toolkit skills` debe actualizarse a `python3 -m compileall -q toolkit`, porque la ruta raíz `skills/` dejó de existir tras la migración de la Fase 1.
+
+## Parte 3: validación documental y de contratos
+
+**Estado:** completada el 2026-09-09.
+
+### Modelo confirmado
+
+Por aclaración del proyecto, las Fases 2–6 se tratan como **catálogos válidos de skills**, y cada skill tiene una herramienta ejecutable asociada. El modelo común queda expresado como:
+
+```text
+skill del catálogo → SKILL.md → herramienta → runner → motor → contrato JSON → smoke test
+```
+
+El registro `ToolSpec` ahora expone explícitamente `skill_identifier` y `tool_path`, además de las rutas de runner, documentación, catálogo y motor.
+
+### Implementación
+
+Se integró `validate_registry()` en `toolkit/registry.py` y en `python3 -m toolkit validate`. La validación ahora comprueba:
+
+- conteos esperados por módulo;
+- identificadores duplicados;
+- carpeta y runner;
+- ejemplo JSON, esquema, recursos y smoke test;
+- existencia de `SKILL.md`;
+- coincidencia de `name` y `description` con el catálogo;
+- secciones documentales obligatorias;
+- asociaciones documentadas de runner, entrada, salida y prueba.
+
+Se aceptan las variantes documentales `## Entradas`/`## Entradas aceptadas` y `## Salida`/`## Salida esperada` para no romper las skills existentes.
+
+### Validaciones
+
+- `python3 -m toolkit validate`: **304 habilidades con herramienta asociada**.
+- Auditoría documental: 304 herramientas, 0 errores.
+- Validación directa del registro: 0 errores.
+- Suite base: 13/13 exitosa.
+- Smoke contracts: 304/304 exitosos.
+- `git diff --check`: sin errores.
+
+El fallo transitorio de la suite causado por el cambio del mensaje de validación se corrigió conservando la palabra `habilidades` en la salida del CLI.

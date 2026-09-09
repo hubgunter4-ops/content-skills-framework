@@ -34,3 +34,22 @@ Contenido: [texto o archivo]
 Estilo: [referencia]
 Formato: [HTML, CSS, SVG, JSON, Markdown]
 Restricciones: [accesibilidad, plataforma, licencia]
+
+## Runner asociado
+
+- **Runner:** `toolkit/phase-5-negocios/cut-the-curve/run.py`
+- **Motor:** `toolkit/phase_5_engine.py`
+- **Entrada de ejemplo:** `toolkit/phase-5-negocios/cut-the-curve/input.example.json`
+- **Esquema de salida:** `toolkit/phase-5-negocios/cut-the-curve/output.schema.json`
+- **Prueba smoke:** `toolkit/phase-5-negocios/cut-the-curve/tests/test_smoke.py`
+
+La documentación debe mantenerse sincronizada con el runner, el catálogo de la fase y el contrato JSON. El runner local no debe interpretarse como una ejecución externa, publicación o despliegue.
+
+## Lista de control
+
+- [ ] El objetivo, la audiencia y el formato están definidos.
+- [ ] Las entradas y sus permisos o fuentes están identificados.
+- [ ] La salida corresponde al runner y al esquema JSON de esta herramienta.
+- [ ] Los supuestos, advertencias y límites fueron revisados.
+- [ ] No se afirmó una ejecución externa, publicación o despliegue sin evidencia.
+- [ ] No se incluyeron credenciales ni datos sensibles.

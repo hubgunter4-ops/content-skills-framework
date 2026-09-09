@@ -39,3 +39,13 @@ Formato: [salida]
 - [ ] El plan no cambia archivos fuera de alcance.
 - [ ] Las pruebas y comandos son reproducibles.
 - [ ] Los riesgos y límites están documentados.
+
+## Runner asociado
+
+- **Runner:** `toolkit/phase-3-programming/web-performance-pro/run.py`
+- **Motor:** `toolkit/phase_3_engine.py`
+- **Entrada de ejemplo:** `toolkit/phase-3-programming/web-performance-pro/input.example.json`
+- **Esquema de salida:** `toolkit/phase-3-programming/web-performance-pro/output.schema.json`
+- **Prueba smoke:** `toolkit/phase-3-programming/web-performance-pro/tests/test_smoke.py`
+
+La documentación debe mantenerse sincronizada con el runner, el catálogo de la fase y el contrato JSON. El runner local no debe interpretarse como una ejecución externa, publicación o despliegue.

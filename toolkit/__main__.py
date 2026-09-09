@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 from .catalog import load_skills, validate_skills
 from .integrations import catalog as integration_catalog
+from .registry import load_registry, validate_registry
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "toolkit" / "phase-1-content-toolkit"
@@ -57,11 +58,12 @@ def show_skill(slug: str) -> int:
 
 def validate() -> int:
     errors = validate_skills(SKILLS)
+    errors.extend(validate_registry(ROOT))
     if errors:
         print("Catálogo inválido:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print(f"Catálogo válido: {len(load_skills(SKILLS))} habilidades.")
+    print(f"Catálogo y contratos válidos: {len(load_registry(ROOT))} habilidades con herramienta asociada.")
     return 0
 
 def list_integrations() -> int:

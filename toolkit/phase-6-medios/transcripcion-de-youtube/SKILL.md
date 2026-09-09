@@ -34,3 +34,22 @@ Audiencia: [público]
 Formato: [MP4, WAV, SRT, HTML]
 Duración: [segundos]
 Derechos y restricciones: [autorizaciones]
+
+## Runner asociado
+
+- **Runner:** `toolkit/phase-6-medios/transcripcion-de-youtube/run.py`
+- **Motor:** `toolkit/phase_6_engine.py`
+- **Entrada de ejemplo:** `toolkit/phase-6-medios/transcripcion-de-youtube/input.example.json`
+- **Esquema de salida:** `toolkit/phase-6-medios/transcripcion-de-youtube/output.schema.json`
+- **Prueba smoke:** `toolkit/phase-6-medios/transcripcion-de-youtube/tests/test_smoke.py`
+
+La documentación debe mantenerse sincronizada con el runner, el catálogo de la fase y el contrato JSON. El runner local no debe interpretarse como una ejecución externa, publicación o despliegue.
+
+## Lista de control
+
+- [ ] El objetivo, la audiencia y el formato están definidos.
+- [ ] Las entradas y sus permisos o fuentes están identificados.
+- [ ] La salida corresponde al runner y al esquema JSON de esta herramienta.
+- [ ] Los supuestos, advertencias y límites fueron revisados.
+- [ ] No se afirmó una ejecución externa, publicación o despliegue sin evidencia.
+- [ ] No se incluyeron credenciales ni datos sensibles.

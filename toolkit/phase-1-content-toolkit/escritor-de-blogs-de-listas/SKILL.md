@@ -56,3 +56,13 @@ Criterio de éxito: [cómo se evaluará]
 - [ ] El formato y el idioma cumplen la solicitud.
 - [ ] No se alteraron datos o metadatos fuera del alcance.
 - [ ] La salida incluye limitaciones y próximos pasos cuando son relevantes.
+
+## Runner asociado
+
+- **Runner:** `toolkit/phase-1-content-toolkit/escritor-de-blogs-de-listas/run.py`
+- **Motor:** `toolkit/skill_engine.py`
+- **Entrada de ejemplo:** `toolkit/phase-1-content-toolkit/escritor-de-blogs-de-listas/input.example.json`
+- **Esquema de salida:** `toolkit/phase-1-content-toolkit/escritor-de-blogs-de-listas/output.schema.json`
+- **Prueba smoke:** `toolkit/phase-1-content-toolkit/escritor-de-blogs-de-listas/tests/test_smoke.py`
+
+La documentación debe mantenerse sincronizada con el runner, el contrato JSON y el comportamiento local de la herramienta.
