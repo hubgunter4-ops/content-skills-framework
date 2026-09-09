@@ -1,0 +1,247 @@
+[
+  {
+    "name": "Creación de Videos HTML",
+    "description": "Crea videos HTML editables basados en escenas renderizadas a MP4 usando HyperFrames, con animaciones GSAP y subtítulos sincronizados.",
+    "slug": "creacion-de-videos-html"
+  },
+  {
+    "name": "Animador Manim",
+    "description": "Crea videos de animación explicativos basados en código y gráficos vectoriales precisos. Ideal para visualizaciones matemáticas, tutoriales de algoritmos, explicaciones de conceptos científicos y animaciones al estilo de 3Blue1Brown.",
+    "slug": "animador-manim"
+  },
+  {
+    "name": "TTS Prompter",
+    "description": "Domina la creación de prompts de texto a voz con marcos estructurados, separación de estilos y etiquetas de marcado expresivas.",
+    "slug": "tts-prompter"
+  },
+  {
+    "name": "Animación de logotipo en 3D",
+    "description": "Convierte un logotipo estándar en 2D en una animación 3D con materiales dimensionales, iluminación cinematográfica y movimiento de cámara para intros de video, sitios web y publicaciones en redes sociales.",
+    "slug": "animacion-de-logotipo-en-3d"
+  },
+  {
+    "name": "Video para redes sociales",
+    "description": "Crea videos cortos listos para plataformas mediante la lectura de su identidad de marca, público objetivo y documentos de mensajes. Automatiza el proceso de redacción de guiones gráficos, elaboración de prompts optimizados y generación de marcos de referencia.",
+    "slug": "video-para-redes-sociales"
+  },
+  {
+    "name": "Shorts de vídeo con IA",
+    "description": "Extrae automáticamente momentos divertidos o destacados de los vídeos, los reformatea en clips verticales de 9:16 e integra subtítulos palabra por palabra.",
+    "slug": "shorts-de-video-con-ia"
+  },
+  {
+    "name": "Creador de anuncios de video para productos",
+    "description": "Convierte una simple foto de producto en un anuncio de video cinematográfico de alta gama. Combina el procesamiento de imágenes y la generación de video en un flujo de trabajo de dos pasos.",
+    "slug": "creador-de-anuncios-de-video-para-productos"
+  },
+  {
+    "name": "Campaña de producto",
+    "description": "Genera un paquete completo de campaña de producto multicanal, que incluye visuales principales, imágenes para redes sociales y vídeos publicitarios cortos para lanzamientos de productos.",
+    "slug": "campana-de-producto"
+  },
+  {
+    "name": "YouTube Shorts",
+    "description": "Identifica y extrae momentos destacados virales de contenido de larga duración, formateándolos específicamente para YouTube Shorts, TikTok e Instagram Reels.",
+    "slug": "youtube-shorts"
+  },
+  {
+    "name": "Fábrica de Vídeos UGC",
+    "description": "Sintetiza imágenes de personas y productos en anuncios de video verticales de estilo UGC 9:16 con locuciones sincronizadas.",
+    "slug": "fabrica-de-videos-ugc"
+  },
+  {
+    "name": "Transcripción de YouTube",
+    "description": "Extrae subtítulos existentes o recurre automáticamente al reconocimiento de voz por IA si no hay ninguno disponible. Incluye scripts de limpieza de formato para proporcionar texto limpio.",
+    "slug": "transcripcion-de-youtube"
+  },
+  {
+    "name": "Gráficos en movimiento Manim",
+    "description": "Crea tipografía cinética, revelaciones de logotipos y secuencias de títulos con el motor Manim. Ideal para intros de canales y vídeos de eslóganes con un estilo geométrico limpio.",
+    "slug": "graficos-en-movimiento-manim"
+  },
+  {
+    "name": "Director de Cine",
+    "description": "Traduce ideas creativas simples en prompts profesionales de generación de vídeo con movimientos de cámara, iluminación y composición cinematográficos.",
+    "slug": "director-de-cine"
+  },
+  {
+    "name": "Anuncio Cinematográfico de Producto",
+    "description": "Transforma una foto de producto estándar en un anuncio de video cinematográfico de 5 a 10 segundos basado en el resumen de tu marca.",
+    "slug": "anuncio-cinematografico-de-producto"
+  },
+  {
+    "name": "Habilidad YouTube Clipper",
+    "description": "Utiliza IA para analizar el contenido, extraer momentos clave y generar resúmenes de momentos destacados o clips cortos.",
+    "slug": "habilidad-youtube-clipper"
+  },
+  {
+    "name": "Restauración de fotos",
+    "description": "Repara fotos antiguas, borrosas y dañadas convirtiéndolas en imágenes de alta definición 8K, preservando estrictamente la identidad de cada persona.",
+    "slug": "restauracion-de-fotos"
+  },
+  {
+    "name": "Generador de memes",
+    "description": "Genera imágenes con subtítulos a partir de más de 170 plantillas clásicas a través de la API gratuita Memegen.link.",
+    "slug": "generador-de-memes"
+  },
+  {
+    "name": "Flujo de trabajo de anuncios de UGC",
+    "description": "Crea anuncios de video de contenido generado por el usuario UGC combinando un selfie humano y una imagen de producto.",
+    "slug": "flujo-de-trabajo-de-anuncios-de-ugc"
+  },
+  {
+    "name": "Video de presentación de producto",
+    "description": "Genera videos dinámicos de presentación de productos con disposiciones explosivas de ingredientes y animaciones de movimiento realistas.",
+    "slug": "video-de-presentacion-de-producto"
+  },
+  {
+    "name": "Video de historia de personajes",
+    "description": "Crea videos de historias animadas de varias partes estableciendo un personaje consistente, generando escenas secuenciales y animándolas.",
+    "slug": "video-de-historia-de-personajes"
+  },
+  {
+    "name": "Video musical",
+    "description": "Genera un video musical corto a partir de un tema dado mediante la creación de múltiples escenas de fotogramas clave, animándolas y añadiendo música de fondo a juego.",
+    "slug": "video-musical"
+  },
+  {
+    "name": "Adaptador de Prompts",
+    "description": "Traduce prompts de video de IA del estilo de un modelo de origen a las mejores prácticas de un modelo de destino.",
+    "slug": "adaptador-de-prompts"
+  },
+  {
+    "name": "Seedance Storyboard",
+    "description": "Convierte esquemas de tramas simples en prompts profesionales de múltiples tomas que incluyen movimiento de cámara, acción, espacio y dimensiones de audio.",
+    "slug": "seedance-storyboard"
+  },
+  {
+    "name": "Vídeo de toma única",
+    "description": "Genera vídeos cinematográficos de toma única como una escena continua, creando metraje fluido de larga duración sin cortes ni transiciones.",
+    "slug": "video-de-toma-unica"
+  },
+  {
+    "name": "Seedance Prompter",
+    "description": "Traduce ideas simples de video en prompts estructurados en inglés de nivel ingeniería, optimizados para Doubao Seedance 2.0.",
+    "slug": "seedance-prompter"
+  },
+  {
+    "name": "Animación de baile de dibujos animados",
+    "description": "Convierte una foto humana en un personaje de dibujos animados en 3D al estilo Pixar y lo anima utilizando un video de baile o movimiento de referencia.",
+    "slug": "animacion-de-baile-de-dibujos-animados"
+  },
+  {
+    "name": "Kit de herramientas ImageMagick",
+    "description": "Procesa y manipula imágenes utilizando ImageMagick, lo que permite cambiar el tamaño, convertir formatos, procesar por lotes y extraer metadatos de imagen.",
+    "slug": "kit-de-herramientas-imagemagick"
+  },
+  {
+    "name": "Resumen de subtítulos de vídeo",
+    "description": "Convierte vídeos de Douyin, Xiaohongshu, Bilibili, YouTube o archivos locales en subtítulos y resúmenes de IA utilizando la transcripción local faster-whisper.",
+    "slug": "resumen-de-subtitulos-de-video"
+  },
+  {
+    "name": "Kling Prompter",
+    "description": "Genera prompts de video profesionales optimizados para Kling 3.0, admitiendo clips cortos, videos narrativos con audio nativo y generación de imagen a video.",
+    "slug": "kling-prompter"
+  },
+  {
+    "name": "Remotion Toolkit",
+    "description": "Aporta patrones de Remotion probados en batalla —transiciones personalizadas, componentes compartidos y convenciones de proyectos— para crear videos con código React.",
+    "slug": "remotion-toolkit"
+  },
+  {
+    "name": "Generador de Vídeos de Animales",
+    "description": "Crea vlogs de animales antropomórficos ultrarrealistas al permitir a los usuarios personalizar el animal, la ubicación, el atuendo y el diálogo.",
+    "slug": "generador-de-videos-de-animales"
+  },
+  {
+    "name": "Escena de lucha con IA",
+    "description": "Crea videos de escenas de lucha de alta energía construyendo primero un guion gráfico de 16 paneles y luego convirtiéndolo en una secuencia de imagen a video.",
+    "slug": "escena-de-lucha-con-ia"
+  },
+  {
+    "name": "Video de bebé que habla",
+    "description": "Crea videos de estilo viral de un bebé que habla con disfraces y guiones personalizados.",
+    "slug": "video-de-bebe-que-habla"
+  },
+  {
+    "name": "Superposición de subtítulos",
+    "description": "Proporciona una doctrina concisa para añadir subtítulos y leyendas a composiciones filmadas, diseñada para complementar un flujo de trabajo de subtítulos incrustados.",
+    "slug": "superposicion-de-subtitulos"
+  },
+  {
+    "name": "Marco cinematográfico con filtraciones de luz",
+    "description": "Crea títulos de apertura cinematográficos y tarjetas de capítulo con filtraciones de luz de película, textura de grano, formato letterbox 16:9 y tipografía con serifa grande.",
+    "slug": "marco-cinematografico-con-filtraciones-de-luz"
+  },
+  {
+    "name": "Selector de Modelos",
+    "description": "Actúa como un asesor inteligente, recomendando la mejor opción entre 16 modelos comerciales y de código abierto convencionales basándose en sus necesidades específicas.",
+    "slug": "selector-de-modelos"
+  },
+  {
+    "name": "Director de arte de álbumes",
+    "description": "Desarrolla conceptos visuales para el arte de álbumes basados en el género y el estado de ánimo de tu música, luego genera prompts de arte de IA para producirlos.",
+    "slug": "director-de-arte-de-albumes"
+  },
+  {
+    "name": "Recetas de géneros de Seedance",
+    "description": "Ofrece recetas de producción reutilizables para Seedance 2.0: anuncios de productos, vídeos de estilo de vida, escenas dramáticas, vídeos musicales y tomas de paisajes.",
+    "slug": "recetas-de-generos-de-seedance"
+  },
+  {
+    "name": "Vídeo con efecto de congelación",
+    "description": "Convierte una única foto de retrato en una secuencia cinematográfica de \"efecto de congelación\" donde el tiempo se detiene a mitad de la escena.",
+    "slug": "video-con-efecto-de-congelacion"
+  },
+  {
+    "name": "Exhibición de Productos Gigantes",
+    "description": "Transforma fotos de productos estándar en visuales dramáticos de \"productos gigantes\" del tamaño de un edificio junto a figuras humanas.",
+    "slug": "exhibicion-de-productos-gigantes"
+  },
+  {
+    "name": "Storyboard a Video de Cocina",
+    "description": "Transforma una sola foto en un video tutorial de cocina cinematográfico de 15 segundos.",
+    "slug": "storyboard-a-video-de-cocina"
+  },
+  {
+    "name": "ACE-Step Música",
+    "description": "Genera música con el modelo de código abierto ACE-Step — pistas de fondo, voces, covers, extracción de stems, repintado de audio y continuación.",
+    "slug": "ace-step-musica"
+  },
+  {
+    "name": "Video de Ceremonia de Premiación",
+    "description": "Transforma dos fotos en un video cinematográfico de 15 segundos de una ceremonia de premiación, completo con el anuncio del presentador, seguimiento de focos, aceptación en el escenario y títulos personalizados en pantalla LED.",
+    "slug": "video-de-ceremonia-de-premiacion"
+  },
+  {
+    "name": "Video de producto de joyería",
+    "description": "Genera videos publicitarios de joyería de lujo de alta gama con animaciones macro detalladas y movimientos de cámara cinematográficos.",
+    "slug": "video-de-producto-de-joyeria"
+  },
+  {
+    "name": "Marco de título con efecto glitch",
+    "description": "Produce marcos de título con glitch digital con desplazamiento cromático y texturas de corrupción de datos.",
+    "slug": "marco-de-titulo-con-efecto-glitch"
+  },
+  {
+    "name": "Artesanía de Empalmes",
+    "description": "Define los requisitos previos de corrección de renderizado para los empalmes entre escenas en los videos de lanzamiento de HyperFrames.",
+    "slug": "artesania-de-empalmes"
+  },
+  {
+    "name": "Cursor sobredimensionado",
+    "description": "Proporciona una técnica de puntero de macOS sobredimensionado de estilo propio para vídeos de lanzamiento.",
+    "slug": "cursor-sobredimensionado"
+  },
+  {
+    "name": "Generador de videos con IA",
+    "description": "Planifica y produce videos generados por IA, cortometrajes, anuncios comerciales y otros contenidos de video profesionales.",
+    "slug": "generador-de-videos-con-ia"
+  },
+  {
+    "name": "Video estilo dron",
+    "description": "Crea impresionantes metrajes aéreos con perspectiva de dron, incluyendo vistas panorámicas a ojo de pájaro, tomas orbitales y secuencias de sobrevuelo.",
+    "slug": "video-estilo-dron"
+  }
+]
