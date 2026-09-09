@@ -64,6 +64,10 @@ content-skills-toolkit/
 └── SECURITY.md
 ```
 
+## Automatización recomendada
+
+Consulta las [recomendaciones de automatización para Claude Code](docs/claude-automation-recommendations.md) para el perfil del repositorio, el flujo local de calidad y una propuesta gradual de CI, skills, hooks y subagentes. El informe es prescriptivo y no activa integraciones externas por sí mismo.
+
 ## Catálogo
 
 | Habilidad | Descripción |

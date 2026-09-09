@@ -7,7 +7,7 @@ from .catalog import load_skills, validate_skills
 from .integrations import catalog as integration_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ROOT / "skills" / "content-toolkit"
+SKILLS = ROOT / "toolkit" / "phase-1-content-toolkit"
 
 def show_menu() -> None:
     print("Content Skills Toolkit")

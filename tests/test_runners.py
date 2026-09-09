@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class RunnerTests(unittest.TestCase):
     def run_runner(self, slug, payload=None):
-        folder = ROOT / "skills" / "content-toolkit" / slug
+        folder = ROOT / "toolkit" / "phase-1-content-toolkit" / slug
         example = folder / "input.example.json"
         payload = payload or json.loads(example.read_text(encoding="utf-8"))
         return subprocess.run(
@@ -22,7 +22,7 @@ class RunnerTests(unittest.TestCase):
         )
 
     def test_every_skill_has_runner_contract(self):
-        folders = sorted(path for path in (ROOT / "skills" / "content-toolkit").iterdir() if path.is_dir())
+        folders = sorted(path for path in (ROOT / "toolkit" / "phase-1-content-toolkit").iterdir() if path.is_dir())
         self.assertEqual(len(folders), 52)
         for folder in folders:
             with self.subTest(skill=folder.name):
@@ -44,7 +44,7 @@ class RunnerTests(unittest.TestCase):
                 self.assertNotEqual(output["deliverable"]["content"], payload["content"])
 
     def test_runner_reports_missing_input(self):
-        runner = next((ROOT / "skills" / "content-toolkit").glob("*/run.py"))
+        runner = next((ROOT / "toolkit" / "phase-1-content-toolkit").glob("*/run.py"))
         result = subprocess.run([sys.executable, str(runner)], input=json.dumps({"objective": "x"}), text=True, capture_output=True)
         self.assertEqual(result.returncode, 1)
         self.assertEqual(json.loads(result.stdout)["status"], "needs_input")

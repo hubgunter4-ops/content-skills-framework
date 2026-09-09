@@ -27,7 +27,7 @@ class ToolkitTests(unittest.TestCase):
         self.assertIn("OPENAI_API_KEY", result.stdout)
 
     def test_skill_does_not_load_integration_without_explicit_request(self):
-        result = self.run_cli("run", "investigacion-de-videos-de-youtube", "-i", str(ROOT / "skills/content-toolkit/investigacion-de-videos-de-youtube/input.example.json"))
+        result = self.run_cli("run", "investigacion-de-videos-de-youtube", "-i", str(ROOT / "toolkit/phase-1-content-toolkit/investigacion-de-videos-de-youtube/input.example.json"))
         self.assertEqual(result.returncode, 0)
         self.assertNotIn("Integración solicitada", result.stdout)
 
