@@ -2,6 +2,8 @@
 
 Repositorio modular de herramientas y guías para investigación, edición, SEO, documentación, formatos de contenido y productividad. Cada capacidad vive en su propia carpeta para poder revisarse, copiarse o extenderse de manera independiente. Cada carpeta incluye `run.py`, `input.example.json` y `output.schema.json`; el runner es local, determinista y escribe JSON.
 
+Los runners utilizan `toolkit/skill_engine.py`, un motor sin dependencias externas con adaptadores por skill. Los adaptadores realizan transformaciones locales como Markdown a HTML, fuentes Typst y Marp, JSON Canvas de Obsidian, limpieza editorial, matrices SEO, plantillas PRD/README, reutilización multicanal y tablas de verificación. No consultan servicios externos ni publican resultados automáticamente.
+
 ## Instalación
 
 No requiere dependencias externas para consultar las habilidades. Requiere Python 3.10+ para usar el CLI:
