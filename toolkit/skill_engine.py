@@ -5,6 +5,7 @@ import json
 import re
 from collections import Counter
 from typing import Callable
+from .integrations import run_requested
 
 
 Handler = Callable[[str, dict], tuple[str, list[str]]]
@@ -256,8 +257,12 @@ def build_result(slug: str, name: str, description: str, payload: dict) -> dict:
     missing = [key for key in required if not str(payload.get(key, "")).strip()]
     content = _text(payload)
     status = "ready" if not missing else "needs_input"
+    integration_result = run_requested(payload)
+    effective_payload = dict(payload)
+    if integration_result and integration_result.get("status") == "ok":
+        effective_payload["content"] = content + "\n\n## Datos obtenidos mediante integración\n" + json.dumps(integration_result.get("data", integration_result), ensure_ascii=False, indent=2)
     if status == "ready":
-        deliverable, next_steps = _dispatch(slug, payload)
+        deliverable, next_steps = _dispatch(slug, effective_payload)
     else:
         deliverable = ""
         next_steps = ["Completar los campos indicados en missing_fields."]
@@ -265,7 +270,7 @@ def build_result(slug: str, name: str, description: str, payload: dict) -> dict:
         "skill": {"name": name, "slug": slug, "description": description},
         "status": status,
         "request": {"objective": _objective(payload) if status == "ready" else str(payload.get("objective", "")).strip(), "audience": _audience(payload) if status == "ready" else str(payload.get("audience", "")).strip(), "format": str(payload.get("format", "markdown")).strip()},
-        "analysis": {"input_characters": len(content), "input_words": len(content.split()), "missing_fields": missing, "assumptions": ["La ejecución es local y no consulta fuentes externas.", f"Se aplicó el adaptador funcional de {slug}."]},
+        "analysis": {"input_characters": len(content), "input_words": len(content.split()), "missing_fields": missing, "assumptions": ["La ejecución es local y no consulta fuentes externas." if integration_result is None else f"Integración solicitada: {integration_result.get('status', 'unknown')}.", f"Se aplicó el adaptador funcional de {slug}."]},
         "deliverable": {"title": f"{name} — {_objective(payload)}", "format": str(payload.get("format", "markdown")).strip() or "markdown", "content": deliverable, "next_steps": next_steps},
-        "warnings": (["Faltan entradas obligatorias: " + ", ".join(missing)] if missing else []),
+        "warnings": (["Faltan entradas obligatorias: " + ", ".join(missing)] if missing else []) + ([integration_result.get("message", "Integración solicitada") ] if integration_result and integration_result.get("status") != "ok" else []),
     }

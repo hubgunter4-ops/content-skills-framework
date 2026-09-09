@@ -4,15 +4,17 @@ import argparse
 import sys
 from pathlib import Path
 from .catalog import load_skills, validate_skills
+from .integrations import catalog as integration_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ROOT / "skills"
+SKILLS = ROOT / "skills" / "content-toolkit"
 
 def show_menu() -> None:
     print("Content Skills Toolkit")
     print("1) Listar habilidades")
     print("2) Mostrar una habilidad")
     print("3) Validar catálogo")
+    print("4) Listar integraciones opcionales")
     print("q) Cancelar")
     while True:
         try:
@@ -36,7 +38,10 @@ def show_menu() -> None:
         if choice == "3":
             validate()
             return
-        print("Opción no válida. Usa 1, 2, 3 o q.")
+        if choice == "4":
+            list_integrations()
+            return
+        print("Opción no válida. Usa 1, 2, 3, 4 o q.")
 
 def list_skills() -> None:
     for skill in load_skills(SKILLS):
@@ -59,9 +64,17 @@ def validate() -> int:
     print(f"Catálogo válido: {len(load_skills(SKILLS))} habilidades.")
     return 0
 
+def list_integrations() -> int:
+    for integration in integration_catalog():
+        credentials = ", ".join(integration["credential_env"]) or "sin credencial obligatoria"
+        print(f"{integration['name']}\t{integration['service']}\tcredencial: {credentials}")
+        print(f"  {integration['description']}")
+        print(f"  skills: {', '.join(integration['skills'])}")
+    return 0
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Descubre y valida habilidades locales.")
-    parser.add_argument("command", nargs="?", choices=("list", "show", "run", "validate"))
+    parser.add_argument("command", nargs="?", choices=("list", "show", "run", "validate", "integrations"))
     parser.add_argument("slug", nargs="?")
     parser.add_argument("-i", "--input", dest="input_file")
     args = parser.parse_args()
@@ -72,6 +85,8 @@ def main() -> int:
         list_skills(); return 0
     if args.command == "validate":
         return validate()
+    if args.command == "integrations":
+        return list_integrations()
     if args.command == "run":
         if not args.slug:
             parser.error("run requiere un slug")

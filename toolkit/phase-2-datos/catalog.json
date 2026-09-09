@@ -1,0 +1,287 @@
+[
+  {
+    "name": "Análisis de acciones",
+    "description": "Utiliza datos de mercado, gráficos de precios, información sobre la propiedad y presentaciones ante la SEC para analizar acciones y empresas públicas.",
+    "slug": "analisis-de-acciones"
+  },
+  {
+    "name": "Generador de Excel",
+    "description": "Crea hojas de cálculo de Excel profesionales con análisis de datos estructurado. Organiza, analiza y presenta datos empresariales y financieros en formatos limpios y listos para su publicación.",
+    "slug": "generador-de-excel"
+  },
+  {
+    "name": "Analítica de tráfico web",
+    "description": "Analiza el tráfico del sitio web, la interacción, las clasificaciones, las fuentes de tráfico y la distribución geográfica con datos de Similarweb.",
+    "slug": "analitica-de-trafico-web"
+  },
+  {
+    "name": "Investigación de videos de YouTube",
+    "description": "Mejora las investigaciones profundas y los informes con evidencia de videos de YouTube de primera mano, entrevistas a expertos y presentaciones de conferencias.",
+    "slug": "investigacion-de-videos-de-youtube"
+  },
+  {
+    "name": "Análisis Financiero",
+    "description": "Investiga las finanzas de las empresas, los precios de mercado, las presentaciones ante la SEC, las conferencias de resultados y los datos macroeconómicos utilizando APIs financieras estructuradas.",
+    "slug": "analisis-financiero"
+  },
+  {
+    "name": "Constructor de Paneles Interactivos",
+    "description": "Crea paneles HTML interactivos e independientes utilizando Chart.js, filtros desplegables y un estilo profesional. Genera archivos HTML compartibles y con capacidad offline que muestran gráficos, permiten el filtrado dinámico, admiten diseños adaptables y no requieren servidor.",
+    "slug": "constructor-de-paneles-interactivos"
+  },
+  {
+    "name": "Extractor Web Inteligente",
+    "description": "Este asistente inteligente de extracción web elude automáticamente las protecciones anti-bot como Cloudflare para extraer datos de páginas y contenido de artículos. Ofrece un flujo de trabajo completo con selección inteligente de extractores y generación de scripts en Python.",
+    "slug": "extractor-web-inteligente"
+  },
+  {
+    "name": "Diseñador de Dashboards de KPI",
+    "description": "Proporciona patrones de diseño profesionales para dashboards de KPI, cubriendo la selección de métricas, las mejores prácticas de visualización y soluciones de monitoreo en tiempo real con ejemplos de código SQL y Python.",
+    "slug": "disenador-de-dashboards-de-kpi"
+  },
+  {
+    "name": "Sintetizador de Conocimiento",
+    "description": "Sintetiza los resultados de búsqueda de múltiples fuentes en respuestas coherentes y sin duplicados, con una clara atribución de fuentes y puntuación de confianza. Pondera la actualidad y la autoridad para mostrar la información más fiable.",
+    "slug": "sintetizador-de-conocimiento"
+  },
+  {
+    "name": "Flujo de trabajo de análisis de Excel",
+    "description": "Orquestador de análisis de datos de Excel de extremo a extremo que cubre la lectura de múltiples hojas, limpieza, filtrado, agregación y exportación formateada. Guía todo el proceso paso a paso para obtener informes de análisis fiables y descargables.",
+    "slug": "flujo-de-trabajo-de-analisis-de-excel"
+  },
+  {
+    "name": "Orquestador de Estrategias de Búsqueda",
+    "description": "Orquesta la descomposición de consultas y los flujos de trabajo de búsqueda en múltiples fuentes para recuperar respuestas precisas de diversos almacenes de datos. Divide las preguntas en lenguaje natural en subconsultas específicas, las traduce a la sintaxis propia de cada fuente, clasifica y consolida los resultados por relevancia.",
+    "slug": "orquestador-de-estrategias-de-busqueda"
+  },
+  {
+    "name": "Optimizador de Consultas SQL",
+    "description": "Manual de optimización de SQL probado en combate que cubre el análisis de planes EXPLAIN, estrategias de indexación y patrones de reescritura de consultas para PostgreSQL y más allá. Ayuda a convertir consultas lentas en otras ultrarrápidas, reducir la carga de la base de datos y diseñar esquemas que escalen con tus datos.",
+    "slug": "optimizador-de-consultas-sql"
+  },
+  {
+    "name": "Buscador de Datos Científicos",
+    "description": "Herramienta de búsqueda en bases de datos que ayuda a los usuarios a consultar con precisión 78 bases de datos públicas en las áreas de biología, química y finanzas mediante el uso de APIs documentadas. Proporciona datos científicos y estadísticos autorizados y reproducibles.",
+    "slug": "buscador-de-datos-cientificos"
+  },
+  {
+    "name": "Validación de datos",
+    "description": "Realiza controles de calidad QA en los análisis antes de compartirlos con las partes interesadas, comprobando la metodología, verificando la precisión y detectando fuentes de sesgo para aumentar la confianza. Valida la lógica de agregación, señala el posible sesgo de supervivencia y las brechas de reproducibilidad.",
+    "slug": "validacion-de-datos"
+  },
+  {
+    "name": "Visualización Estadística",
+    "description": "Herramienta de visualización de datos estadísticos que proporciona una interfaz de alto nivel para dibujar gráficos estadísticos con integración de pandas. Ayuda a los usuarios a explorar rápidamente las distribuciones y relaciones de los datos, generando gráficos de calidad de publicación.",
+    "slug": "visualizacion-estadistica"
+  },
+  {
+    "name": "Extractor de contexto de datos",
+    "description": "Ayuda a generar o mejorar una capacidad de análisis de datos específica de la empresa mediante la extracción del conocimiento tribal de los analistas, el descubrimiento de esquemas y la producción de archivos de referencia y patrones de consulta.",
+    "slug": "extractor-de-contexto-de-datos"
+  },
+  {
+    "name": "Analítica de Big Data",
+    "description": "Guía de procesamiento de big data que ayuda a utilizar la biblioteca Vaex para analizar y visualizar conjuntos de datos tabulares masivos, como archivos CSV o HDF5 de varios gigabytes. Al aprovechar las operaciones fuera del núcleo out-of-core y la evaluación diferida lazy evaluation, permite realizar estadísticas rápidas, filtrado y aprendizaje automático en miles de millones de filas sin quedarse sin memoria.",
+    "slug": "analitica-de-big-data"
+  },
+  {
+    "name": "Risk Metrics Pro",
+    "description": "Herramienta de cálculo de riesgo de cartera que computa métricas principales como VaR, CVaR, ratio de Sharpe, ratio de Sortino y el drawdown máximo. Proporciona metodologías detalladas y mejores prácticas, ayudando a inversores cuantitativos y gestores de riesgos a medir con precisión el riesgo de la cartera, implementar límites y construir sistemas de monitoreo robustos.",
+    "slug": "risk-metrics-pro"
+  },
+  {
+    "name": "Revisión de tabla de contratos",
+    "description": "Convierte pilas de acuerdos comerciales en una tabla comparativa estructurada con 19 columnas de extracción predefinidas que cubren las partes, la vigencia, los precios, los límites de responsabilidad y más. Cargue sus contratos y obtenga una revisión de Excel limpia y exportable en minutos.",
+    "slug": "revision-de-tabla-de-contratos"
+  },
+  {
+    "name": "Extractor de Hacker News",
+    "description": "Herramienta que extrae la página principal de Hacker News y devuelve las 30 historias principales como JSON estructurado, incluyendo rank, title, URL, points y recuentos de comentarios. Proporciona una fuente rápida y legible por máquina para monitoreo, paneles, boletines o análisis automatizados sin necesidad de copiar o procesar manualmente.",
+    "slug": "extractor-de-hacker-news"
+  },
+  {
+    "name": "Patrones de búsqueda híbrida",
+    "description": "Proporciona patrones de implementación y plantillas de código para la búsqueda híbrida, combinando la búsqueda vectorial y por palabras clave mediante métodos como RRF y combinación lineal. Ayuda a los desarrolladores a crear sistemas RAG y motores de búsqueda más robustos al mejorar la recuperación de información cuando ninguno de los enfoques por sí solo es suficiente.",
+    "slug": "patrones-de-busqueda-hibrida"
+  },
+  {
+    "name": "Potencia Estadística Pro",
+    "description": "Herramienta que calcula el tamaño de la muestra, la potencia estadística, el efecto mínimo detectable y las curvas de potencia para experimentos, estudios y protocolos clínicos en diseños estándar y basados en simulación. Ayuda a los investigadores a justificar planes de estudio con evidencia cuantitativa defendible, reducir el trabajo con baja potencia y preparar propuestas, materiales para el IRB y prerregistros más sólidos.",
+    "slug": "potencia-estadistica-pro"
+  },
+  {
+    "name": "Asistente de Modelado de Power BI",
+    "description": "Herramienta que se conecta a su modelo semántico activo de Power BI a través de las utilidades MCP de power-bi-modeling y ofrece orientación práctica orientada al modelo. Ayuda a diseñar esquemas en estrella, crear medidas DAX eficientes, configurar relaciones y RLS, definir grupos de cálculo y aplicar mejores prácticas de rendimiento y nomenclatura.",
+    "slug": "asistente-de-modelado-de-power-bi"
+  },
+  {
+    "name": "Optimizador de Índices Vectoriales",
+    "description": "Proporciona una guía de nivel de producción y plantillas de código para optimizar el rendimiento de los índices vectoriales, abarcando el ajuste de parámetros HNSW, estrategias de cuantificación y monitoreo del rendimiento. Ayuda a los desarrolladores que manejan búsquedas vectoriales a gran escala a equilibrar la latencia, la recuperación y el uso de memoria.",
+    "slug": "optimizador-de-indices-vectoriales"
+  },
+  {
+    "name": "Análisis de Redes",
+    "description": "Conjunto de herramientas de análisis de redes basado en Python que ayuda a crear, analizar y visualizar estructuras de grafos complejas, admitiendo diversos formatos de datos de red. Proporciona algoritmos integrados para calcular rutas más cortas, centralidad y detección de comunidades.",
+    "slug": "analisis-de-redes"
+  },
+  {
+    "name": "Modelado estadístico",
+    "description": "Conjunto de herramientas de modelado estadístico y econometría para Python que admite regresión lineal, modelos lineales generalizados, modelos mixtos y pronóstico de series temporales. Proporciona diagnósticos detallados, residuos e inferencia estadística rigurosa.",
+    "slug": "modelado-estadistico"
+  },
+  {
+    "name": "Estudio de Visualización de Datos",
+    "description": "Herramienta oficial de visualización de datos de Anthropic con orientación para la selección de gráficos, patrones de código Python para matplotlib, seaborn y plotly, además de principios de diseño y accesibilidad. Ayuda a crear gráficos de calidad de publicación y aptos para daltónicos que comunican hallazgos con claridad.",
+    "slug": "estudio-de-visualizacion-de-datos"
+  },
+  {
+    "name": "Gráficos científicos",
+    "description": "Guía de la biblioteca de gráficos Matplotlib que cubre gráficos básicos, subgráficos múltiples complejos y visualizaciones en 3D. Proporciona un control detallado sobre los elementos del gráfico, ayudando a los usuarios a crear figuras personalizadas con calidad de publicación y exportarlas en formatos PNG, PDF o SVG.",
+    "slug": "graficos-cientificos"
+  },
+  {
+    "name": "Motor de Excel para grandes volúmenes",
+    "description": "Motor de análisis de alto rendimiento para archivos de Excel con entre 10k y más de 1M de filas, que utiliza lectura en streaming, conversión a Parquet y optimización de memoria. Evita bloqueos por falta de memoria y tiempos de espera agotados para que pueda analizar conjuntos de datos masivos de forma rápida y confiable.",
+    "slug": "motor-de-excel-para-grandes-volumenes"
+  },
+  {
+    "name": "Mejores prácticas de Postgres",
+    "description": "Guía oficial de Supabase que proporciona mejores prácticas de PostgreSQL, consejos de optimización y orientación arquitectónica para desarrolladores. Ayuda a mejorar el rendimiento de la base de datos, implementar una seguridad de nivel de fila RLS robusta y crear arquitecturas de datos más eficientes.",
+    "slug": "mejores-practicas-de-postgres"
+  },
+  {
+    "name": "Creador de gráficos AntV",
+    "description": "Herramienta oficial de generación de gráficos de AntV que ofrece más de 26 tipos de gráficos, desde gráficos de barras y líneas hasta diagramas de Sankey, mapas mentales y nubes de palabras. Selecciona el mejor gráfico para sus datos y devuelve una imagen del gráfico lista para compartir a través de la API de AntV en segundos.",
+    "slug": "creador-de-graficos-antv"
+  },
+  {
+    "name": "Solucionador de matemáticas simbólicas",
+    "description": "Proporciona una guía de SymPy para matemáticas simbólicas exactas en Python, cubriendo álgebra, cálculo, resolución de ecuaciones y generación de código. Ayuda a los usuarios a realizar derivaciones matemáticas precisas, simplificar fórmulas y convertir expresiones simbólicas en código numérico ejecutable o formato LaTeX.",
+    "slug": "solucionador-de-matematicas-simbolicas"
+  },
+  {
+    "name": "Datos Fiscales de EE. UU.",
+    "description": "Herramienta que consulta la API de Datos Fiscales del Tesoro de los EE. UU. para recuperar datos financieros federales oficiales, incluyendo la deuda nacional, estados de cuenta del Tesoro y resultados de subastas, sin requerir una clave de API. Proporciona una fuente directa y autorizada para la investigación macroeconómica.",
+    "slug": "datos-fiscales-de-ee-uu"
+  },
+  {
+    "name": "HF Dataset Manager",
+    "description": "Kit de herramientas oficial de Hugging Face que ayuda a los profesionales del aprendizaje automático a crear y gestionar conjuntos de datos mediante configuraciones personalizadas y consultas SQL. Proporciona un flujo de trabajo fiable y estandarizado para manejar estructuras de datos complejas.",
+    "slug": "hf-dataset-manager"
+  },
+  {
+    "name": "Arquitecto de Pipelines de ML",
+    "description": "Guía de ingeniería de pipelines de ML de nivel de producción que cubre el seguimiento de experimentos con MLflow o Weights & Biases, la orquestación de entrenamiento con Kubeflow o Airflow DAGs, la configuración de almacenes de características con Feast y el reentrenamiento y validación automatizados de modelos. Estandariza el flujo de trabajo de MLOps de extremo a extremo.",
+    "slug": "arquitecto-de-pipelines-de-ml"
+  },
+  {
+    "name": "Diseño Experimental",
+    "description": "Conjunto de herramientas de diseño experimental que ayuda a investigadores y analistas a planificar estudios proporcionando marcos para la aleatorización, el bloqueo y los diseños factoriales antes de la recopilación de datos. Convierte principios estadísticos complejos en planes ejecutables.",
+    "slug": "diseno-experimental"
+  },
+  {
+    "name": "Diseñador de Esquemas de MongoDB",
+    "description": "Herramienta que ayuda a los desarrolladores a diseñar esquemas de documentos de MongoDB eficientes, incorporando reglas de validación y patrones de indexación. Agiliza el proceso de diseño de la base de datos, garantizando un rendimiento óptimo y la integridad de los datos para aplicaciones backend.",
+    "slug": "disenador-de-esquemas-de-mongodb"
+  },
+  {
+    "name": "Entrenador de Modelos de RL",
+    "description": "Biblioteca que ofrece algoritmos de aprendizaje por refuerzo listos para producción como PPO y SAC con una API similar a scikit-learn para experimentos y prototipado estándar de RL. Agiliza la implementación y evaluación de algoritmos, permitiendo un desarrollo más rápido de modelos de RL de un solo agente dentro de entornos de Gymnasium.",
+    "slug": "entrenador-de-modelos-de-rl"
+  },
+  {
+    "name": "Patrones de búsqueda vectorial",
+    "description": "Kit de herramientas que proporciona mejores prácticas y plantillas de código para implementar búsquedas de similitud eficientes en bases de datos vectoriales, incluyendo búsqueda híbrida y optimización del rendimiento. Ayuda a los desarrolladores a crear búsquedas semánticas y consultas de vecinos más cercanos más rápido.",
+    "slug": "patrones-de-busqueda-vectorial"
+  },
+  {
+    "name": "Búsqueda & IA de MongoDB",
+    "description": "Integración oficial de MongoDB que ayuda a los desarrolladores a implementar Atlas Search y recomendaciones impulsadas por IA mediante la búsqueda vectorial. Agiliza el proceso de configuración y prueba, permitiendo a los equipos integrar rápidamente capacidades de búsqueda avanzada en sus proyectos de backend existentes.",
+    "slug": "busqueda-y-ia-de-mongodb"
+  },
+  {
+    "name": "Explicador SHAP",
+    "description": "Herramienta de interpretabilidad de modelos de aprendizaje automático que utiliza SHAP para facilitar la selección de explicadores y generar visualizaciones como gráficos de cascada waterfall y de abejas beeswarm. Traduce predicciones complejas en un análisis intuitivo de la importancia de las características.",
+    "slug": "explicador-shap"
+  },
+  {
+    "name": "Optimizador de Rendimiento de Spark",
+    "description": "Guía que proporciona estrategias de optimización de rendimiento para Apache Spark, cubriendo la partición, la gestión de memoria, el ajuste de shuffle y el manejo de sesgo de datos. Equipa a los ingenieros de datos con ejemplos de código prácticos y patrones para depurar trabajos lentos y escalar canalizaciones de procesamiento de datos.",
+    "slug": "optimizador-de-rendimiento-de-spark"
+  },
+  {
+    "name": "Arquitecto de ClickHouse",
+    "description": "Asesor de arquitectura que ayuda a diseñar implementaciones de ClickHouse y a traducir las mejores prácticas en decisiones específicas para su carga de trabajo. Proporciona orientación experta sobre el diseño de clústeres, la optimización de esquemas y el rendimiento de las consultas.",
+    "slug": "arquitecto-de-clickhouse"
+  },
+  {
+    "name": "Patrones de DAG de Airflow",
+    "description": "Proporciona patrones de diseño de DAG de Apache Airflow de nivel de producción, que cubren dependencias de tareas, sensores, manejo de errores y pruebas. Convierte las mejores prácticas dispersas en un flujo de trabajo ejecutable, ayudando a los ingenieros de datos a crear canalizaciones de datos robustas, orquestar flujos de trabajo complejos y programar tareas por lotes con confianza.",
+    "slug": "patrones-de-dag-de-airflow"
+  },
+  {
+    "name": "Patrones de transformación de dbt",
+    "description": "Proporciona patrones de transformación de datos dbt de grado de producción, que cubren la organización de modelos, pruebas de calidad, estrategias incrementales y estándares de documentación. Ayuda a los equipos de ingeniería de datos a construir pipelines de datos eficientes, implementar mejores prácticas de analítica y mantener modelos de datos claros y escalables.",
+    "slug": "patrones-de-transformacion-de-dbt"
+  },
+  {
+    "name": "Motor de Datos Polars",
+    "description": "Guía de la biblioteca DataFrame de alto rendimiento que cubre conceptos básicos, optimización de consultas perezosas lazy y migración de pandas para ETL y analítica. Ayuda a procesar conjuntos de datos masivos de manera eficiente con ejecución paralela y procesamiento fuera del núcleo out-of-core mediante streaming.",
+    "slug": "motor-de-datos-polars"
+  },
+  {
+    "name": "Mongo Query Pro",
+    "description": "Herramienta que traduce solicitudes en lenguaje natural en consultas de MongoDB y pipelines de agregación ejecutables. Cierra la brecha entre el texto plano y las operaciones complejas de bases de datos, ayudando a desarrolladores y analistas a recuperar datos más rápido sin necesidad de escribir o depurar manualmente la intrincada sintaxis de MongoDB.",
+    "slug": "mongo-query-pro"
+  },
+  {
+    "name": "Explorador de datos UMAP",
+    "description": "Guía de reducción de dimensionalidad UMAP que cubre la visualización de datos, el preprocesamiento de agrupamiento y el aprendizaje supervisado. Proporciona ajuste de parámetros y funciones avanzadas como Parametric UMAP, ayudando a los usuarios a analizar datos de alta dimensionalidad y optimizar los flujos de trabajo de agrupamiento.",
+    "slug": "explorador-de-datos-umap"
+  },
+  {
+    "name": "Motor SQL de ClickHouse",
+    "description": "Motor SQL de ClickHouse integrado para Python que permite consultar archivos, bases de datos y almacenamiento en la nube sin un servidor dedicado. Permite una ejecución de SQL rápida y sin servidor directamente dentro de su entorno local, agilizando los flujos de trabajo de análisis de datos y mejorando la eficiencia del procesamiento.",
+    "slug": "motor-sql-de-clickhouse"
+  },
+  {
+    "name": "Escalador de Datos Dask",
+    "description": "Guía de computación distribuida para Dask, que cubre las mejores prácticas para DataFrames, Arrays, Bags y Futures. Ayuda a escalar los flujos de trabajo existentes de pandas y NumPy más allá de los límites de memoria de una sola máquina, facilitando el procesamiento de conjuntos de datos masivos, la ejecución de canalizaciones ETL paralelas y la optimización del rendimiento en clústeres.",
+    "slug": "escalador-de-datos-dask"
+  },
+  {
+    "name": "Control de Calidad de ARN de Célula Única",
+    "description": "Herramienta que realiza el control de calidad en conjuntos de datos de RNA-seq de célula única .h5ad o .h5 siguiendo las mejores prácticas de scverse/scanpy, aplicando filtrado basado en MAD para identificar y eliminar células de baja calidad. Genera visualizaciones exhaustivas y métricas de resumen para ayudarle a evaluar la calidad de los datos, elegir umbrales de filtrado y producir objetos limpios para análisis posteriores.",
+    "slug": "control-de-calidad-de-arn-de-celula-unica"
+  },
+  {
+    "name": "chDB Data Store",
+    "description": "Herramienta de almacenamiento de datos que proporciona un reemplazo directo para pandas, ofreciendo un rendimiento al nivel de ClickHouse en más de 16 fuentes de datos. Permite a los equipos consultar y analizar grandes conjuntos de datos de manera eficiente, optimizando los flujos de trabajo de datos sin necesidad de una configuración de infraestructura compleja.",
+    "slug": "chdb-data-store"
+  },
+  {
+    "name": "Verificador de tráfico web",
+    "description": "Flujo de trabajo de análisis integral del tráfico web compatible con Similarweb, Ahrefs, Semrush, DataForSEO y datos de analítica exportados.",
+    "slug": "verificador-de-trafico-web"
+  },
+  {
+    "name": "Extractor de Datos de Documentos",
+    "description": "Motor de análisis y procesamiento de Word, PDF y PowerPoint que extrae tablas, números, gráficos y formato de los documentos. Convierte informes, contratos y presentaciones no estructurados en datos estructurados que puedes analizar y resumir en varios archivos.",
+    "slug": "extractor-de-datos-de-documentos"
+  },
+  {
+    "name": "Agent Reach",
+    "description": "Enrutador de contenido de internet unificado que permite a su agente buscar y leer en 15 plataformas — Xiaohongshu, Twitter/X, Bilibili, Reddit, YouTube, LinkedIn, RSS y más — a través de un conjunto de comandos consistente. Realice investigaciones multiplataforma y recopile discusiones de usuarios reales sin inventar trucos de scraping.",
+    "slug": "agent-reach"
+  },
+  {
+    "name": "Experto en Consultas SQL",
+    "description": "Herramienta que genera SQL correcto y eficiente en los principales dialectos de almacenes de datos Snowflake, BigQuery, Databricks, PostgreSQL, etc.. Ayuda a escribir consultas analíticas, traducir sintaxis específica de dialectos y optimizar consultas lentas mediante el uso de CTE, funciones de ventana y mejores prácticas de agregación.",
+    "slug": "experto-en-consultas-sql"
+  },
+  {
+    "name": "Redes Neuronales de Grafos",
+    "description": "Guía para PyTorch Geometric PyG que ayuda a los desarrolladores a construir, entrenar e interpretar redes neuronales de grafos para datos de grafos complejos. Cubre el paso de mensajes, grafos heterogéneos y conjuntos de datos personalizados, permitiendo a los equipos procesar estructuras de grafos y avanzar en su investigación de GNN.",
+    "slug": "redes-neuronales-de-grafos"
+  }
+]

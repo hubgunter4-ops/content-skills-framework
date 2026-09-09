@@ -19,6 +19,18 @@ class ToolkitTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0)
         self.assertIn("investigacion-de-videos-de-youtube", result.stdout)
 
+    def test_integrations_lists_optional_services_without_loading_them(self):
+        result = self.run_cli("integrations")
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("youtube\tYouTube Data API v3", result.stdout)
+        self.assertIn("SERP_API_KEY", result.stdout)
+        self.assertIn("OPENAI_API_KEY", result.stdout)
+
+    def test_skill_does_not_load_integration_without_explicit_request(self):
+        result = self.run_cli("run", "investigacion-de-videos-de-youtube", "-i", str(ROOT / "skills/content-toolkit/investigacion-de-videos-de-youtube/input.example.json"))
+        self.assertEqual(result.returncode, 0)
+        self.assertNotIn("Integración solicitada", result.stdout)
+
     def test_invalid_show_is_visible(self):
         result = self.run_cli("show", "no-existe")
         self.assertEqual(result.returncode, 2)

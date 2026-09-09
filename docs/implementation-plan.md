@@ -21,7 +21,7 @@
 
 ### Task 1: Generate the skill catalog
 
-**Files:** `skills/*/SKILL.md`, `README.md`
+**Files:** `skills/content-toolkit/*/SKILL.md`, `README.md`
 
 - [x] Parse each named skill and remove usage/star counts.
 - [x] Create one independently reviewable folder per skill.

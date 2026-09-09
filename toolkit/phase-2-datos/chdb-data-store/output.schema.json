@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Resultado de herramienta de datos",
+  "type": "object",
+  "required": [
+    "skill",
+    "status",
+    "analysis",
+    "deliverable",
+    "warnings"
+  ],
+  "properties": {
+    "skill": {
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "needs_input",
+        "not_loaded"
+      ]
+    },
+    "analysis": {
+      "type": "object"
+    },
+    "deliverable": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  }
+}
