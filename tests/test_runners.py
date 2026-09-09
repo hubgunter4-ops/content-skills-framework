@@ -22,7 +22,7 @@ class RunnerTests(unittest.TestCase):
         )
 
     def test_every_skill_has_runner_contract(self):
-        folders = sorted(path for path in (ROOT / "toolkit" / "phase-1-content-toolkit").iterdir() if path.is_dir())
+        folders = sorted(path for path in (ROOT / "toolkit" / "phase-1-content-toolkit").iterdir() if path.is_dir() and path.name != 'tests')
         self.assertEqual(len(folders), 52)
         for folder in folders:
             with self.subTest(skill=folder.name):

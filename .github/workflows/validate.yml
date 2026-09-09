@@ -1,0 +1,50 @@
+name: Validate Content Skills Toolkit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Compile Python
+        run: python3 -m compileall -q toolkit
+
+      - name: Validate catalog and contracts
+        run: python3 -m toolkit validate
+
+      - name: Validate documentation for every phase
+        shell: bash
+        run: |
+          set -euo pipefail
+          for test_file in toolkit/phase-*/tests/test_documentation.py; do
+            python3 "$test_file"
+          done
+
+      - name: Validate phase runners
+        shell: bash
+        run: |
+          set -euo pipefail
+          for test_file in toolkit/phase-*/tests/test_phase*.py; do
+            python3 "$test_file"
+          done
+
+      - name: Check diff whitespace
+        run: git diff --check

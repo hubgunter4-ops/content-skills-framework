@@ -24,6 +24,22 @@ El catálogo de `catalog.json` contiene 57 subherramientas derivadas del documen
 
 Los runners aceptan JSON por stdin o por `--input` con `objective`, `audience`, `content` y `format`. La entrada debe contener datos reales proporcionados por el usuario o una referencia autorizada. No se generan datasets simulados para presentarlos como evidencia.
 
+## Contrato por herramienta
+
+Cada carpeta de herramienta mantiene la asociación explícita entre documentación y ejecución:
+
+```text
+<slug>/
+├── SKILL.md                 # propósito, límites y guardrails
+├── run.py                   # runner ejecutable
+├── input.example.json       # entrada reproducible
+├── output.schema.json       # contrato JSON de salida
+├── resources/README.md      # referencias y recursos locales
+└── tests/test_smoke.py      # comprobación mínima del runner
+```
+
+`SKILL.md` declara el runner, el motor `toolkit/phase_2_engine.py`, los archivos de entrada y salida y la prueba smoke. El runner delega en `phase_2_engine.run_tool`, devuelve JSON y no ejecuta una integración por el mero hecho de mencionar un proveedor. Las herramientas que producen planes, plantillas, consultas o diseños deben describirlos como entregables locales revisables, no como ejecuciones externas completadas.
+
 ## Integraciones externas
 
 No se cargan integraciones por defecto. Las herramientas financieras, tráfico web, fuentes científicas, Hacker News, datos fiscales, Power BI, MongoDB, Similarweb, Ahrefs, Semrush, APIs SEC, proveedores de mercado, bases públicas o plataformas ML solo deben conectarse cuando el usuario incluya explícitamente `integration` o `integrations` y exista autorización, endpoint y credencial adecuados.
@@ -36,6 +52,16 @@ Cada subcarpeta contiene una prueba smoke. Desde el repositorio, la verificació
 
 ```bash
 python3 -m compileall -q toolkit/phase_2_engine.py toolkit/phase-2-datos
+python3 toolkit/phase-2-datos/tests/test_phase2.py
+```
+
+La validación de documentación y contratos de todas las fases se ejecuta desde la raíz:
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 -m compileall -q toolkit
+python3 -m toolkit validate
+python3 toolkit/phase-2-datos/tests/test_documentation.py
 python3 toolkit/phase-2-datos/tests/test_phase2.py
 ```
 

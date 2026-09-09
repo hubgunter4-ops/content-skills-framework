@@ -1,14 +1,17 @@
 from __future__ import annotations
 
 import argparse
+import subprocess
 import sys
 from pathlib import Path
+
 from .catalog import load_skills, validate_skills
 from .integrations import catalog as integration_catalog
-from .registry import load_registry, validate_registry
+from .registry import RegistryError, load_registry, resolve_tool, validate_registry
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "toolkit" / "phase-1-content-toolkit"
+
 
 def show_menu() -> None:
     print("Content Skills Toolkit")
@@ -44,17 +47,28 @@ def show_menu() -> None:
             return
         print("Opción no válida. Usa 1, 2, 3, 4 o q.")
 
-def list_skills() -> None:
-    for skill in load_skills(SKILLS):
-        print(f"{skill.slug}\t{skill.name}")
 
-def show_skill(slug: str) -> int:
-    for skill in load_skills(SKILLS):
-        if skill.slug == slug:
-            print(skill.path.read_text(encoding="utf-8"))
-            return 0
-    print(f"No existe la habilidad: {slug}")
-    return 2
+def list_skills() -> int:
+    for spec in load_registry(ROOT):
+        print(f"{spec.identifier}\t{spec.name}")
+    return 0
+
+
+def _resolve(identifier: str):
+    try:
+        return resolve_tool(load_registry(ROOT), identifier)
+    except RegistryError as exc:
+        print(str(exc))
+        return None
+
+
+def show_skill(identifier: str) -> int:
+    spec = _resolve(identifier)
+    if spec is None:
+        return 2
+    print(spec.skill_doc.read_text(encoding="utf-8"))
+    return 0
+
 
 def validate() -> int:
     errors = validate_skills(SKILLS)
@@ -66,6 +80,7 @@ def validate() -> int:
     print(f"Catálogo y contratos válidos: {len(load_registry(ROOT))} habilidades con herramienta asociada.")
     return 0
 
+
 def list_integrations() -> int:
     for integration in integration_catalog():
         credentials = ", ".join(integration["credential_env"]) or "sin credencial obligatoria"
@@ -73,6 +88,18 @@ def list_integrations() -> int:
         print(f"  {integration['description']}")
         print(f"  skills: {', '.join(integration['skills'])}")
     return 0
+
+
+def run_tool(identifier: str, input_file: str | None) -> int:
+    spec = _resolve(identifier)
+    if spec is None:
+        return 2
+    command = [sys.executable, str(spec.runner)]
+    if input_file:
+        command.extend(["--input", input_file])
+    completed = subprocess.run(command, cwd=ROOT)
+    return completed.returncode
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Descubre y valida habilidades locales.")
@@ -84,27 +111,17 @@ def main() -> int:
         show_menu()
         return 0
     if args.command == "list":
-        list_skills(); return 0
+        return list_skills()
     if args.command == "validate":
         return validate()
     if args.command == "integrations":
         return list_integrations()
-    if args.command == "run":
-        if not args.slug:
-            parser.error("run requiere un slug")
-        runner = SKILLS / args.slug / "run.py"
-        if not runner.is_file():
-            print(f"No existe la habilidad: {args.slug}")
-            return 2
-        import subprocess
-        command = [sys.executable, str(runner)]
-        if args.input_file:
-            command.extend(["--input", args.input_file])
-        completed = subprocess.run(command)
-        return completed.returncode
     if not args.slug:
-        parser.error("show requiere un slug")
+        parser.error(f"{args.command} requiere un slug")
+    if args.command == "run":
+        return run_tool(args.slug, args.input_file)
     return show_skill(args.slug)
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
