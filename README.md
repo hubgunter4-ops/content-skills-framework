@@ -1,6 +1,6 @@
 # Content Skills Toolkit
 
-Repositorio modular de herramientas y guías para investigación, edición, SEO, documentación, formatos de contenido y productividad. Cada capacidad vive en su propia carpeta para poder revisarse, copiarse o extenderse de manera independiente.
+Repositorio modular de herramientas y guías para investigación, edición, SEO, documentación, formatos de contenido y productividad. Cada capacidad vive en su propia carpeta para poder revisarse, copiarse o extenderse de manera independiente. Cada carpeta incluye `run.py`, `input.example.json` y `output.schema.json`; el runner es local, determinista y escribe JSON.
 
 ## Instalación
 
@@ -21,6 +21,7 @@ python3 -m toolkit
 python3 -m toolkit list
 python3 -m toolkit show estratega-de-seo-aeo
 python3 -m toolkit validate
+python3 -m toolkit run estratega-de-seo-y-aeo -i skills/estratega-de-seo-y-aeo/input.example.json
 ```
 
 En el menú: `1` lista habilidades, `2` muestra una habilidad por nombre, `3` valida la colección y `q` cancela. Las acciones son locales, no envían datos y no modifican archivos salvo que el usuario lo haga explícitamente.
@@ -29,7 +30,7 @@ En el menú: `1` lista habilidades, `2` muestra una habilidad por nombre, `3` va
 
 ```text
 content-skills-toolkit/
-├── skills/                 # Una guía ejecutable por capacidad
+├── skills/                 # Guía, runner, ejemplo y esquema por capacidad
 ├── toolkit/                # CLI de descubrimiento y validación
 ├── tests/                  # Pruebas unitarias y smoke tests del menú
 ├── docs/                   # Plan y decisiones del proyecto

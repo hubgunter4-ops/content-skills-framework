@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 from .catalog import load_skills, validate_skills
 
@@ -60,8 +61,9 @@ def validate() -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Descubre y valida habilidades locales.")
-    parser.add_argument("command", nargs="?", choices=("list", "show", "validate"))
+    parser.add_argument("command", nargs="?", choices=("list", "show", "run", "validate"))
     parser.add_argument("slug", nargs="?")
+    parser.add_argument("-i", "--input", dest="input_file")
     args = parser.parse_args()
     if not args.command:
         show_menu()
@@ -70,6 +72,19 @@ def main() -> int:
         list_skills(); return 0
     if args.command == "validate":
         return validate()
+    if args.command == "run":
+        if not args.slug:
+            parser.error("run requiere un slug")
+        runner = SKILLS / args.slug / "run.py"
+        if not runner.is_file():
+            print(f"No existe la habilidad: {args.slug}")
+            return 2
+        import subprocess
+        command = [sys.executable, str(runner)]
+        if args.input_file:
+            command.extend(["--input", args.input_file])
+        completed = subprocess.run(command)
+        return completed.returncode
     if not args.slug:
         parser.error("show requiere un slug")
     return show_skill(args.slug)

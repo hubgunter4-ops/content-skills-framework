@@ -1,0 +1,10 @@
+{
+  "objective": "Convertir las entradas en un entregable revisable",
+  "audience": "Equipo de contenido",
+  "content": "Texto de ejemplo proporcionado por el usuario para procesar localmente.",
+  "format": "markdown",
+  "constraints": [
+    "No inventar fuentes ni métricas",
+    "Marcar incertidumbres"
+  ]
+}

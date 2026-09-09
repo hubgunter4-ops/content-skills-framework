@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Resultado de ejecución de habilidad",
+  "type": "object",
+  "required": [
+    "skill",
+    "status",
+    "request",
+    "analysis",
+    "deliverable",
+    "warnings"
+  ],
+  "properties": {
+    "skill": {
+      "type": "object",
+      "required": [
+        "name",
+        "slug",
+        "description"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "needs_input"
+      ]
+    },
+    "request": {
+      "type": "object",
+      "required": [
+        "objective",
+        "audience",
+        "format"
+      ],
+      "properties": {
+        "objective": {
+          "type": "string"
+        },
+        "audience": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "analysis": {
+      "type": "object",
+      "required": [
+        "input_characters",
+        "input_words",
+        "missing_fields",
+        "assumptions"
+      ],
+      "properties": {
+        "input_characters": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "input_words": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "deliverable": {
+      "type": "object",
+      "required": [
+        "title",
+        "format",
+        "content",
+        "next_steps"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "next_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
