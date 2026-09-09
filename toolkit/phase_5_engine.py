@@ -27,7 +27,10 @@ def build(skill: dict[str, str], payload: dict[str, Any]) -> tuple[str, list[str
         return f"# Auditoría de accesibilidad\n\n{sec('Entrada', text or '[HTML, URL o código pendiente]')}{sec('WCAG 2.2', '- Contraste de texto y componentes.\n- Navegación completa por teclado y foco visible.\n- Objetivos táctiles y zoom.\n- Nombres accesibles, roles y estados.\n- Mensajes de error y orden de lectura.\n- Preferencia `prefers-reduced-motion`.')}{sec('Informe', 'Priorizar por impacto, frecuencia, criterio WCAG, evidencia, corrección y prueba de regresión.')}", ['Ejecutar pruebas con teclado, lector de pantalla y herramientas automatizadas autorizadas.']
     if 'paleta' in low:
         base = hex_color(text); colors = [f'{base} / paso {step}' for step in range(1, 12)]
-        return f"# Paleta de colores inteligente\n\n{sec('Color base', base)}{sec('Escala', '\n'.join('- ' + color for color in colors))}{sec('Tokens', ':root { --color-brand: ' + base + '; --color-focus: ' + base + '; }')}{sec('Contraste', 'Comprobar texto normal, texto grande, controles, estados hover/focus y modo oscuro contra WCAG 2.2.')}", ['Medir contraste con los colores finales; no asumir que una escala cumple sin cálculo.']
+        scale = '\n'.join('- ' + color for color in colors)
+        tokens = ':root { --color-brand: ' + base + '; --color-focus: ' + base + '; }'
+        contrast = 'Comprobar texto normal, texto grande, controles, estados hover/focus y modo oscuro contra WCAG 2.2.'
+        return f"# Paleta de colores inteligente\n\n{sec('Color base', base)}{sec('Escala', scale)}{sec('Tokens', tokens)}{sec('Contraste', contrast)}", ['Medir contraste con los colores finales; no asumir que una escala cumple sin cálculo.']
     if 'mermaid' in low:
         return f"flowchart TD\n  A[Brief: {objective}] --> B[Diseño]\n  B --> C[Accesibilidad]\n  C --> D[Revisión]", ['Renderizar el diagrama y revisar sintaxis, labels y relaciones.']
     if 'plantuml' in low:

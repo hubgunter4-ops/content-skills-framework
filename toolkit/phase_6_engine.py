@@ -19,7 +19,10 @@ def storyboard(objective: str, text: str) -> dict[str, Any]:
 def build(skill: dict[str, str], payload: dict[str, Any]) -> tuple[str, list[str]]:
     name = skill['name']; low = (name + ' ' + skill['description']).lower(); text = str(payload.get('content', '')).strip(); objective = str(payload.get('objective', name))
     if 'tts' in low or 'voz' in low:
-        return f"# Prompt TTS\n\n{sec('Texto', text or '[Texto hablado]')}{sec('Dirección vocal', 'Voz: [describir]\nEdad percibida: [describir]\nRitmo: [lento/medio/rápido]\nEnergía: [describir]\nPronunciación: [notas]\nPausas: [marcas]')}{sec('Marcado', '<break time=\"300ms\"/> y etiquetas del proveedor solo después de confirmar su formato.')}{sec('Control', 'Revisar consentimiento, pronunciación de nombres, derechos de voz y uso final.')}", ['No se generó audio ni se llamó un servicio TTS.']
+        vocal = 'Voz: [describir]\nEdad percibida: [describir]\nRitmo: [lento/medio/rápido]\nEnergía: [describir]\nPronunciación: [notas]\nPausas: [marcas]'
+        markup = '<break time="300ms"/> y etiquetas del proveedor solo después de confirmar su formato.'
+        control = 'Revisar consentimiento, pronunciación de nombres, derechos de voz y uso final.'
+        return f"# Prompt TTS\n\n{sec('Texto', text or '[Texto hablado]')}{sec('Dirección vocal', vocal)}{sec('Marcado', markup)}{sec('Control', control)}", ['No se generó audio ni se llamó un servicio TTS.']
     if 'subtítulo' in low or 'subtitulo' in low or 'caption' in low:
         return 'WEBVTT\n\n00:00:00.000 --> 00:00:03.000\n' + (text or '[Subtítulo pendiente]') + '\n', ['Revisar sincronización, legibilidad, idioma y nombres propios con el material final.']
     if 'transcrip' in low or 'resumen de subtítulos' in low:

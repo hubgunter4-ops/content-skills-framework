@@ -15,7 +15,8 @@ def markdown_to_html(text: str) -> str:
         if heading:
             level = len(heading.group(1)); out.append(f'<h{level}>{heading.group(2)}</h{level}>')
         elif re.match(r'^[-*]\s+', line):
-            out.append(f'<li>{re.sub(r"^[-*]\\s+", "", line)}</li>')
+            item = re.sub(r'^[-*]\s+', '', line)
+            out.append(f'<li>{item}</li>')
         elif line.strip():
             line = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
             out.append(f'<p>{line}</p>')
@@ -44,7 +45,9 @@ def build(skill: dict[str, str], payload: dict[str, Any]) -> tuple[str, list[str
         return f"flowchart TD\n  A[Entrada: {payload.get('objective', 'objetivo')}] --> B[Proceso]\n  B --> C[Validación]\n  C --> D[Salida]", ['Renderizar el diagrama y revisar etiquetas y relaciones.']
     if 'destructiv' in low:
         risky = re.findall(r'\b(?:rm\s+-rf|DROP\s+TABLE|git\s+push\s+--force|kubectl\s+delete|terraform\s+destroy)\b[^\n]*', text, flags=re.I)
-        return f"# Protección contra comandos destructivos\n\n{section('Comandos detectados', '\n'.join('- `' + command + '`' for command in risky) or 'No se detectaron patrones de alto riesgo.')}{section('Flujo de confirmación', '1. Mostrar comando exacto.\n2. Identificar entorno y alcance.\n3. Confirmar respaldo y reversibilidad.\n4. Solicitar aprobación explícita.\n5. Ejecutar solo después de aprobación.')}", ['No se ejecutó ningún comando.']
+        detected = '\n'.join('- `' + command + '`' for command in risky) or 'No se detectaron patrones de alto riesgo.'
+        confirmation = '1. Mostrar comando exacto.\n2. Identificar entorno y alcance.\n3. Confirmar respaldo y reversibilidad.\n4. Solicitar aprobación explícita.\n5. Ejecutar solo después de aprobación.'
+        return f"# Protección contra comandos destructivos\n\n{section('Comandos detectados', detected)}{section('Flujo de confirmación', confirmation)}", ['No se ejecutó ningún comando.']
     if 'sql' in low or 'postgres' in low or 'mongodb' in low or 'clickhouse' in low:
         return f"# Revisión de consultas\n\n{section('Consulta recibida', '```sql\n' + (text or '[consulta pendiente]') + '\n```')}{section('Checklist', '- Confirmar dialecto.\n- Ejecutar EXPLAIN en entorno autorizado.\n- Revisar filtros, joins, cardinalidad e índices.\n- Medir antes y después con datos representativos.\n- Evitar afirmar mejoras sin medición.')}", ['Probar la propuesta en una copia o entorno de desarrollo.']
     if 'debug' in low or 'depur' in low or 'error' in low or 'diagnóstico' in low:

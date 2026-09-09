@@ -21,7 +21,9 @@ def build(skill: dict[str, str], payload: dict[str, Any]) -> tuple[str, list[str
     slug = skill['slug']; name = skill['name']; low = (name + ' ' + skill['description']).lower(); text = str(payload.get('content', '')).strip()
     if 'destructiv' in low:
         risky = re.findall(r'\b(?:rm\s+-rf|drop\s+table|git\s+push\s+--force|kubectl\s+delete|terraform\s+destroy|delete\s+from)\b[^\n]*', text, re.I)
-        return f"# Protección contra comandos destructivos\n\n{sec('Hallazgos', '\n'.join('- `' + item + '`' for item in risky) or 'No se detectaron comandos peligrosos.')}{sec('Confirmación obligatoria', 'Mostrar el comando exacto, el entorno, el alcance, la reversión y el respaldo; pedir aprobación explícita antes de ejecutar.')}", ['No se ejecutó ningún comando.']
+        findings = '\n'.join('- `' + item + '`' for item in risky) or 'No se detectaron comandos peligrosos.'
+        confirmation = 'Mostrar el comando exacto, el entorno, el alcance, la reversión y el respaldo; pedir aprobación explícita antes de ejecutar.'
+        return f"# Protección contra comandos destructivos\n\n{sec('Hallazgos', findings)}{sec('Confirmación obligatoria', confirmation)}", ['No se ejecutó ningún comando.']
     if 'selenium' in low or 'puppeteer' in low or 'chrome devtools' in low:
         code = """// Código generado como propuesta; no ejecuta navegación automáticamente.\nconst target = process.env.TARGET_URL;\nif (!target || !/^https?:\\/\\//.test(target)) throw new Error('TARGET_URL debe ser una URL autorizada');\n// Añadir aquí selectores allowlisted, timeout, captura y teardown.\n"""
         return f"# {name}\n\n{sec('Alcance', 'Generar un script revisable para un dominio autorizado, con límites de tiempo y datos.')}{sec('Código propuesto', '```javascript\n' + code + '\n```')}{sec('Seguridad', 'No evade CAPTCHA, Cloudflare, robots, autenticación ni límites del sitio.')}", ['Revisar el dominio, permisos y selectores antes de ejecutar.']
