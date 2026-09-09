@@ -1,0 +1,447 @@
+[
+  {
+    "name": "Arquitecto de Prompts",
+    "description": "Este conjunto de herramientas de ingeniería de prompts proporciona un marco sistemático para diseñar, optimizar y evaluar prompts, admitiendo técnicas como zero-shot, few-shot y chain-of-thought. Convierte métodos de prompting dispersos en un proceso accionable, ayudando a los desarrolladores a maximizar el rendimiento de los LLM y a crear aplicaciones de IA más fiables de forma más rápida.(scripts/tool)",
+    "slug": "arquitecto-de-prompts"
+  },
+  {
+    "name": "Optimizador de Rendimiento",
+    "description": "Este conjunto de herramientas de optimización de rendimiento proporciona un flujo de trabajo sistemático para medir, perfilar y resolver cuellos de botella en las aplicaciones. Al abordar problemas como tiempos de carga lentos, regresiones en Core Web Vitals y consultas de base de datos ineficientes, ayuda a los desarrolladores a identificar rápidamente las causas raíz e implementar correcciones específicas para ofrecer experiencias de usuario más rápidas y receptivas.",
+    "slug": "optimizador-de-rendimiento"
+  },
+  {
+    "name": "Arquitecto de Habilidades",
+    "description": "Esta meta-habilidad aplica los principios del Desarrollo Guiado por Pruebas TDD a la creación, edición y verificación de Habilidades de Agente. Al requerir casos de prueba antes de redactar la documentación, ayuda a los desarrolladores y creadores a producir especificaciones de habilidades confiables y bien estructuradas, y garantiza que funcionen correctamente antes del despliegue.",
+    "slug": "arquitecto-de-habilidades"
+  },
+  {
+    "name": "Mejorador de CLAUDE.md",
+    "description": "Esta habilidad audita y mejora archivos CLAUDE.md en un repositorio. Escanea archivos CLAUDE.md, los evalúa frente a plantillas y mejores prácticas, genera un informe de calidad y puede aplicar actualizaciones específicas para corregir problemas, optimizar la memoria del proyecto y simplificar el mantenimiento a largo plazo.",
+    "slug": "mejorador-de-claude-md"
+  },
+  {
+    "name": "Recuperación de Memoria",
+    "description": "Esta es la habilidad oficial de recuperación de memoria de Zilliz para memsearch, que permite a su agente buscar y recordar decisiones, notas de depuración y conocimientos de sesiones pasadas. Presenta el contexto histórico adecuado en el momento oportuno, para que nunca tenga que volver a explicar trabajos anteriores ni repetir problemas ya resueltos.",
+    "slug": "recuperacion-de-memoria"
+  },
+  {
+    "name": "Suite de Animación GSAP",
+    "description": "Esta colección oficial de complementos de GSAP proporciona herramientas de animación esenciales, incluyendo ScrollToPlugin, Flip, Draggable, SplitText, SVG y Physics. Extiende las capacidades principales de GreenSock, ayudando a los desarrolladores a crear animaciones web complejas y de alto rendimiento, así como experiencias interactivas con calidad y fiabilidad garantizadas.",
+    "slug": "suite-de-animacion-gsap"
+  },
+  {
+    "name": "Accesibilidad web",
+    "description": "Auditar y mejorar la accesibilidad web siguiendo las pautas WCAG 2.2.",
+    "slug": "accesibilidad-web"
+  },
+  {
+    "name": "Sistema de diseño de Tailwind",
+    "description": "Este es un manual del sistema de diseño de Tailwind CSS v4 que cubre la configuración CSS-first, tokens de diseño OKLCH, modo oscuro y arquitectura de variantes de componentes. Le ayuda a construir bibliotecas de componentes consistentes y accesibles, y a migrar sin problemas de la v3 a la v4.",
+    "slug": "sistema-de-diseno-de-tailwind"
+  },
+  {
+    "name": "Ingeniería de Diseño de Emil",
+    "description": "Esta habilidad codifica la filosofía de ingeniería de diseño de Emil Kowalski creador de Sonner y Vaul sobre el pulido de la interfaz de usuario, las decisiones de animación y los detalles invisibles. Te ayuda a decidir qué animar, elegir el suavizado y la duración adecuados, y crear componentes que se sientan receptivos y refinados.",
+    "slug": "ingenieria-de-diseno-de-emil"
+  },
+  {
+    "name": "Optimizador de Consultas SQL",
+    "description": "Este es un manual de optimización de SQL probado en combate que cubre el análisis de planes EXPLAIN, estrategias de indexación y patrones de reescritura de consultas para PostgreSQL y más allá. Te ayuda a convertir consultas lentas en otras ultrarrápidas, reducir la carga de la base de datos y diseñar esquemas que escalen con tus datos.",
+    "slug": "optimizador-de-consultas-sql"
+  },
+  {
+    "name": "Bucle de diagnóstico de errores",
+    "description": "Esta es una metodología de depuración disciplinada de seis fases de Matt Pocock, construida en torno a la creación de un bucle de retroalimentación automatizado y ajustado antes de tocar cualquier código. Te ayuda a resolver errores difíciles y regresiones de rendimiento de forma sistemática: reproducir, minimizar, hipotetizar, instrumentar, corregir y asegurar con una prueba de regresión.",
+    "slug": "bucle-de-diagnostico-de-errores"
+  },
+  {
+    "name": "Markdown a HTML",
+    "description": "Esta herramienta convierte archivos Markdown en HTML limpio y compatible con los estándares para su uso en sitios web, documentación o generadores de sitios estáticos. Admite flujos de trabajo de CLI y Node.js, GitHub Flavored Markdown GFM, CommonMark y los sabores típicos de Markdown, y se integra con sistemas de plantillas como Jekyll o Hugo para producir una salida HTML lista para desplegar.",
+    "slug": "markdown-a-html"
+  },
+  {
+    "name": "Nothing Design System",
+    "description": "Este sistema de diseño proporciona un lenguaje visual inspirado en Nothing para crear interfaces de estilo industrial y minimalista con diseños basados en tipografía, presentación de información densa y reglas detalladas para colores, componentes y estructura. Ayuda a los diseñadores y equipos de producto a aplicar una estética coherente más rápido en diferentes tipos de interfaz, reduciendo las conjeturas de estilo y produciendo pantallas más nítidas y modernas.",
+    "slug": "nothing-design-system"
+  },
+  {
+    "name": "Maestro de la API de Gemini",
+    "description": "Esta guía de desarrollo cubre la integración de la API de Gemini utilizando el SDK de Google Gen AI, incluyendo la generación de texto y entradas multimodales. Ayuda a los desarrolladores a identificar las versiones correctas del modelo para casos de uso específicos e implementar rápidamente llamadas oficiales a la API, facilitando la creación de aplicaciones impulsadas por modelos de lenguaje de gran tamaño.",
+    "slug": "maestro-de-la-api-de-gemini"
+  },
+  {
+    "name": "Generador de diagramas de Excalidraw",
+    "description": "Esta herramienta genera diagramas de Excalidraw a partir de descripciones en lenguaje natural y genera archivos JSON .excalidraw que se abren directamente en Excalidraw. Admite diagramas de flujo, diagramas de relaciones, mapas mentales y representaciones visuales de arquitectura de sistemas, lo que permite a los equipos convertir rápidamente requisitos textuales en diagramas editables y listos para presentaciones para ahorrar tiempo de diseño.",
+    "slug": "generador-de-diagramas-de-excalidraw"
+  },
+  {
+    "name": "Protección contra Comandos Destructivos",
+    "description": "Esta habilidad implementa barreras de seguridad en torno a operaciones destructivas de shell y control de versiones, advirtiendo a los usuarios antes de ejecutar rm -rf, DROP TABLE, git force-push, kubectl delete y comandos similares. Ayuda a prevenir la pérdida accidental de datos al solicitar confirmaciones, marcar contextos de riesgo como entornos de producción o compartidos, y permitir anulaciones deliberadas cuando sea necesario.",
+    "slug": "proteccion-contra-comandos-destructivos"
+  },
+  {
+    "name": "Vercel Workflow Kit",
+    "description": "Esta habilidad crea flujos de trabajo duraderos y reanudables utilizando el Workflow DevKit de Vercel, lo que permite que los procesos de varios pasos sobrevivan a reinicios, se pausen ante eventos externos y se reintenten en caso de error. Ayuda a los desarrolladores a orquestar de manera confiable operaciones de larga duración o impulsadas por eventos, simplificar el manejo de errores y persistir el estado a través de interrupciones.",
+    "slug": "vercel-workflow-kit"
+  },
+  {
+    "name": "Verificar antes de terminar",
+    "description": "Esta es una habilidad de disciplina del conjunto de herramientas de superpoderes que prohíbe afirmar que el trabajo está completo sin ejecutar primero comandos de verificación actualizados. Obliga a realizar afirmaciones de finalización basadas en evidencia pruebas ejecutadas, compilaciones aprobadas, diferencias revisadas para que 'terminado' realmente signifique terminado.",
+    "slug": "verificar-antes-de-terminar"
+  },
+  {
+    "name": "Plantilla de Habilidad para Plugins",
+    "description": "Esta habilidad proporciona una plantilla de referencia lista para usar para crear habilidades de plugins de Claude Code, incluyendo el frontmatter recomendado, la estructura de archivos, ejemplos de controladores y patrones de uso. Ayuda a los desarrolladores a arrancar rápidamente nuevas habilidades, seguir las mejores prácticas y producir archivos SKILL.md y código de controlador consistentes y bien formados para el desarrollo de plugins de Claude.",
+    "slug": "plantilla-de-habilidad-para-plugins"
+  },
+  {
+    "name": "Arquitecto de Modelos de Contenido",
+    "description": "Esta guía proporciona las mejores prácticas para diseñar modelos de contenido estructurado escalables y eficientes en Sanity. Traduce los principios arquitectónicos en pautas prácticas, ayudando a los desarrolladores y equipos de contenido a construir estructuras de contenido robustas que mejoren el rendimiento de las consultas, reduzcan la deuda técnica y garanticen la mantenibilidad a largo plazo.",
+    "slug": "arquitecto-de-modelos-de-contenido"
+  },
+  {
+    "name": "Diagramador Mermaid",
+    "description": "Esta guía de diagramas Mermaid ayuda a los usuarios a crear diagramas de flujo, diagramas de secuencia, diagramas ER y visualizaciones de arquitectura a partir de instrucciones estructuradas o material de origen. Convierte sistemas complejos, modelos de datos y flujos de negocio en visualizaciones claras, mejorando la eficiencia de la comunicación y la documentación.",
+    "slug": "diagramador-mermaid"
+  },
+  {
+    "name": "Excelencia Operativa de GCP",
+    "description": "Esta es una guía centrada en las operaciones para cargas de trabajo de Google Cloud basada en el pilar oficial de Excelencia Operativa. Ayuda a los arquitectos de la nube y a los ingenieros de operaciones a evaluar la salud arquitectónica, implementar una respuesta ante incidentes automatizada y crear entornos de nube más confiables y eficientes utilizando las mejores prácticas autorizadas.",
+    "slug": "excelencia-operativa-de-gcp"
+  },
+  {
+    "name": "Grafana Dashboard Pro",
+    "description": "Este kit de herramientas de monitoreo proporciona plantillas y mejores prácticas para crear tableros de Grafana listos para producción utilizando las metodologías RED y USE. Ayuda a los equipos a construir rápidamente interfaces de visualización profesionales para métricas de sistemas y aplicaciones, facilitando el establecimiento de una observabilidad operativa robusta.",
+    "slug": "grafana-dashboard-pro"
+  },
+  {
+    "name": "Web Performance Pro",
+    "description": "Este conjunto de herramientas de rendimiento web ayuda a los desarrolladores a analizar la velocidad de carga, la eficiencia en tiempo de ejecución y la optimización de recursos. Identifica cuellos de botella y proporciona sugerencias específicas, ayudando a los equipos a crear páginas que cargan más rápido y experiencias interactivas más fluidas para los usuarios.",
+    "slug": "web-performance-pro"
+  },
+  {
+    "name": "Depuración & recuperación",
+    "description": "Esta es una guía de depuración sistemática que ayuda a los desarrolladores a identificar y corregir las causas raíz cuando las pruebas fallan, las compilaciones se rompen o se producen errores inesperados. Al proporcionar un enfoque estructurado para la recuperación de errores, elimina las suposiciones a ciegas y ayuda a los equipos a resolver problemas complejos de código más rápido en cualquier escenario de desarrollo.",
+    "slug": "depuracion-recuperacion"
+  },
+  {
+    "name": "Desarrollo basado en especificaciones",
+    "description": "Esta herramienta metodológica impone la redacción de especificaciones antes de la codificación, proporcionando plantillas estructuradas para el análisis de requisitos y el desglose de tareas. Ayuda a los equipos a aclarar ideas ambiguas, establecer criterios de aceptación y reducir el retrabajo al asegurar que exista un plan claro antes de que comience el desarrollo.",
+    "slug": "desarrollo-basado-en-especificaciones"
+  },
+  {
+    "name": "Optimizador de costos de GCP",
+    "description": "Esta habilidad de Google Cloud Well-Architected Framework evalúa los requisitos de las cargas de trabajo para recomendar estrategias de optimización de costos en la utilización de recursos, la visibilidad de la facturación y las prácticas de FinOps. Proporciona listas de verificación estructuradas para el dimensionamiento adecuado, compromisos y ciclos de vida de almacenamiento, lo que ayuda a los equipos a alinear el gasto en la nube con el valor comercial y a reducir continuamente los gastos innecesarios.",
+    "slug": "optimizador-de-costos-de-gcp"
+  },
+  {
+    "name": "Arquitecto de Excalidraw",
+    "description": "Esta Skill delega las operaciones de archivos de Excalidraw a subagentes, evitando que el JSON detallado agote el contexto del agente principal. Permite la lectura, modificación y creación eficiente de diagramas de arquitectura y diagramas de flujo sin interrumpir el flujo de trabajo principal.",
+    "slug": "arquitecto-de-excalidraw"
+  },
+  {
+    "name": "Patrones de búsqueda híbrida",
+    "description": "Esta habilidad proporciona patrones de implementación y plantillas de código para la búsqueda híbrida, combinando la búsqueda vectorial y por palabras clave mediante métodos como RRF y combinación lineal. Ayuda a los desarrolladores a crear sistemas RAG y motores de búsqueda más robustos al mejorar la recuperación de información cuando ninguno de los enfoques por sí solo es suficiente.",
+    "slug": "patrones-de-busqueda-hibrida"
+  },
+  {
+    "name": "Implementación de SLO Pro",
+    "description": "Este es un marco de implementación estandarizado para Objetivos de Nivel de Servicio SLO e Indicadores de Nivel de Servicio SLI, incluyendo reglas de Prometheus, estructuras de tableros de Grafana y estrategias de presupuesto de errores. Traduce las prácticas de SRE en configuraciones accionables, ayudando a los equipos de operaciones a establecer objetivos de fiabilidad claros, medir el rendimiento del servicio y gestionar las alertas de manera efectiva.",
+    "slug": "implementacion-de-slo-pro"
+  },
+  {
+    "name": "Finalizador de Ramas Git",
+    "description": "Esta habilidad proporciona un flujo de trabajo estandarizado para finalizar una rama de desarrollo al presentar opciones estructuradas para fusionar, crear una solicitud de extracción o limpiar el espacio de trabajo. Ayuda a los desarrolladores a evitar conflictos de fusión y el desorden en el espacio de trabajo al depender completamente de comandos estándar de Git sin requerir ninguna configuración adicional.",
+    "slug": "finalizador-de-ramas-git"
+  },
+  {
+    "name": "GSAP ScrollTrigger",
+    "description": "Esta herramienta oficial de GreenSock proporciona capacidades de ScrollTrigger para crear animaciones vinculadas al desplazamiento, fijar elementos y manejar efectos de scrub. Simplifica las interacciones de desplazamiento complejas en un flujo de trabajo fiable, ayudando a los desarrolladores a crear experiencias web interactivas de alta calidad con un rendimiento garantizado.",
+    "slug": "gsap-scrolltrigger"
+  },
+  {
+    "name": "Quant Backtesting Pro",
+    "description": "Esta guía del marco de trabajo para el backtesting de trading cuantitativo ayuda a los desarrolladores a construir sistemas fiables evitando errores comunes como el sesgo de anticipación look-ahead bias, el sesgo de supervivencia y el sobreajuste overfitting. Proporciona las mejores prácticas para gestionar el deslizamiento slippage y los costes de transacción, permitiéndole validar estrategias de trading de forma rigurosa antes de su implementación.",
+    "slug": "quant-backtesting-pro"
+  },
+  {
+    "name": "Mejores prácticas de Stripe",
+    "description": "Esta guía oficial de integración de Stripe proporciona mejores prácticas y orientación arquitectónica para crear sistemas de pago seguros y confiables. Traduce la lógica de pago compleja en consejos de código accionables, ayudando a los desarrolladores a evitar errores comunes y a crear flujos de suscripción y manejo de webhooks robustos más rápido.",
+    "slug": "mejores-practicas-de-stripe"
+  },
+  {
+    "name": "Asistente de Desarrollo de Supabase",
+    "description": "Crea y asegura aplicaciones de Supabase con la guía oficial del proveedor que cubre Auth, políticas RLS, migraciones, Edge Functions y el CLI de Supabase y el servidor MCP. Incorpora la propia lista de verificación de seguridad de Supabase para detectar vulnerabilidades silenciosas como el mal uso de user_metadata, las trampas de SECURITY DEFINER y la falta de cláusulas WITH CHECK.",
+    "slug": "asistente-de-desarrollo-de-supabase"
+  },
+  {
+    "name": "Optimizador de Índices Vectoriales",
+    "description": "Esta habilidad proporciona una guía de nivel de producción y plantillas de código para optimizar el rendimiento de los índices vectoriales, abarcando el ajuste de parámetros HNSW, estrategias de cuantificación y monitoreo del rendimiento. Ayuda a los desarrolladores que manejan búsquedas vectoriales a gran escala a equilibrar la latencia, la recuperación y el uso de memoria, permitiendo una infraestructura de recuperación más rápida y precisa.",
+    "slug": "optimizador-de-indices-vectoriales"
+  },
+  {
+    "name": "Remotion Toolkit",
+    "description": "Esta Skill aporta patrones de Remotion probados en batalla —transiciones personalizadas, componentes compartidos y convenciones de proyectos— para crear videos con código React. Te permite generar programáticamente videos animados con la imagen de marca, como demostraciones de funciones y animaciones de datos, con un control preciso y repetible.",
+    "slug": "remotion-toolkit"
+  },
+  {
+    "name": "Git Workflow Pro",
+    "description": "Esta guía de versionado de código proporciona estándares y listas de verificación para commits, ramificación, resolución de conflictos y procesos de lanzamiento. Al aplicar estrategias de commits atómicos y reglas de versionado semántico, ayuda a los desarrolladores a mantener una base de código organizada a través de flujos de trabajo paralelos y a producir registros de cambios bien estructurados para cualquier cambio de código.",
+    "slug": "git-workflow-pro"
+  },
+  {
+    "name": "Guía de desarrollo de Gemini Live",
+    "description": "Esta guía de desarrollo oficial de Google ayuda a los desarrolladores a crear aplicaciones de streaming bidireccional en tiempo real utilizando la API de Gemini Live. Proporciona instrucciones que van desde la implementación de conversaciones de voz hasta la optimización de la latencia, lo que permite a los equipos crear experiencias de IA interactivas.",
+    "slug": "guia-de-desarrollo-de-gemini-live"
+  },
+  {
+    "name": "Arquitecto de API",
+    "description": "Esta herramienta de diseño de API proporciona patrones estándar de REST y GraphQL junto con plantillas de OpenAPI para el modelado de recursos, el control de versiones y el manejo de errores. Establece una base estructurada para la arquitectura de API, ayudando a los desarrolladores a garantizar la consistencia y el cumplimiento de los estándares de la industria antes de escribir cualquier código de implementación.",
+    "slug": "arquitecto-de-api"
+  },
+  {
+    "name": "Refactorización de Markdown",
+    "description": "Esta herramienta de refactorización reorganiza archivos de instrucciones de IA monolíticos como CLAUDE.md o AGENTS.md en documentación estructurada basada en temas utilizando principios de divulgación progresiva. Al separar las directivas principales de las guías detalladas, reduce la carga de mantenimiento para proyectos complejos y mejora la precisión con la que los agentes de IA siguen las reglas del proyecto.",
+    "slug": "refactorizacion-de-markdown"
+  },
+  {
+    "name": "Núcleo de Animación GSAP",
+    "description": "Este kit de herramientas oficial de GSAP Core proporciona APIs de animación esenciales que incluyen gsap.to, from, fromTo, easing, duration, stagger y defaults. Ayuda a los desarrolladores a implementar rápidamente animaciones web fluidas y de alto rendimiento, reduciendo el esfuerzo de codificación manual y garantizando efectos de movimiento consistentes y profesionales en todos los proyectos web.",
+    "slug": "nucleo-de-animacion-gsap"
+  },
+  {
+    "name": "Mejores prácticas de Postgres",
+    "description": "Esta guía oficial de Supabase proporciona mejores prácticas de PostgreSQL, consejos de optimización y orientación arquitectónica para desarrolladores. Le ayuda a mejorar el rendimiento de la base de datos, implementar una seguridad de nivel de fila RLS robusta y crear arquitecturas de datos más eficientes dentro del ecosistema de Supabase.",
+    "slug": "mejores-practicas-de-postgres"
+  },
+  {
+    "name": "Selector de roles de Azure",
+    "description": "Esta herramienta ayuda a elegir el rol de Azure que otorga los permisos necesarios siguiendo los principios de privilegios mínimos, y proporciona instrucciones paso a paso para asignarlo a través del Portal, la CLI de Azure o plantillas ARM. Aclara las decisiones sobre el alcance, los roles integrados frente a los personalizados, y proporciona comandos y notas exactos para aplicar el rol de forma segura.",
+    "slug": "selector-de-roles-de-azure"
+  },
+  {
+    "name": "PlantUML ASCII",
+    "description": "Esta habilidad convierte diagramas de PlantUML en arte ASCII compatible con terminales y representaciones de texto mejoradas con Unicode. Genera diagramas de secuencia, diagramas de clases y diagramas de flujo incluyendo la salida Unicode -utxt, haciendo que los diagramas sean legibles dentro de archivos de texto plano, terminales, comentarios de código y documentación ligera.",
+    "slug": "plantuml-ascii"
+  },
+  {
+    "name": "Solucionador de matemáticas simbólicas",
+    "description": "Esta Skill proporciona una guía de SymPy para matemáticas simbólicas exactas en Python, cubriendo álgebra, cálculo, resolución de ecuaciones y generación de código. Ayuda a los usuarios a realizar derivaciones matemáticas precisas, simplificar fórmulas y convertir expresiones simbólicas en código numérico ejecutable o formato LaTeX.",
+    "slug": "solucionador-de-matematicas-simbolicas"
+  },
+  {
+    "name": "Explorador de Microsoft Docs",
+    "description": "Esta habilidad consulta la documentación oficial de Microsoft para explicar conceptos, encontrar tutoriales y aprender cómo funcionan los servicios en Azure, .NET, Microsoft 365, Windows, Power Platform y otras tecnologías de Microsoft. Recupera contenido fidedigno de learn.microsoft.com y sitios oficiales relacionados descripciones generales de arquitectura, inicios rápidos, guías de configuración, límites y mejores prácticas para ofrecer respuestas concisas y actualizadas.",
+    "slug": "explorador-de-microsoft-docs"
+  },
+  {
+    "name": "HF Dataset Manager",
+    "description": "Este kit de herramientas oficial de Hugging Face ayuda a los profesionales del aprendizaje automático a crear y gestionar conjuntos de datos mediante configuraciones personalizadas y consultas SQL. Proporciona un flujo de trabajo fiable y estandarizado para manejar estructuras de datos complejas, lo que permite a los equipos procesar y preparar de forma eficiente conjuntos de datos de alta calidad para el entrenamiento y la evaluación de modelos.",
+    "slug": "hf-dataset-manager"
+  },
+  {
+    "name": "Generador de Pruebas de Selenium",
+    "description": "Esta Skill genera pruebas de Selenium WebDriver en los principales lenguajes de programación para tareas de automatización de navegadores. Ofrece un amplio soporte del ecosistema y portabilidad, ayudando a los equipos a unificar sus capacidades de automatización y reutilizar scripts de prueba en diferentes proyectos.",
+    "slug": "generador-de-pruebas-de-selenium"
+  },
+  {
+    "name": "Arquitecto de Pipelines de ML",
+    "description": "Esta es una guía de ingeniería de pipelines de ML de nivel de producción que cubre el seguimiento de experimentos con MLflow o Weights & Biases, la orquestación de entrenamiento con Kubeflow o Airflow DAGs, la configuración de almacenes de características con Feast y el reentrenamiento y validación automatizados de modelos. Estandariza el flujo de trabajo de MLOps de extremo a extremo, ayudando a los equipos de datos a pasar de experimentos ad-hoc a pipelines repetibles y auditables más rápidamente.",
+    "slug": "arquitecto-de-pipelines-de-ml"
+  },
+  {
+    "name": "Búsqueda de amenazas de SecOps",
+    "description": "Esta habilidad proporciona orientación experta para la búsqueda proactiva de amenazas a través de indicadores de compromiso IOC, TTP y actividad anómala. Ayuda a los analistas de seguridad a priorizar investigaciones, crear consultas de detección y búsqueda para SIEM y EDR por ejemplo, Splunk, Elastic, CrowdStrike, interpretar telemetría y recomendar pasos de triaje y remediación para reducir el tiempo de permanencia.",
+    "slug": "busqueda-de-amenazas-de-secops"
+  },
+  {
+    "name": "Revisión de Lanzamiento Final",
+    "description": "Esta habilidad realiza una revisión de preparación para el lanzamiento localizando la etiqueta de versión anterior en las etiquetas remotas y auditando la diferencia por ejemplo, v1.2.3... en busca de cambios disruptivos, regresiones, oportunidades de mejora y riesgos. Produce una lista de riesgos priorizada, correcciones sugeridas y un veredicto de preparación para el lanzamiento para ayudarte a enviar openai-agents-python de forma segura y rápida.",
+    "slug": "revision-de-lanzamiento-final"
+  },
+  {
+    "name": "Localización de VS Code",
+    "description": "Esta guía explica las mejores prácticas y los pasos concretos para localizar extensiones de Visual Studio Code, alineándose con las directrices de desarrollo de extensiones de VS Code, las bibliotecas recomendadas y los flujos de trabajo comunes. Ayuda a los autores de extensiones a estructurar archivos de configuración regional, extraer y gestionar cadenas traducibles, configurar package.json y herramientas, y verificar las traducciones para ofrecer experiencias de usuario multilingües coherentes.",
+    "slug": "localizacion-de-vs-code"
+  },
+  {
+    "name": "Diseñador de Esquemas de MongoDB",
+    "description": "Esta herramienta ayuda a los desarrolladores a diseñar esquemas de documentos de MongoDB eficientes, incorporando reglas de validación y patrones de indexación. Agiliza el proceso de diseño de la base de datos, garantizando un rendimiento óptimo y la integridad de los datos para aplicaciones backend.",
+    "slug": "disenador-de-esquemas-de-mongodb"
+  },
+  {
+    "name": "Personalizador de Plugins de Cowork",
+    "description": "Esta habilidad te permite personalizar y adaptar un plugin de Claude Code para que coincida con las herramientas, endpoints y flujos de trabajo de una organización. Reemplaza los marcadores de posición de herramientas, configura servidores MCP, actualiza credenciales y manifiestos, y adapta el comportamiento del plugin — ten en cuenta que requiere el modo Cowork con directorios de plugins montados y no funcionará en sesiones remotas o de CLI estándar.",
+    "slug": "personalizador-de-plugins-de-cowork"
+  },
+  {
+    "name": "Refactorización Quirúrgica",
+    "description": "Esta herramienta realiza una refactorización quirúrgica del código para mejorar la mantenibilidad sin cambiar el comportamiento del programa. Automatiza y sugiere ediciones específicas —extracción de funciones, cambio de nombre de variables, desglose de funciones grandes, refuerzo de tipos y eliminación de code smells—, permitiendo mejoras graduales y de bajo riesgo en toda su base de código.",
+    "slug": "refactorizacion-quirurgica"
+  },
+  {
+    "name": "Entrenador de Modelos de RL",
+    "description": "Esta biblioteca ofrece algoritmos de aprendizaje por refuerzo listos para producción como PPO y SAC con una API similar a scikit-learn para experimentos y prototipado estándar de RL. Agiliza la implementación y evaluación de algoritmos, permitiendo un desarrollo más rápido de modelos de RL de un solo agente dentro de entornos de Gymnasium.",
+    "slug": "entrenador-de-modelos-de-rl"
+  },
+  {
+    "name": "Depurador Sistemático",
+    "description": "Esta habilidad impone un riguroso proceso de depuración sistemática de cuatro pasos para investigar exhaustivamente errores, fallos en las pruebas y comportamientos inesperados antes de proponer cualquier corrección de código. Al eliminar las conjeturas a ciegas y evitar bucles infinitos de intentos ineficaces, mejora fundamentalmente la eficiencia y la precisión al resolver problemas complejos en su base de código.",
+    "slug": "depurador-sistematico"
+  },
+  {
+    "name": "Patrones de búsqueda vectorial",
+    "description": "Este kit de herramientas proporciona mejores prácticas y plantillas de código para implementar búsquedas de similitud eficientes en bases de datos vectoriales, incluyendo búsqueda híbrida y optimización del rendimiento. Ayuda a los desarrolladores a crear búsquedas semánticas y consultas de vecinos más cercanos más rápido, ofreciendo implementaciones listas para usar para Weaviate y PostgreSQL para mejorar la precisión de la recuperación y el rendimiento del sistema.",
+    "slug": "patrones-de-busqueda-vectorial"
+  },
+  {
+    "name": "Optimizador de rendimiento de GCP",
+    "description": "Esta es una guía autorizada de optimización del rendimiento para cargas de trabajo de Google Cloud, basada en el Marco de Arquitectura oficial de Google Cloud. Proporciona a los arquitectos e ingenieros de la nube recomendaciones prácticas para el ajuste de bases de datos y el escalado de cómputo, ayudando a los equipos a mejorar la eficiencia del sistema y garantizar operaciones de alto rendimiento.",
+    "slug": "optimizador-de-rendimiento-de-gcp"
+  },
+  {
+    "name": "Asistente de Git Commit",
+    "description": "Esta habilidad automatiza los commits de git analizando los diffs, detectando automáticamente el tipo y el alcance del commit convencional y generando mensajes de commit claros, al tiempo que ofrece anulaciones interactivas. Organiza inteligentemente los archivos en grupos lógicos para producir commits enfocados y consistentes que ahorran tiempo y mejoran la calidad del historial del repositorio para la CI y la colaboración.",
+    "slug": "asistente-de-git-commit"
+  },
+  {
+    "name": "Asistente de Contribución de Repositorio",
+    "description": "Esta herramienta/habilidad aplica las guías de contribución de un repositorio buscando automáticamente CONTRIBUTING.md, plantillas de PR/incidencias y reglas de rama antes de registrar incidencias, crear commits, subir código o abrir pull requests. Genera nombres de rama conformes, mensajes de commit formateados y descripciones de PR, y ejecuta los pasos de la lista de verificación para que las contribuciones sean consistentes y estén listas para revisión.",
+    "slug": "asistente-de-contribucion-de-repositorio"
+  },
+  {
+    "name": "Búsqueda & IA de MongoDB",
+    "description": "Esta integración oficial de MongoDB ayuda a los desarrolladores a implementar Atlas Search y recomendaciones impulsadas por IA mediante la búsqueda vectorial. Agiliza el proceso de configuración y prueba, lo que permite a los equipos integrar rápidamente capacidades de búsqueda avanzada en sus proyectos de backend existentes.",
+    "slug": "busqueda-ia-de-mongodb"
+  },
+  {
+    "name": "Mejores prácticas de Workers",
+    "description": "Esta herramienta de desarrollo oficial de Cloudflare le ayuda a revisar y crear código de Workers siguiendo las mejores prácticas de producción y las convenciones de wrangler.jsonc. Garantiza que sus aplicaciones estén configuradas correctamente, ayudando a los desarrolladores a desplegar una infraestructura en la nube robusta de manera eficiente.",
+    "slug": "mejores-practicas-de-workers"
+  },
+  {
+    "name": "Fotogramas clave de HyperFrames",
+    "description": "Esta habilidad genera fotogramas clave y líneas de tiempo 2D y 3D seguros para la búsqueda para composiciones de HyperFrames, produciendo código para fotogramas clave CSS, GSAP, Anime.js, WAAPI, FLIP, morfismos SVG, máscaras y rastros de texto. Garantiza una reproducción precisa de los fotogramas, compatibilidad en tiempo de ejecución y proporciona diagnósticos y patrones de fotogramas clave correctivos para evitar vibraciones jitter durante el desplazamiento.",
+    "slug": "fotogramas-clave-de-hyperframes"
+  },
+  {
+    "name": "Perspectivas de ingeniería",
+    "description": "Esta herramienta de análisis de código extrae lecciones de ingeniería de software del historial reciente de commits de Git y de los cambios de código. Destaca las mejores prácticas y áreas de mejora, ayudando a los desarrolladores a reflexionar sobre su trabajo y a mejorar continuamente sus habilidades de programación.",
+    "slug": "perspectivas-de-ingenieria"
+  },
+  {
+    "name": "Arquitecto de LangChain",
+    "description": "Esta guía de arquitectura proporciona instrucciones detalladas, ejemplos de código y mejores prácticas para crear aplicaciones de LLM complejas utilizando LangChain 1.x y LangGraph. Ayuda a los desarrolladores a diseñar rápidamente flujos de trabajo de IA con integración de memoria y herramientas, reduciendo el tiempo de configuración y garantizando un desarrollo de agentes robusto y escalable.",
+    "slug": "arquitecto-de-langchain"
+  },
+  {
+    "name": "Referencia de código de Microsoft",
+    "description": "Esta herramienta le ayuda a buscar referencias de API de Microsoft, localizar ejemplos de código funcionales y verificar el uso de SDK en Azure, .NET y servicios de Microsoft. Consulta la documentación oficial para confirmar nombres de métodos, firmas de parámetros y patrones recomendados para que pueda evitar APIs alucinadas y corregir errores de integración más rápido.",
+    "slug": "referencia-de-codigo-de-microsoft"
+  },
+  {
+    "name": "Arquitecto de seguridad de GCP",
+    "description": "Esta guía de seguridad autorizada proporciona recomendaciones de arquitectura para cargas de trabajo de Google Cloud basadas en el pilar de seguridad oficial de Google. Ayuda a los arquitectos de nube y a los ingenieros de seguridad a identificar vulnerabilidades potenciales, implementar redes de confianza cero y construir entornos de nube robustos y conformes utilizando mejores prácticas fiables.",
+    "slug": "arquitecto-de-seguridad-de-gcp"
+  },
+  {
+    "name": "Flujo de trabajo TDD",
+    "description": "Esta es una guía metodológica para el desarrollo guiado por pruebas que impone la escritura de casos de prueba antes de implementar funcionalidades o corregir errores. Al establecer un flujo de trabajo de prueba primero, ayuda a los desarrolladores a detectar errores de forma temprana, reducir las regresiones y construir bases de código más robustas.",
+    "slug": "flujo-de-trabajo-tdd"
+  },
+  {
+    "name": "Constructor de aplicaciones Gradio",
+    "description": "Esta herramienta ayuda a los desarrolladores a crear aplicaciones Gradio y desplegarlas en Hugging Face Spaces. Al integrarse con el ecosistema de Hugging Face, simplifica el intercambio de modelos de aprendizaje automático y la creación de interfaces web interactivas sin una configuración de infraestructura compleja.",
+    "slug": "constructor-de-aplicaciones-gradio"
+  },
+  {
+    "name": "Explicador SHAP",
+    "description": "Esta herramienta de interpretabilidad de modelos de aprendizaje automático utiliza SHAP para facilitar la selección de explicadores y generar visualizaciones como gráficos de cascada waterfall y de abejas beeswarm. Traduce predicciones complejas en un análisis intuitivo de la importancia de las características, ayudando a los desarrolladores a depurar modelos y a hacer que los procesos de decisión de la IA sean más transparentes.",
+    "slug": "explicador-shap"
+  },
+  {
+    "name": "Optimizador de Rendimiento de Spark",
+    "description": "Esta guía proporciona estrategias de optimización de rendimiento para Apache Spark, cubriendo la partición, la gestión de memoria, el ajuste de shuffle y el manejo de sesgo de datos. Equipa a los ingenieros de datos con ejemplos de código prácticos y patrones para depurar trabajos lentos y escalar canalizaciones de procesamiento de datos.",
+    "slug": "optimizador-de-rendimiento-de-spark"
+  },
+  {
+    "name": "Arquitecto de ClickHouse",
+    "description": "Este asesor de arquitectura le ayuda a diseñar implementaciones de ClickHouse y a traducir las mejores prácticas en decisiones específicas para su carga de trabajo. Proporciona orientación experta sobre el diseño de clústeres, la optimización de esquemas y el rendimiento de las consultas, ayudando a los equipos a crear bases de datos analíticas escalables y a evitar errores arquitectónicos costosos.",
+    "slug": "arquitecto-de-clickhouse"
+  },
+  {
+    "name": "React Email Builder",
+    "description": "Esta es una biblioteca de componentes basada en React para crear plantillas de correo electrónico adaptables y compatibles con múltiples clientes con un flujo de trabajo de desarrollo moderno. Permite que los desarrolladores frontend escriban diseños de correo electrónico utilizando la sintaxis familiar de React, eliminando la necesidad de trucos heredados con tablas HTML y reduciendo el tiempo necesario para producir diseños de correo electrónico compatibles.",
+    "slug": "react-email-builder"
+  },
+  {
+    "name": "Instrumentación de App Insights",
+    "description": "Esta herramienta instrumenta una aplicación web para enviar telemetría estructurada a Azure Application Insights, incluyendo solicitudes, excepciones, dependencias y eventos personalizados. Proporciona configuración del SDK, ejemplos de configuración, fragmentos de código/middleware y orientación sobre mejores prácticas para el muestreo y enriquecimiento, de modo que los desarrolladores puedan supervisar el rendimiento, solucionar problemas y mejorar la confiabilidad con datos accionables.",
+    "slug": "instrumentacion-de-app-insights"
+  },
+  {
+    "name": "Patrones de DAG de Airflow",
+    "description": "Esta habilidad proporciona patrones de diseño de DAG de Apache Airflow de nivel de producción, que cubren dependencias de tareas, sensores, manejo de errores y pruebas. Convierte las mejores prácticas dispersas en un flujo de trabajo ejecutable, ayudando a los ingenieros de datos a crear canalizaciones de datos robustas, orquestar flujos de trabajo complejos y programar tareas por lotes con confianza.",
+    "slug": "patrones-de-dag-de-airflow"
+  },
+  {
+    "name": "Arquitecto de Observabilidad",
+    "description": "Esta guía sistemática de observabilidad ayuda a los desarrolladores a implementar registros estructurados, métricas y rastreo distribuido en el código de su aplicación. Al ofrecer mejores prácticas y listas de verificación estructuradas, ayuda a los equipos a detectar problemas de diseño como la explosión de cardinalidad de métricas durante la revisión, haciendo que los comportamientos de producción sean totalmente transparentes y diagnosticables.",
+    "slug": "arquitecto-de-observabilidad"
+  },
+  {
+    "name": "Actualizador de Dependencias",
+    "description": "Esta herramienta de gestión de dependencias multilenguaje detecta automáticamente el tipo de proyecto y aplica de forma segura actualizaciones de parches y versiones menores durante el desarrollo. Al avisar proactivamente antes de cambios de versiones mayores, previene eficazmente cambios disruptivos y ayuda a los desarrolladores a mantener fácilmente la salud del proyecto y la seguridad de las dependencias.",
+    "slug": "actualizador-de-dependencias"
+  },
+  {
+    "name": "Utilidades de Animación GSAP",
+    "description": "Este conjunto de herramientas de utilidad proporciona funciones esenciales de GSAP como clamp, mapRange, interpolate, snap, selector y wrap para el desarrollo frontend. Simplifica cálculos matemáticos complejos y selecciones del DOM en flujos de trabajo de animación, ayudando a los desarrolladores a crear animaciones web fluidas, precisas y de alto rendimiento más rápido.",
+    "slug": "utilidades-de-animacion-gsap"
+  },
+  {
+    "name": "Patrones de transformación de dbt",
+    "description": "Esta Skill proporciona patrones de transformación de datos dbt de grado de producción, que cubren la organización de modelos, pruebas de calidad, estrategias incrementales y estándares de documentación. Ayuda a los equipos de ingeniería de datos a construir pipelines de datos eficientes, implementar mejores prácticas de analítica y mantener modelos de datos claros y escalables para tareas complejas de ingeniería de datos.",
+    "slug": "patrones-de-transformacion-de-dbt"
+  },
+  {
+    "name": "Asesor de Sostenibilidad en la Nube",
+    "description": "Esta es una guía oficial de sostenibilidad de Google Cloud que proporciona recomendaciones prácticas para reducir la huella de carbono y el consumo de energía de las cargas de trabajo en la nube. Al aplicar los principios del pilar de Sostenibilidad, ayuda a los arquitectos de la nube a optimizar el uso de recursos, reducir el impacto ambiental y construir una infraestructura más ecológica y eficiente.",
+    "slug": "asesor-de-sostenibilidad-en-la-nube"
+  },
+  {
+    "name": "Plantilla de Aplicación Spark",
+    "description": "Esta guía proporciona plantillas completas y con criterio, junto con las mejores prácticas para crear aplicaciones web modernas, paneles de control e interfaces interactivas. Recomienda una pila tecnológica completa, un sistema de diseño, una estructura de proyecto, convenciones de estilo y estándares de código para que puedas estructurar una aplicación hermosa y fácil de mantener, y poner en marcha un producto funcional rápidamente.",
+    "slug": "plantilla-de-aplicacion-spark"
+  },
+  {
+    "name": "Arquitecto de GraphQL",
+    "description": "Esta guía de arquitectura de GraphQL cubre el diseño de esquemas, Apollo Federation y la optimización del rendimiento para desarrolladores que crean APIs. Proporciona patrones prácticos para resolver problemas de consultas N+1 con DataLoader e implementar suscripciones en tiempo real, ayudando a los equipos a diseñar capas de obtención de datos escalables para sistemas complejos.",
+    "slug": "arquitecto-de-graphql"
+  },
+  {
+    "name": "Actualización de pnpm",
+    "description": "Esta habilidad automatiza la actualización de pnpm en todos los repositorios: ejecuta pnpm self-update o corepack prepare, alinea el campo packageManager en package.json e incrementa pnpm/action-setup y las versiones de pnpm fijadas en .github/workflows a la última versión. Úsala para mantener tu cadena de herramientas de Node.js y flujos de trabajo de CI consistentes y actualizados con el mínimo esfuerzo manual.",
+    "slug": "actualizacion-de-pnpm"
+  },
+  {
+    "name": "Experto en Postgres de PlanetScale",
+    "description": "Experiencia oficial en PostgreSQL de PlanetScale que cubre diseño de esquemas, indexación, optimización de consultas, ajuste de vacuum, replicación, copias de seguridad y agrupación de conexiones. Incluye 22 guías de referencia concisas con consultas de auditoría SQL probadas en batalla, orientación específica para versiones PG 13–18 y flujos de trabajo de PlanetScale CLI e Insights para diagnosticar consultas lentas.",
+    "slug": "experto-en-postgres-de-planetscale"
+  },
+  {
+    "name": "Experto en AWS Serverless",
+    "description": "Construya, implemente y depure aplicaciones serverless de AWS con la experiencia oficial de AWS, que abarca Lambda, API Gateway, Step Functions, EventBridge y SAM/CDK. Obtenga cuotas exactas, reglas de concurrencia, estrategias de inicio en frío y tablas de resolución de problemas de error a corrección que transforman problemas serverless vagos en soluciones precisas y listas para producción.",
+    "slug": "experto-en-aws-serverless"
+  },
+  {
+    "name": "Stripe Upgrade Pro",
+    "description": "Este asistente de actualización de SDK y API de Stripe ayuda a los desarrolladores a migrar de forma segura sus integraciones de pago a las versiones más recientes. Identifica llamadas a la API obsoletas y proporciona orientación oficial para la migración, lo que reduce el riesgo de las actualizaciones del sistema de pago y garantiza una transición fluida a las interfaces más nuevas.",
+    "slug": "stripe-upgrade-pro"
+  },
+  {
+    "name": "Mongo Query Pro",
+    "description": "Esta herramienta traduce solicitudes en lenguaje natural en consultas de MongoDB y pipelines de agregación ejecutables. Cierra la brecha entre el texto plano y las operaciones complejas de bases de datos, ayudando a desarrolladores y analistas a recuperar datos más rápido sin necesidad de escribir",
+    "slug": "mongo-query-pro"
+  }
+]

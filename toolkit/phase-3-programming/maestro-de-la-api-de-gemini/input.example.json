@@ -1,0 +1,6 @@
+{
+  "objective": "Aplicar Maestro de la API de Gemini",
+  "audience": "Equipo de ingeniería",
+  "content": "Código o especificación proporcionada por el usuario.",
+  "format": "markdown"
+}
