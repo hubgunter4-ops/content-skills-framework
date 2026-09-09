@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Buscador de Habilidades de Internet",
+    "description": "Busca y recomienda habilidades de agente de repositorios verificados de GitHub para tareas y flujos de trabajo específicos.",
+    "slug": "buscador-de-habilidades-de-internet"
+  },
+  {
+    "name": "Extractor Web Inteligente",
+    "description": "Extrae datos de páginas y contenido de artículos, eludiendo protecciones anti-bot como Cloudflare. Ofrece un flujo de trabajo completo con selección inteligente de extractores y generación de scripts en Python.",
+    "slug": "extractor-web-inteligente"
+  },
+  {
+    "name": "Buscador de habilidades",
+    "description": "Descubre e instala habilidades de agentes desde el ecosistema de habilidades abiertas a través de la CLI de Skills. Encuentra rápidamente habilidades populares y probadas para cualquier tarea e instálalas con un solo comando.",
+    "slug": "buscador-de-habilidades"
+  },
+  {
+    "name": "Orquestador de Estrategias de Búsqueda",
+    "description": "Descompone consultas y flujos de trabajo de búsqueda en múltiples fuentes para recuperar respuestas precisas. Divide preguntas en lenguaje natural en subconsultas específicas, las traduce a la sintaxis propia de cada fuente, clasifica y consolida los resultados por relevancia.",
+    "slug": "orquestador-de-estrategias-de-busqueda"
+  },
+  {
+    "name": "Patrones de flujo de trabajo",
+    "description": "Proporciona una colección de patrones de flujo de trabajo de n8n que cubren webhooks, solicitudes HTTP, bases de datos y tareas de IA. Ofrece plantillas listas para usar, reduciendo el tiempo de configuración y garantizando una integración de datos confiable.",
+    "slug": "patrones-de-flujo-de-trabajo"
+  },
+  {
+    "name": "Protección contra Comandos Destructivos",
+    "description": "Implementa barreras de seguridad en torno a operaciones destructivas de shell y control de versiones, advirtiendo a los usuarios antes de ejecutar comandos peligrosos. Ayuda a prevenir la pérdida accidental de datos al solicitar confirmaciones y marcar contextos de riesgo.",
+    "slug": "proteccion-contra-comandos-destructivos"
+  },
+  {
+    "name": "Experto en Validación de n8n",
+    "description": "Corrige errores de validación de n8n consultando un catálogo de errores integrado. Optimiza el proceso de depuración, permitiendo identificar rápidamente problemas y resolver problemas de configuración del flujo de trabajo.",
+    "slug": "experto-en-validacion-de-n8n"
+  },
+  {
+    "name": "Vercel Workflow Kit",
+    "description": "Crea flujos de trabajo duraderos y reanudables utilizando el Workflow DevKit de Vercel. Permite que los procesos de varios pasos sobrevivan a reinicios, se pausen ante eventos externos y se reintenten en caso de error.",
+    "slug": "vercel-workflow-kit"
+  },
+  {
+    "name": "Excelencia Operativa de GCP",
+    "description": "Guía centrada en las operaciones para cargas de trabajo de Google Cloud. Ayuda a evaluar la salud arquitectónica, implementar una respuesta ante incidentes automatizada y crear entornos de nube más confiables y eficientes.",
+    "slug": "excelencia-operativa-de-gcp"
+  },
+  {
+    "name": "Grafana Dashboard Pro",
+    "description": "Proporciona plantillas y mejores prácticas para crear tableros de Grafana listos para producción. Ayuda a construir rápidamente interfaces de visualización profesionales para métricas de sistemas y aplicaciones.",
+    "slug": "grafana-dashboard-pro"
+  },
+  {
+    "name": "Implementación de SLO Pro",
+    "description": "Marco de implementación estandarizado para Objetivos de Nivel de Servicio SLO e Indicadores de Nivel de Servicio SLI. Traduce las prácticas de SRE en configuraciones accionables, ayudando a establecer objetivos de fiabilidad claros y gestionar las alertas de manera efectiva.",
+    "slug": "implementacion-de-slo-pro"
+  },
+  {
+    "name": "Gestor de fuentes empresariales",
+    "description": "Gestiona fuentes MCP conectadas para la búsqueda empresarial, detectando automáticamente los conectores disponibles y guiando a los usuarios en la adición de nuevas integraciones. Ayuda a establecer y reordenar la prioridad de las fuentes y mantener una indexación de búsqueda saludable.",
+    "slug": "gestor-de-fuentes-empresariales"
+  },
+  {
+    "name": "Selector de roles de Azure",
+    "description": "Ayuda a elegir el rol de Azure que otorga los permisos necesarios siguiendo los principios de privilegios mínimos. Proporciona instrucciones paso a paso para asignarlo a través del Portal, la CLI de Azure o plantillas ARM.",
+    "slug": "selector-de-roles-de-azure"
+  },
+  {
+    "name": "Generador de Pruebas de Selenium",
+    "description": "Genera pruebas de Selenium WebDriver en los principales lenguajes de programación para tareas de automatización de navegadores. Ofrece un amplio soporte del ecosistema y portabilidad, ayudando a unificar las capacidades de automatización.",
+    "slug": "generador-de-pruebas-de-selenium"
+  },
+  {
+    "name": "Recomendador de automatización de Claude",
+    "description": "Analiza una base de código y recomienda automatizaciones de Claude Code adaptadas a la estructura y los objetivos de tu proyecto. Ayuda a priorizar e implementar automatizaciones con guías de configuración concretas.",
+    "slug": "recomendador-de-automatizacion-de-claude"
+  },
+  {
+    "name": "Guía de desarrollo de agentes",
+    "description": "Ayuda a diseñar, crear y documentar agentes autónomos y subagentes para los plugins de Claude Code. Recopila las mejores prácticas para garantizar un comportamiento del agente predecible, seguro y fácil de mantener.",
+    "slug": "guia-de-desarrollo-de-agentes"
+  },
+  {
+    "name": "Experto en n8n MCP",
+    "description": "Guía a los desarrolladores a seleccionar y configurar herramientas y formatos de nodo del Protocolo de Contexto de Modelo MCP dentro de los flujos de trabajo de n8n. Proporciona orientación estructurada para integrar herramientas MCP.",
+    "slug": "experto-en-n8n-mcp"
+  },
+  {
+    "name": "Despachador de Agentes en Paralelo",
+    "description": "Guía en el despacho de múltiples subagentes paralelos para manejar dos o más tareas independientes sin estados compartidos ni dependencias secuenciales. Permite la ejecución concurrente, ahorrando tiempo durante el proceso de desarrollo y depuración.",
+    "slug": "despachador-de-agentes-en-paralelo"
+  },
+  {
+    "name": "MCP CLI",
+    "description": "Proporciona una interfaz de línea de comandos para interactuar con servidores MCP y sus herramientas registradas. Úsela para descubrir servidores MCP disponibles y capacidades de herramientas, invocar herramientas respaldadas por MCP o APIs externas directamente desde su terminal o scripts.",
+    "slug": "mcp-cli"
+  },
+  {
+    "name": "Configurador de Nodos n8n",
+    "description": "Ayuda a configurar nodos de n8n con reglas de dependencia complejas y conexiones de IA. Agiliza la creación de flujos de trabajo automatizados gestionando dependencias de nodos intrincadas e integraciones de IA.",
+    "slug": "configurador-de-nodos-n8n"
+  },
+  {
+    "name": "Asistente de Chrome DevTools",
+    "description": "Proporciona automatización de navegación, depuración y análisis de rendimiento de nivel experto utilizando el protocolo Chrome DevTools. Interactúa con páginas web, captura capturas de pantalla y recopila perfiles de CPU y memoria.",
+    "slug": "asistente-de-chrome-devtools"
+  },
+  {
+    "name": "CI/CD Pipeline Pro",
+    "description": "Guía de configuración de pipelines de CI/CD que proporciona prácticas estándar para automatizar las comprobaciones de calidad del código, los ejecutores de pruebas y las estrategias de despliegue. Convierte la compleja configuración de DevOps en un proceso estructurado.",
+    "slug": "ci-cd-pipeline-pro"
+  },
+  {
+    "name": "Puppeteer Script Pro",
+    "description": "Genera scripts de Node.js Puppeteer para raspado web, capturas de pantalla automatizadas, generación de PDF y flujos de trabajo ligeros de sitios web. Traduce interacciones complejas del navegador en código ejecutable, ayudando a automatizar tareas repetitivas.",
+    "slug": "puppeteer-script-pro"
+  }
+]
