@@ -6,7 +6,7 @@
   },
   {
     "name": "Extractor Web Inteligente",
-    "description": "Extrae datos de páginas y contenido de artículos, eludiendo protecciones anti-bot como Cloudflare. Ofrece un flujo de trabajo completo con selección inteligente de extractores y generación de scripts en Python.",
+    "description": "Extrae datos de páginas y contenido de artículos, mediante extracción autorizada sin evadir controles anti-bot como Cloudflare. Ofrece un flujo de trabajo completo con selección inteligente de extractores y generación de scripts en Python.",
     "slug": "extractor-web-inteligente"
   },
   {

@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from phase_4_engine import run_tool
-SKILL = {'name': 'Extractor Web Inteligente', 'description': 'Extrae datos de páginas y contenido de artículos, eludiendo protecciones anti-bot como Cloudflare. Ofrece un flujo de trabajo completo con selección inteligente de extractores y generación de scripts en Python.', 'slug': 'extractor-web-inteligente'}
+SKILL = {'name': 'Extractor Web Inteligente', 'description': 'Extrae datos de páginas y contenido de artículos, mediante extracción autorizada sin evadir controles anti-bot como Cloudflare. Ofrece un flujo de trabajo completo con selección inteligente de extractores y generación de scripts en Python.', 'slug': 'extractor-web-inteligente'}
 def main() -> int:
     parser = argparse.ArgumentParser(description=SKILL["name"])
     parser.add_argument("-i", "--input", type=Path); parser.add_argument("-o", "--output", type=Path)
