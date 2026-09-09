@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Resultado de herramienta de Diseño",
+  "type": "object",
+  "required": [
+    "skill",
+    "status",
+    "analysis",
+    "deliverable",
+    "warnings"
+  ]
+}

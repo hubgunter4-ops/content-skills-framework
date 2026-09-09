@@ -1,0 +1,172 @@
+[
+  {
+    "name": "Diseño de IU Pro",
+    "description": "Genera maquetas de alta fidelidad para aplicaciones móviles y web. Traduce requisitos de usuario en wireframes y esquemas de diseño profesionales. Visualiza conceptos rápidamente en diferentes estilos sin fondos de dispositivos físicos.",
+    "slug": "diseno-de-iu-pro"
+  },
+  {
+    "name": "Animación de logotipo en 3D",
+    "description": "Convierte logotipos 2D en animaciones 3D con materiales dimensionales, iluminación cinematográfica y movimiento de cámara. Ideal para intros de video, sitios web y redes sociales. Combina edición de imágenes y generación de video en un solo flujo de trabajo.",
+    "slug": "animacion-de-logotipo-en-3d"
+  },
+  {
+    "name": "Constructor de Paneles Interactivos",
+    "description": "Crea paneles HTML interactivos e independientes utilizando Chart.js, filtros desplegables y estilo profesional. Genera archivos HTML compartibles y con capacidad offline. Ideal para informes, presentaciones o entregables integrados.",
+    "slug": "constructor-de-paneles-interactivos"
+  },
+  {
+    "name": "Motor de Estilo de Marca",
+    "description": "Aplica automáticamente la imagen de marca corporativa a documentos y plantillas generados por IA. Garantiza una identidad visual coherente en hojas de una página, presentaciones, correos electrónicos y otros materiales.",
+    "slug": "motor-de-estilo-de-marca"
+  },
+  {
+    "name": "Extractor de sistemas de diseño",
+    "description": "Realiza ingeniería inversa de un sistema de diseño completo directamente desde el código fuente del frontend. Captura colores, tipografía, espaciado y patrones de componentes sin compilar ni ejecutar la aplicación.",
+    "slug": "extractor-de-sistemas-de-diseno"
+  },
+  {
+    "name": "Suite de Animación GSAP",
+    "description": "Ofrece herramientas de animación esenciales, incluyendo ScrollToPlugin, Flip, Draggable, SplitText, SVG y Physics. Extiende las capacidades principales de GreenSock para crear animaciones web complejas y de alto rendimiento.",
+    "slug": "suite-de-animacion-gsap"
+  },
+  {
+    "name": "Accesibilidad web",
+    "description": "Audita y mejora la accesibilidad web siguiendo las pautas WCAG 2.2. Verifica el contraste de color, la navegación por teclado, los objetivos táctiles y el comportamiento del lector de pantalla.",
+    "slug": "accesibilidad-web"
+  },
+  {
+    "name": "Sistema de diseño de Tailwind",
+    "description": "Manual del sistema de diseño de Tailwind CSS v4. Cubre la configuración CSS-first, tokens de diseño OKLCH, modo oscuro y arquitectura de variantes de componentes. Ayuda a construir bibliotecas de componentes consistentes y accesibles.",
+    "slug": "sistema-de-diseno-de-tailwind"
+  },
+  {
+    "name": "Generador de diapositivas Marp",
+    "description": "Proporciona un generador de presentaciones basado en Marp con 7 temas integrados y guías de diseño detalladas. Transforma requisitos vagos o contenido sin procesar en código de diapositivas Markdown bien estructurado y con un formato atractivo.",
+    "slug": "generador-de-diapositivas-marp"
+  },
+  {
+    "name": "Constructor de JSON Canvas",
+    "description": "Crea y edita archivos JSON Canvas .canvas con nodos, conexiones y grupos para lienzos visuales, mapas mentales y diagramas de flujo. Permite generar notas visuales estructuradas que pueden abrirse y utilizarse directamente en Obsidian y otros programas compatibles.",
+    "slug": "constructor-de-json-canvas"
+  },
+  {
+    "name": "Ingeniería de Diseño de Emil",
+    "description": "Codifica la filosofía de ingeniería de diseño de Emil Kowalski sobre el pulido de la interfaz de usuario, las decisiones de animación y los detalles invisibles. Ayuda a decidir qué animar, elegir el suavizado y la duración adecuados, y crear componentes que se sientan receptivos y refinados.",
+    "slug": "ingenieria-de-diseno-de-emil"
+  },
+  {
+    "name": "Diseñador de artículos editoriales",
+    "description": "Transforma cualquier material de origen en un hermoso artículo HTML de un solo archivo con componentes interactivos. Garantiza la retención del 100% de la información mientras ofrece una experiencia de lectura pulida y lista para compartir.",
+    "slug": "disenador-de-articulos-editoriales"
+  },
+  {
+    "name": "Motor de Word de Marca",
+    "description": "Extrae pautas de diseño como fuentes, colores y estilos de plantillas existentes para crear un perfil de marca reutilizable. Automatiza la generación de nuevos documentos .docx basados en estos perfiles guardados, garantizando una identidad corporativa coherente.",
+    "slug": "motor-de-word-de-marca"
+  },
+  {
+    "name": "Nothing Design System",
+    "description": "Proporciona un lenguaje visual inspirado en Nothing para crear interfaces de estilo industrial y minimalista. Ayuda a los diseñadores y equipos de producto a aplicar una estética coherente más rápido en diferentes tipos de interfaz.",
+    "slug": "nothing-design-system"
+  },
+  {
+    "name": "Generador de diagramas de Excalidraw",
+    "description": "Genera diagramas de Excalidraw a partir de descripciones en lenguaje natural. Admite diagramas de flujo, diagramas de relaciones, mapas mentales y representaciones visuales de arquitectura de sistemas.",
+    "slug": "generador-de-diagramas-de-excalidraw"
+  },
+  {
+    "name": "Generador de favicons",
+    "description": "Genera un conjunto completo de favicons para sitios web a partir de logotipos, texto o formas de marca. Produce automáticamente todos los formatos y el código HTML necesarios, asegurando que su sitio se vea profesional en todos los dispositivos y navegadores.",
+    "slug": "generador-de-favicons"
+  },
+  {
+    "name": "Creador de Obsidian Canvas",
+    "description": "Convierte texto, artículos o esquemas en archivos estructurados de Obsidian Canvas. Admite tanto mapas mentales como diseños espaciales de forma libre para la organización visual del conocimiento.",
+    "slug": "creador-de-obsidian-canvas"
+  },
+  {
+    "name": "Markdown & Mermaid Pro",
+    "description": "Proporciona pautas y plantillas de escritura de Markdown y Mermaid para crear documentos técnicos, diagramas de arquitectura e informes de investigación. Establece los diagramas basados en texto como el estándar de documentación predeterminado.",
+    "slug": "markdown-mermaid-pro"
+  },
+  {
+    "name": "Diagramador Mermaid",
+    "description": "Ayuda a los usuarios a crear diagramas de flujo, diagramas de secuencia, diagramas ER y visualizaciones de arquitectura a partir de instrucciones estructuradas o material de origen. Convierte sistemas complejos, modelos de datos y flujos de negocio en visualizaciones claras.",
+    "slug": "diagramador-mermaid"
+  },
+  {
+    "name": "Guía de diseño de Penpot",
+    "description": "Proporciona un flujo de trabajo integral para crear diseños de UI/UX profesionales en Penpot utilizando herramientas MCP. Ayuda a los diseñadores a crear interfaces adaptables, sistemas de diseño y patrones accesibles más rápido.",
+    "slug": "guia-de-diseno-de-penpot"
+  },
+  {
+    "name": "Auditoría de accesibilidad",
+    "description": "Verifica el contraste de color, la navegación por teclado, los objetivos táctiles y el comportamiento del lector de pantalla. Entrega un informe de hallazgos estructurado con correcciones priorizadas.",
+    "slug": "auditoria-de-accesibilidad"
+  },
+  {
+    "name": "Arquitecto de Excalidraw",
+    "description": "Delega las operaciones de archivos de Excalidraw a subagentes, evitando que el JSON detallado agote el contexto del agente principal. Permite la lectura, modificación y creación eficiente de diagramas de arquitectura y diagramas de flujo.",
+    "slug": "arquitecto-de-excalidraw"
+  },
+  {
+    "name": "GSAP ScrollTrigger",
+    "description": "Proporciona capacidades de ScrollTrigger para crear animaciones vinculadas al desplazamiento, fijar elementos y manejar efectos de scrub. Simplifica las interacciones de desplazamiento complejas en un flujo de trabajo fiable.",
+    "slug": "gsap-scrolltrigger"
+  },
+  {
+    "name": "Creador de gráficos AntV",
+    "description": "Ofrece más de 26 tipos de gráficos, desde gráficos de barras y líneas hasta diagramas de Sankey, mapas mentales y nubes de palabras. Selecciona el mejor gráfico para sus datos y devuelve una imagen del gráfico lista para compartir a través de la API de AntV en segundos.",
+    "slug": "creador-de-graficos-antv"
+  },
+  {
+    "name": "PlantUML ASCII",
+    "description": "Convierte diagramas de PlantUML en arte ASCII compatible con terminales y representaciones de texto mejoradas con Unicode. Genera diagramas de secuencia, diagramas de clases y diagramas de flujo.",
+    "slug": "plantuml-ascii"
+  },
+  {
+    "name": "Visualizador de Mermaid",
+    "description": "Transforma contenido de texto complejo en diagramas de Mermaid profesionales. Proporciona prevención de errores de sintaxis integrada, ayudando a los usuarios a visualizar conceptos rápidamente y crear diagramas pulidos para presentaciones y documentación.",
+    "slug": "visualizador-de-mermaid"
+  },
+  {
+    "name": "Diagramador de Excalidraw",
+    "description": "Convierte contenido de texto en atractivos diagramas de Excalidraw. Ofrece modos de salida estándar y animados, ayudando a visualizar rápidamente ideas y procesos complejos sin necesidad de dibujo manual.",
+    "slug": "diagramador-de-excalidraw"
+  },
+  {
+    "name": "Maquetas de Circuitos Clásicos",
+    "description": "Genera maquetas detalladas de placas de pruebas y esquemas utilizando HTML5 Canvas. Ayuda a aficionados e ingenieros a producir rápidamente diagramas claros y compartibles para montajes 6502, temporizadores 555, lógica de la serie 7400, EEPROM y otros componentes retro.",
+    "slug": "maquetas-de-circuitos-clasicos"
+  },
+  {
+    "name": "Cut the Curve",
+    "description": "Cataloga la familia de técnicas de costura de movimiento Cut the Curve para transiciones cinematográficas y texto cinético. Proporciona parámetros accionables, recetas de suavizado, reglas de escala Z, pautas de tamaño de desenfoque, proporciones de ritmo y plantillas de código GSAP.",
+    "slug": "cut-the-curve"
+  },
+  {
+    "name": "Ingeniero de Diseño Web",
+    "description": "Construye páginas web pulidas, paneles de control, prototipos y visualizaciones de datos utilizando HTML, CSS, JavaScript y React. Combina flujos de trabajo detallados, sistemas de diseño y listas de verificación previas a la entrega.",
+    "slug": "ingeniero-de-diseno-web"
+  },
+  {
+    "name": "Revisor de Diseño Web",
+    "description": "Permite la inspección visual de sitios web para identificar y corregir problemas de diseño a nivel de código fuente. Detecta fallos de adaptabilidad, barreras de accesibilidad, inconsistencias visuales y errores de maquetación.",
+    "slug": "revisor-de-diseno-web"
+  },
+  {
+    "name": "Paleta de colores inteligente",
+    "description": "Genera una paleta de colores accesible completa a partir de un único color de marca. Incluye escalas de 11 pasos, tokens semánticos, variantes de modo oscuro, CSS para Tailwind v4 y comprobaciones de contraste WCAG.",
+    "slug": "paleta-de-colores-inteligente"
+  },
+  {
+    "name": "Revisión de Animaciones",
+    "description": "Audita el código de movimiento según diez estándares de artesanía no negociables. Verifica suavizado, duración, origen, interrumpibilidad, rendimiento y accesibilidad para que cada animación se sienta bien, no solo funcione.",
+    "slug": "revision-de-animaciones"
+  },
+  {
+    "name": "Playground Interactivo",
+    "description": "Crea entornos de pruebas HTML interactivos e independientes. Permite a los usuarios configurar opciones mediante controles visuales, ver una vista previa en vivo y copiar el prompt o marcado resultante. Produce un explorador de archivo único adecuado para compartir o incrustar.",
+    "slug": "playground-interactivo"
+  }
+]
