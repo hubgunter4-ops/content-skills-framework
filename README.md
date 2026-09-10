@@ -25,11 +25,15 @@ python3 -m toolkit show phase-1-content-toolkit/estratega-de-seo-y-aeo
 python3 -m toolkit show phase-2-datos/validacion-de-datos
 python3 -m toolkit validate
 python3 -m toolkit integrations
+python3 -m toolkit index --phase phase-2-datos
+python3 -m toolkit index phase-2-datos/validacion-de-datos
 python3 -m toolkit run phase-2-datos/validacion-de-datos \
   -i toolkit/phase-2-datos/validacion-de-datos/input.example.json
 ```
 
 `list` muestra siempre `fase/slug`. `show` y `run` aceptan identificadores cualificados y también slugs cortos cuando no hay colisión. Si un slug se repite, el CLI exige indicar la fase. En el menú: `1` lista habilidades, `2` muestra una habilidad, `3` valida la colección y `q` cancela. Las acciones son locales, no envían datos y no modifican archivos salvo que el usuario lo haga explícitamente.
+
+`index` crea o reutiliza un índice SQLite reconstruible. El descubrimiento de entry points lee las declaraciones instaladas, pero no importa ni ejecuta sus objetos. La huella del entorno incluye la versión de Python, los catálogos y documentos locales y las declaraciones de entry points; si cambia, el índice se reconstruye de forma atómica. El archivo predeterminado es `.content-skills-index.sqlite3` y está excluido de Git. Se puede seleccionar otra ubicación con `--db`.
 
 ## Integraciones externas bajo demanda
 
@@ -81,7 +85,8 @@ content-skills-toolkit/
 ├── toolkit/phase-4-automatizacion/         # 23 herramientas de automatización
 ├── toolkit/phase-5-negocios/               # 34 herramientas de negocios y diseño
 ├── toolkit/phase-6-medios/                 # 49 herramientas de medios
-├── toolkit/registry.py                     # Registro unificado
+├── toolkit/registry.py                     # Registro unificado compatible
+├── toolkit/persistent_index.py              # Índice SQLite y entry points
 ├── toolkit/__main__.py                     # CLI
 ├── tests/                  # Pruebas unitarias y smoke tests del menú
 ├── docs/                   # Plan y decisiones del proyecto

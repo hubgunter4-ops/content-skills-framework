@@ -29,6 +29,17 @@ from .models import (
     ToolMetadata,
     ToolSelection,
 )
+from .persistent_index import (
+    ENTRY_POINT_GROUP,
+    IndexedTool,
+    discover_external_entry_points,
+    ensure_index,
+    environment_fingerprint,
+    index_is_current,
+    list_index,
+    lookup,
+    rebuild_index,
+)
 
 __version__ = "0.2.0"
 
@@ -45,6 +56,15 @@ __all__ = [
     "ToolCandidate",
     "ToolMetadata",
     "ToolSelection",
+    "ENTRY_POINT_GROUP",
+    "IndexedTool",
+    "discover_external_entry_points",
+    "ensure_index",
+    "environment_fingerprint",
+    "index_is_current",
+    "list_index",
+    "lookup",
+    "rebuild_index",
     "load_schema",
     "validate_metadata_dict",
     "validate_result_dict",

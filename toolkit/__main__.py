@@ -1,16 +1,19 @@
 from __future__ import annotations
 
 import argparse
+import json
 import subprocess
 import sys
 from pathlib import Path
 
 from .catalog import load_skills, validate_skills
 from .integrations import catalog as integration_catalog
+from .persistent_index import ensure_index, list_index, lookup
 from .registry import RegistryError, load_registry, resolve_tool, validate_registry
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "toolkit" / "phase-1-content-toolkit"
+DEFAULT_INDEX = ROOT / ".content-skills-index.sqlite3"
 
 
 def show_menu() -> None:
@@ -90,6 +93,25 @@ def list_integrations() -> int:
     return 0
 
 
+def index_tools(identifier: str | None, phase: str | None, db_path: str | None) -> int:
+    """Build the persistent index and optionally display a record."""
+    path = Path(db_path) if db_path else DEFAULT_INDEX
+    _, rebuilt = ensure_index(ROOT, path)
+    state = "reconstruido" if rebuilt else "vigente"
+    if identifier:
+        record = lookup(path, identifier)
+        if record is None:
+            print(f"No existe en el índice: {identifier}")
+            return 2
+        print(json.dumps(record.__dict__, ensure_ascii=False, indent=2, default=list))
+        return 0
+    records = list_index(path, phase=phase)
+    print(f"Índice {state}: {len(records)} herramientas en {path}")
+    for record in records:
+        print(f"{record.tool_id}\t{record.status}\t{record.distribution}")
+    return 0
+
+
 def run_tool(identifier: str, input_file: str | None) -> int:
     spec = _resolve(identifier)
     if spec is None:
@@ -103,9 +125,11 @@ def run_tool(identifier: str, input_file: str | None) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Descubre y valida habilidades locales.")
-    parser.add_argument("command", nargs="?", choices=("list", "show", "run", "validate", "integrations"))
+    parser.add_argument("command", nargs="?", choices=("list", "show", "run", "validate", "integrations", "index"))
     parser.add_argument("slug", nargs="?")
     parser.add_argument("-i", "--input", dest="input_file")
+    parser.add_argument("--phase", dest="phase")
+    parser.add_argument("--db", dest="db_path")
     args = parser.parse_args()
     if not args.command:
         show_menu()
@@ -116,6 +140,8 @@ def main() -> int:
         return validate()
     if args.command == "integrations":
         return list_integrations()
+    if args.command == "index":
+        return index_tools(args.slug, args.phase, args.db_path)
     if not args.slug:
         parser.error(f"{args.command} requiere un slug")
     if args.command == "run":
