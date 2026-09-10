@@ -1,7 +1,7 @@
 # Plan de ejecución del framework de plugins
 
 **Solicitud identificable:** plan para implementar caché, índice persistente, módulos por fase, sandboxing, cuotas y circuit breakers  
-**Estado:** Fases 0–4 y 4A completadas; Fase 5 — supervisor y sandbox por subproceso implementada
+**Estado:** Fases 0–5 y 4A completadas; Fase 6 — sistema de cuotas implementado
 **Repositorio:** `content-skills-framework`  
 **Fecha:** 9 de septiembre de 2026
 
