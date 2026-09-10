@@ -1,6 +1,7 @@
 """Public API for the Content Skills Framework."""
 
 from .contracts import load_schema, validate_metadata_dict, validate_result_dict, validate_schema_documents
+from .cache import CacheStats, ToolCache
 from .errors import (
     CapabilityDeniedError,
     CircuitOpenError,
@@ -45,6 +46,7 @@ __version__ = "0.2.0"
 
 __all__ = [
     "CONTRACT_VERSION",
+    "CacheStats",
     "Capability",
     "ExecutionPlan",
     "ExecutionRequest",
@@ -56,6 +58,7 @@ __all__ = [
     "ToolCandidate",
     "ToolMetadata",
     "ToolSelection",
+    "ToolCache",
     "ENTRY_POINT_GROUP",
     "IndexedTool",
     "discover_external_entry_points",
