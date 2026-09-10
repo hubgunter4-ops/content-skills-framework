@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["status", "analysis", "deliverable", "warnings", "provenance"],
+  "properties": {
+    "status": {"const": "ready"},
+    "analysis": {"type": "object"},
+    "deliverable": {"type": "object"},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "provenance": {"type": "object"}
+  }
+}

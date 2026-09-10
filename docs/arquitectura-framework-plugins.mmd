@@ -1,0 +1,66 @@
+flowchart TB
+    U[Aplicación consumidora / CLI] --> API[API pública del framework]
+    API --> REG[Registro y resolución]
+    REG --> MEM[(Caché en memoria LRU)]
+    REG --> IDX[(Índice persistente SQLite)]
+    IDX --> EP[Python entry points]
+
+    subgraph CORE[content-skills-core]
+        API
+        REG
+        MEM
+        IDX
+        CONTRACTS[Contratos JSON Schema]
+        POLICY[Políticas de capacidades]
+        QUOTA[Cuotas jerárquicas]
+        CB[Circuit breakers]
+        SUP[Supervisor de ejecución]
+    end
+
+    REG --> CONTRACTS
+    API --> CONTRACTS
+    CONTRACTS --> POLICY
+    POLICY --> QUOTA
+    POLICY --> SUP
+    QUOTA --> SUP
+    CB --> SUP
+
+    EP --> P1[content-skills-phase-content]
+    EP --> P2[content-skills-phase-data]
+    EP --> P3[content-skills-phase-programming]
+    EP --> P4[content-skills-phase-automation]
+    EP --> P5[content-skills-phase-business]
+    EP --> P6[content-skills-phase-media]
+
+    P1 --> T[Herramientas / plugins]
+    P2 --> T
+    P3 --> T
+    P4 --> T
+    P5 --> T
+    P6 --> T
+    T --> SUP
+
+    SUP --> INPROC[Worker confiable en proceso]
+    SUP --> PROC[Worker de terceros aislado]
+    SUP --> CONT[Contenedor sin privilegios]
+
+    PROC --> FS[Workspace temporal limitado]
+    PROC --> NET[Red deshabilitada o allowlist]
+    PROC --> RES[Límites CPU / RAM / tiempo / salida]
+    CONT --> FS
+    CONT --> NET
+    CONT --> RES
+
+    SUP --> OBS[Métricas y trazabilidad sin secretos]
+
+    classDef core fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+    classDef storage fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#0f172a
+    classDef phase fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#0f172a
+    classDef security fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#0f172a
+    classDef worker fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#0f172a
+
+    class API,REG,CONTRACTS,POLICY,QUOTA,CB,SUP core
+    class MEM,IDX,EP storage
+    class P1,P2,P3,P4,P5,P6,T phase
+    class PROC,CONT,FS,NET,RES security
+    class INPROC,OBS worker

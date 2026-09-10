@@ -1,0 +1,102 @@
+{
+  "repository": "content-skills-framework",
+  "source_repository": "content-skills-toolkit",
+  "head": "a7e1facfc2d8990a141a981c924006ede1113548",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "platform": "Linux-6.18.38+-x86_64-with-glibc2.39",
+  "git_status": "## main...origin/main\n?? docs/arquitectura-cache-sandbox-fases.md\n?? docs/arquitectura-framework-plugins.mmd\n?? docs/arquitectura-framework-plugins.png\n?? docs/ejemplo-plugin-entry-points-y-rendimiento.md\n?? docs/examples/plugin-analizador-legibilidad/\n?? docs/implicaciones-y-plan-framework.md\n?? docs/interfaz-framework-dashboard.png\n?? docs/interfaz-framework-plugin-detail.png\n?? docs/interfaz-peticiones-enrutamiento.md\n?? docs/interfaz-peticiones-seleccion-herramienta.png\n?? docs/phase0-baseline.json\n?? docs/phase0-decisions.md\n?? docs/phase0_baseline.py\n?? docs/plan-ejecucion-framework-plugins.md\n?? docs/pruebas-cuotas-circuit-breakers-plugins.md\n",
+  "checks": [
+    {
+      "label": "unit_tests",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "elapsed_ms": 5767.03,
+      "stdout_tail": "",
+      "stderr_tail": "esearch (test_runners.RunnerTests.test_keyword_runner_generates_structured_research) ... ok\ntest_markdown_runner_converts_to_html (test_runners.RunnerTests.test_markdown_runner_converts_to_html) ... ok\ntest_runner_reports_missing_input (test_runners.RunnerTests.test_runner_reports_missing_input) ... ok\ntest_skill_adapters_produce_different_formats (test_runners.RunnerTests.test_skill_adapters_produce_different_formats) ... ok\ntest_ambiguous_short_slug_requires_phase (test_toolkit.ToolkitTests.test_ambiguous_short_slug_requires_phase) ... ok\ntest_catalog_validates (test_toolkit.ToolkitTests.test_catalog_validates) ... ok\ntest_cli_preserves_phase_one_compatibility (test_toolkit.ToolkitTests.test_cli_preserves_phase_one_compatibility) ... ok\ntest_integrations_lists_optional_services_without_loading_them (test_toolkit.ToolkitTests.test_integrations_lists_optional_services_without_loading_them) ... ok\ntest_invalid_show_is_visible (test_toolkit.ToolkitTests.test_invalid_show_is_visible) ... ok\ntest_list_contains_all_phases_and_304_entries (test_toolkit.ToolkitTests.test_list_contains_all_phases_and_304_entries) ... ok\ntest_list_contains_known_skill (test_toolkit.ToolkitTests.test_list_contains_known_skill) ... ok\ntest_menu_eof (test_toolkit.ToolkitTests.test_menu_eof) ... ok\ntest_menu_invalid_then_cancel (test_toolkit.ToolkitTests.test_menu_invalid_then_cancel) ... ok\ntest_run_accepts_qualified_phase_two_slug (test_toolkit.ToolkitTests.test_run_accepts_qualified_phase_two_slug) ... ok\ntest_show_accepts_qualified_phase_two_slug (test_toolkit.ToolkitTests.test_show_accepts_qualified_phase_two_slug) ... ok\ntest_skill_does_not_load_integration_without_explicit_request (test_toolkit.ToolkitTests.test_skill_does_not_load_integration_without_explicit_request) ... ok\ntest_validate_does_not_load_integrations (test_toolkit.ToolkitTests.test_validate_does_not_load_integrations) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 5.706s\n\nOK\n"
+    },
+    {
+      "label": "compileall",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "compileall",
+        "-q",
+        "toolkit"
+      ],
+      "returncode": 0,
+      "elapsed_ms": 89.66,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "label": "catalog_validate",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "toolkit",
+        "validate"
+      ],
+      "returncode": 0,
+      "elapsed_ms": 127.02,
+      "stdout_tail": "Catálogo y contratos válidos: 304 habilidades con herramienta asociada.\n",
+      "stderr_tail": ""
+    },
+    {
+      "label": "list",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "toolkit",
+        "list"
+      ],
+      "returncode": 0,
+      "elapsed_ms": 78.85,
+      "stdout_tail": "videos con IA\nphase-6-medios/generador-de-videos-de-animales\tGenerador de Vídeos de Animales\nphase-6-medios/graficos-en-movimiento-manim\tGráficos en movimiento Manim\nphase-6-medios/habilidad-youtube-clipper\tHabilidad YouTube Clipper\nphase-6-medios/kit-de-herramientas-imagemagick\tKit de herramientas ImageMagick\nphase-6-medios/kling-prompter\tKling Prompter\nphase-6-medios/marco-cinematografico-con-filtraciones-de-luz\tMarco cinematográfico con filtraciones de luz\nphase-6-medios/marco-de-titulo-con-efecto-glitch\tMarco de título con efecto glitch\nphase-6-medios/recetas-de-generos-de-seedance\tRecetas de géneros de Seedance\nphase-6-medios/remotion-toolkit\tRemotion Toolkit\nphase-6-medios/restauracion-de-fotos\tRestauración de fotos\nphase-6-medios/resumen-de-subtitulos-de-video\tResumen de subtítulos de vídeo\nphase-6-medios/seedance-prompter\tSeedance Prompter\nphase-6-medios/seedance-storyboard\tSeedance Storyboard\nphase-6-medios/selector-de-modelos\tSelector de Modelos\nphase-6-medios/shorts-de-video-con-ia\tShorts de vídeo con IA\nphase-6-medios/storyboard-a-video-de-cocina\tStoryboard a Video de Cocina\nphase-6-medios/superposicion-de-subtitulos\tSuperposición de subtítulos\nphase-6-medios/transcripcion-de-youtube\tTranscripción de YouTube\nphase-6-medios/tts-prompter\tTTS Prompter\nphase-6-medios/video-con-efecto-de-congelacion\tVídeo con efecto de congelación\nphase-6-medios/video-de-bebe-que-habla\tVideo de bebé que habla\nphase-6-medios/video-de-ceremonia-de-premiacion\tVideo de Ceremonia de Premiación\nphase-6-medios/video-de-historia-de-personajes\tVideo de historia de personajes\nphase-6-medios/video-de-presentacion-de-producto\tVideo de presentación de producto\nphase-6-medios/video-de-producto-de-joyeria\tVideo de producto de joyería\nphase-6-medios/video-de-toma-unica\tVídeo de toma única\nphase-6-medios/video-estilo-dron\tVideo estilo dron\nphase-6-medios/video-musical\tVideo musical\nphase-6-medios/video-para-redes-sociales\tVideo para redes sociales\nphase-6-medios/youtube-shorts\tYouTube Shorts\n",
+      "stderr_tail": ""
+    },
+    {
+      "label": "show",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "toolkit",
+        "show",
+        "phase-2-datos/validacion-de-datos"
+      ],
+      "returncode": 0,
+      "elapsed_ms": 81.15,
+      "stdout_tail": "s, archivos externos, infraestructura o cuentas desde este runner.\n- No incluir datos personales, secretos, tokens o archivos sensibles en ejemplos o salidas.\n- Registrar fuente, fecha de corte, transformaciones, supuestos y versión cuando sean relevantes.\n- Mantener separados los hechos observados, las inferencias y las recomendaciones.\n- Detenerse o declarar el límite cuando falte información necesaria para una conclusión fiable.\n- Revisar manualmente los resultados de riesgo, finanzas, contratos, salud, seguridad o decisiones operativas antes de usarlos.\n\n## Plantilla de solicitud\n\n```text\nObjetivo: [resultado deseado]\nAudiencia: [quién utilizará el resultado]\nContenido o datos: [entrada autorizada]\nFormato: [markdown, html, svg, json, sql u otro]\nFuente y fecha de corte: [origen y periodo]\nRestricciones: [permisos, privacidad, longitud y límites]\nIntegraciones autorizadas: [ninguna o proveedor configurado explícitamente]\nCriterio de éxito: [cómo se revisará el resultado]\n```\n\n## Lista de control\n\n- [ ] El objetivo, la audiencia y el formato están definidos.\n- [ ] El contenido proviene de una entrada autorizada.\n- [ ] Las unidades, fechas, fuentes y transformaciones están identificadas cuando aplican.\n- [ ] Los resultados observados están separados de los supuestos.\n- [ ] La salida coincide con el formato solicitado.\n- [ ] Las advertencias y próximos pasos fueron revisados.\n- [ ] No se afirmó una ejecución externa sin evidencia.\n- [ ] No se incluyeron credenciales ni datos sensibles.\n- [ ] Una persona responsable del dominio revisará el resultado antes de tomar decisiones.\n\n## Límites de implementación\n\nEste `SKILL.md` documenta el runner local y el motor compartido actuales. La herramienta puede producir una propuesta estructurada, una plantilla o un análisis preliminar, pero las fuentes externas, los datasets reales, las exportaciones, los renders, las publicaciones y las acciones irreversibles requieren una solicitud, configuración y revisión independientes.\n\n",
+      "stderr_tail": ""
+    },
+    {
+      "label": "sample_run",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "toolkit",
+        "run",
+        "phase-2-datos/validacion-de-datos",
+        "-i",
+        "toolkit/phase-2-datos/validacion-de-datos/input.example.json"
+      ],
+      "returncode": 0,
+      "elapsed_ms": 141.03,
+      "stdout_tail": "{\n  \"skill\": {\n    \"name\": \"Validación de datos\",\n    \"description\": \"Realiza controles de calidad QA en los análisis antes de compartirlos con las partes interesadas, comprobando la metodología, verificando la precisión y detectando fuentes de sesgo para aumentar la confianza. Valida la lógica de agregación, señala el posible sesgo de supervivencia y las brechas de reproducibilidad.\",\n    \"slug\": \"validacion-de-datos\"\n  },\n  \"status\": \"ready\",\n  \"analysis\": {\n    \"missing_fields\": [],\n    \"input_characters\": 70,\n    \"input_words\": 10,\n    \"assumptions\": [\n      \"No se cargaron integraciones externas; se trabajó solo con la entrada proporcionada.\",\n      \"No se inventaron datos ni métricas.\"\n    ]\n  },\n  \"deliverable\": {\n    \"title\": \"Validación de datos — Usar Validación de datos\",\n    \"format\": \"markdown\",\n    \"content\": \"# Validación de datos\\n\\n## Resumen\\n| Campo | Resultado |\\n| --- | --- |\\n| filas detectadas | 0 |\\n| valores numéricos | 0 |\\n| nota | Se requieren datos proporcionados por el usuario |\\n\\n## QA\\n| Control | Resultado |\\n| --- | --- |\\n| Entrada no vacía | True |\\n| Filas estructuradas | False |\\n| Valores faltantes | No evaluado |\\n| Duplicados | No evaluado |\\n| Sesgo de supervivencia | Revisar población excluida y periodo |\\n| Reproducibilidad | Registrar fuente, fecha, transformación y versión |\\n\\n## Decisión\\nPublicar solo después de revisar faltantes, outliers, metodología, sesgos y trazabilidad.\",\n    \"next_steps\": [\n      \"Revisar los controles con un responsable del dominio antes de compartir resultados.\"\n    ]\n  },\n  \"warnings\": []\n}\n",
+      "stderr_tail": ""
+    }
+  ],
+  "all_passed": true,
+  "notes": [
+    "La ejecución se realizó localmente sin activar integraciones externas.",
+    "La compatibilidad del CLI existente se conserva como criterio de Fase 0.",
+    "Los archivos de diseño previos se incorporarán en un commit separado de documentación."
+  ]
+}

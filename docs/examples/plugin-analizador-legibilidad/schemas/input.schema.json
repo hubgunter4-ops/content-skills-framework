@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["objective", "audience", "content", "format"],
+  "properties": {
+    "objective": {"type": "string", "minLength": 1},
+    "audience": {"type": "string", "minLength": 1},
+    "content": {"type": "string"},
+    "format": {"enum": ["json", "markdown"]}
+  },
+  "additionalProperties": false
+}
