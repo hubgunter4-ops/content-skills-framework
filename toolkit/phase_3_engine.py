@@ -35,7 +35,9 @@ def generic(skill: dict[str, str], payload: dict[str, Any]) -> str:
 def build(skill: dict[str, str], payload: dict[str, Any]) -> tuple[str, list[str]]:
     slug = skill['slug']; text = str(payload.get('content', '')).strip(); low = (skill['name'] + ' ' + skill['description']).lower()
     if 'prompt' in low:
-        return f"# Arquitectura de prompt\n\n{section('Objetivo', payload.get('objective', 'Definir objetivo'))}{section('Prompt base', 'Rol: [rol experto]\nContexto: [contexto verificable]\nTarea: ' + (text or '[tarea]') + '\nRestricciones: [límites]\nFormato de salida: [contrato]')}{section('Variantes', '- Zero-shot\n- Few-shot con ejemplos representativos\n- Razonamiento interno sin exponer cadenas privadas\n- Criterios de evaluación y casos límite')}", ['Evaluar las variantes con casos fijos y métricas antes de adoptar una versión.']
+        prompt_base = 'Rol: [rol experto]\nContexto: [contexto verificable]\nTarea: ' + (text or '[tarea]') + '\nRestricciones: [límites]\nFormato de salida: [contrato]'
+        variants = '- Zero-shot\n- Few-shot con ejemplos representativos\n- Razonamiento interno sin exponer cadenas privadas\n- Criterios de evaluación y casos límite'
+        return f"# Arquitectura de prompt\n\n{section('Objetivo', payload.get('objective', 'Definir objetivo'))}{section('Prompt base', prompt_base)}{section('Variantes', variants)}", ['Evaluar las variantes con casos fijos y métricas antes de adoptar una versión.']
     if slug == 'markdown-a-html':
         return '<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Documento</title></head><body>' + markdown_to_html(text) + '</body></html>', ['Validar HTML y enlaces en el entorno de destino.']
     if 'excalidraw' in low:
@@ -49,7 +51,9 @@ def build(skill: dict[str, str], payload: dict[str, Any]) -> tuple[str, list[str
         confirmation = '1. Mostrar comando exacto.\n2. Identificar entorno y alcance.\n3. Confirmar respaldo y reversibilidad.\n4. Solicitar aprobación explícita.\n5. Ejecutar solo después de aprobación.'
         return f"# Protección contra comandos destructivos\n\n{section('Comandos detectados', detected)}{section('Flujo de confirmación', confirmation)}", ['No se ejecutó ningún comando.']
     if 'sql' in low or 'postgres' in low or 'mongodb' in low or 'clickhouse' in low:
-        return f"# Revisión de consultas\n\n{section('Consulta recibida', '```sql\n' + (text or '[consulta pendiente]') + '\n```')}{section('Checklist', '- Confirmar dialecto.\n- Ejecutar EXPLAIN en entorno autorizado.\n- Revisar filtros, joins, cardinalidad e índices.\n- Medir antes y después con datos representativos.\n- Evitar afirmar mejoras sin medición.')}", ['Probar la propuesta en una copia o entorno de desarrollo.']
+        query_block = '```sql\n' + (text or '[consulta pendiente]') + '\n```'
+        checklist = '- Confirmar dialecto.\n- Ejecutar EXPLAIN en entorno autorizado.\n- Revisar filtros, joins, cardinalidad e índices.\n- Medir antes y después con datos representativos.\n- Evitar afirmar mejoras sin medición.'
+        return f"# Revisión de consultas\n\n{section('Consulta recibida', query_block)}{section('Checklist', checklist)}", ['Probar la propuesta en una copia o entorno de desarrollo.']
     if 'debug' in low or 'depur' in low or 'error' in low or 'diagnóstico' in low:
         return f"# Bucle de diagnóstico\n\n{section('Reproducir', text or '[pasos mínimos]')}{section('Minimizar', 'Reducir el caso a la entrada y componente más pequeños que conservan el fallo.')}{section('Hipotetizar e instrumentar', 'Registrar hipótesis, logs, métricas y observaciones; separar hechos de conjeturas.')}{section('Corregir y asegurar', 'Aplicar el cambio mínimo y añadir una prueba de regresión.')}", ['No se modificó código; validar la hipótesis con una prueba reproducible.']
     if 'api' in low or 'graphql' in low:
