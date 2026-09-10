@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
-VERSION=${VERSION:-0.3.0}
+VERSION=${VERSION:-0.3.1}
 PKG="$ROOT/build/deb/content-skills-framework_${VERSION}_all"
 rm -rf "$PKG"
 mkdir -p "$PKG/DEBIAN" "$PKG/opt/content-skills-framework" "$PKG/usr/bin" "$PKG/usr/share/applications"

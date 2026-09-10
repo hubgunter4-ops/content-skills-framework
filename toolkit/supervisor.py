@@ -6,7 +6,7 @@ import json
 import os
 from pathlib import Path
 import signal
-import subprocess
+import subprocess  # nosec B404
 import sys
 import tempfile
 from typing import Any, Iterable
@@ -100,7 +100,7 @@ class Supervisor:
             stdout_file = workspace / "stdout.log"
             stderr_file = workspace / "stderr.log"
             with stdout_file.open("wb") as stdout_handle, stderr_file.open("wb") as stderr_handle:
-                process = subprocess.Popen(
+                process = subprocess.Popen(  # nosec B603
                     command,
                     cwd=workspace,
                     env=env,

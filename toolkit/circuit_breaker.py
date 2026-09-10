@@ -108,7 +108,8 @@ class CircuitBreakerManager:
             self._prune(circuit, policy, now)
             if circuit.state == CircuitState.OPEN:
                 backoff = min(policy.max_backoff_seconds, policy.cooldown_seconds * (2 ** max(0, circuit.opened_count - 1)))
-                assert circuit.opened_at is not None
+                if circuit.opened_at is None:
+                    raise CircuitOpenError(f"circuit open for {key}; missing opening timestamp")
                 next_probe = circuit.opened_at + backoff
                 if now < next_probe:
                     raise CircuitOpenError(f"circuit open for {key}; retry after {next_probe - now:.3f}s")

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
-import subprocess
+import subprocess  # nosec B404
 import sys
 from pathlib import Path
 
@@ -121,7 +121,7 @@ def run_tool(identifier: str, input_file: str | None) -> int:
     command = [sys.executable, str(spec.runner)]
     if input_file:
         command.extend(["--input", input_file])
-    completed = subprocess.run(command, cwd=ROOT)
+    completed = subprocess.run(command, cwd=ROOT)  # nosec B603
     return completed.returncode
 
 

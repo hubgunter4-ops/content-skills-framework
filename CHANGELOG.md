@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 — Release de seguridad y compatibilidad
+
+- Corregida compatibilidad de los motores de Fase 3 y Fase 4 con Python 3.10/3.11.
+- Rechazados endpoints de integración con esquemas no HTTP(S), hosts no resolubles y direcciones privadas, loopback, link-local o reservadas.
+- Eliminado un `assert` de lógica de runtime en circuit breakers.
+- Documentado el uso controlado de subprocess para runners provenientes del registro validado.
+- Auditoría local: 89 pruebas, Bandit sin hallazgos de severidad alta, pip-audit sin vulnerabilidades en el entorno limpio de proyecto.
+
 ## 0.3.0 — Release interna
 
 - Añadidos modelos y contratos públicos para herramientas, peticiones, selección y resultados.

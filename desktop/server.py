@@ -66,7 +66,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         if self.path == "/api/health":
-            json_response(self, 200, {"status": "ready", "version": "0.3.0", "tools": len(load_registry(ROOT))})
+            json_response(self, 200, {"status": "ready", "version": "0.3.1", "tools": len(load_registry(ROOT))})
             return
         if self.path == "/api/metrics":
             json_response(self, 200, metrics.snapshot().__dict__)

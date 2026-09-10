@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+import ipaddress
 import os
 import re
+import socket
+from urllib.parse import urlsplit
 from dataclasses import dataclass
 from typing import Any
 from urllib.parse import urlencode
@@ -122,7 +125,7 @@ def _youtube(request: dict[str, Any], api_key: str) -> dict[str, Any]:
         return {"status": "needs_input", "message": "youtube requiere video_id o una URL de YouTube."}
     query = urlencode({"part": "snippet,contentDetails,statistics", "id": video_id, "key": api_key})
     request_url = f"https://www.googleapis.com/youtube/v3/videos?{query}"
-    with urlopen(Request(request_url, headers={"Accept": "application/json"}), timeout=15) as response:
+    with urlopen(Request(request_url, headers={"Accept": "application/json"}), timeout=15) as response:  # nosec B310
         data = json.loads(response.read().decode("utf-8"))
     return {"status": "ok", "service": "YouTube Data API v3", "video_id": video_id, "data": _safe_public_payload(data)}
 
@@ -131,12 +134,21 @@ def _generic_http(request: dict[str, Any], spec: IntegrationSpec, credential: st
     base_url = str(request.get("endpoint", "")).strip()
     if not base_url.startswith(("https://", "http://")):
         return {"status": "needs_input", "message": f"{spec.name} requiere endpoint HTTP explícito en integration.endpoint."}
+    parsed = urlsplit(base_url)
+    if parsed.scheme not in {"http", "https"} or not parsed.hostname:
+        return {"status": "needs_input", "message": "El endpoint debe usar HTTP(S) y contener un host válido."}
+    try:
+        addresses = {ipaddress.ip_address(info[4][0]) for info in socket.getaddrinfo(parsed.hostname, parsed.port or 443, type=socket.SOCK_STREAM)}
+    except (OSError, ValueError):
+        return {"status": "needs_input", "message": "No se pudo resolver o validar el host del endpoint."}
+    if any(address.is_private or address.is_loopback or address.is_link_local or address.is_reserved for address in addresses):
+        return {"status": "rejected", "message": "Por seguridad no se permiten endpoints locales o de redes privadas."}
     headers = {"Accept": "application/json"}
     if spec.name in {"ahrefs", "semrush"}:
         headers["Authorization"] = f"Bearer {credential}"
     else:
         headers["X-API-Key"] = credential
-    with urlopen(Request(base_url, headers=headers), timeout=15) as response:
+    with urlopen(Request(base_url, headers=headers), timeout=15) as response:  # nosec B310
         raw = response.read().decode("utf-8")
     try:
         body: Any = json.loads(raw)

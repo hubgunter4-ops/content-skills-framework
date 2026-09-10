@@ -1,4 +1,6 @@
-# Content Skills Toolkit
+# Content Skills Framework / Toolkit
+
+**Release actual: `0.3.1`** · Tags: [`v0.3.1`](https://github.com/hubgunter4-ops/content-skills-framework/releases/tag/v0.3.1), [`v0.3.0-desktop`](https://github.com/hubgunter4-ops/content-skills-framework/releases/tag/v0.3.0-desktop)
 
 Repositorio modular de herramientas y guías para investigación, edición, SEO, documentación, formatos de contenido y productividad. Cada capacidad vive en su propia carpeta para poder revisarse, copiarse o extenderse de manera independiente. Cada carpeta incluye `run.py`, `input.example.json` y `output.schema.json`; el runner es local, determinista y escribe JSON.
 
@@ -49,6 +51,16 @@ La protección de salud se implementa por separado con `CircuitBreakerManager`, 
 La Fase 8 añade controles contra scripts fuera del `root`, symlinks, fugas de variables sensibles y crecimiento indefinido de métricas. `ExecutionMetrics` expone p50, p95 y p99, mientras CI separa validaciones rápidas, integración/seguridad, carga y auditoría de dependencias.
 
 La GUI de escritorio se inicia con `python3 desktop/server.py` y abre una interfaz local para escribir peticiones, ver la decisión explicable del router y ejecutar la herramienta mediante cuotas, circuit breaker y supervisor. Los paquetes Debian y Windows se construyen desde `.github/workflows/desktop.yml`; la guía está en [docs/desktop-gui.md](docs/desktop-gui.md).
+
+## Seguridad y validación
+
+La release `0.3.1` fue validada con **89 pruebas**, compilación en Python 3.10+ y una instalación limpia en Debian Bookworm. El análisis Bandit no encontró vulnerabilidades de severidad alta; los hallazgos restantes corresponden a subprocess controlado por el registro local y a llamadas HTTP con allowlist de esquema, resolución de host y rechazo de direcciones privadas. `pip-audit` no encontró vulnerabilidades en las dependencias del entorno limpio del proyecto; el paquete declara únicamente `python3 >= 3.10` como dependencia de runtime.
+
+Las integraciones HTTP no aceptan `file://`, esquemas personalizados, hosts sin resolver ni direcciones loopback, privadas, link-local o reservadas. Los runners se ejecutan mediante el supervisor con workspace temporal, entorno filtrado, timeout y límites de recursos. El aislamiento `subprocess-limited` no sustituye un contenedor o sandbox de kernel completo.
+
+La auditoría de alertas nativas de Dependabot y Secret Scanning no pudo consultarse con el token disponible porque GitHub respondió `403 Resource not accessible by integration`; por tanto, este README no presenta esas alertas como verificadas. La búsqueda local en archivos versionados e historial no encontró claves privadas, tokens con formato conocido ni credenciales incrustadas. Consulta [SECURITY.md](SECURITY.md) para reportar vulnerabilidades.
+
+La evidencia y los comandos reproducibles están en [docs/security-audit-0.3.1.md](docs/security-audit-0.3.1.md).
 
 ## Integraciones externas bajo demanda
 

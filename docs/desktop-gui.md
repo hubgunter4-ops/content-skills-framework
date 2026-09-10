@@ -31,13 +31,13 @@ La GUI no ejecuta una selección ambigua: el backend solo devuelve un plan cuand
 El script `packaging/build-deb.sh` produce:
 
 ```text
-dist/content-skills-framework_0.3.0_all.deb
+dist/content-skills-framework_0.3.1_all.deb
 ```
 
 Instalación:
 
 ```bash
-sudo dpkg -i content-skills-framework_0.3.0_all.deb
+sudo dpkg -i content-skills-framework_0.3.1_all.deb
 content-skills-framework
 ```
 

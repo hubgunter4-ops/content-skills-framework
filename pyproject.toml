@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "content-skills-toolkit"
-version = "0.3.0"
+version = "0.3.1"
 description = "Framework modular de herramientas, contratos y plugins de contenido"
 requires-python = ">=3.10"
 
