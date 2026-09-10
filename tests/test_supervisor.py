@@ -23,7 +23,7 @@ class SupervisorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             script = write_script(directory, "raise SystemExit(3)")
             breakers = CircuitBreakerManager(CircuitPolicy(failure_threshold=1, cooldown_seconds=0.5))
-            supervisor = Supervisor(root=ROOT, circuit_breaker=breakers)
+            supervisor = Supervisor(root=Path(directory), circuit_breaker=breakers)
             first = supervisor.run_script(script, {}, circuit_key="phase-2-datos/tool")
             second = supervisor.run_script(script, {}, circuit_key="phase-2-datos/tool")
         self.assertEqual(first.result.status, Status.WORKER_CRASHED)
@@ -34,7 +34,7 @@ class SupervisorTests(unittest.TestCase):
             script = write_script(directory, "print('{\"status\": \"ready\"}')")
             policy = QuotaPolicy("worker", max_concurrent=1, burst=1, rate_per_second=10)
             quotas = QuotaManager({"host": policy})
-            result = Supervisor(root=ROOT, quota_manager=quotas).run_script(script, {}, quota_scopes=("host",))
+            result = Supervisor(root=Path(directory), quota_manager=quotas).run_script(script, {}, quota_scopes=("host",))
         self.assertEqual(result.result.status, Status.READY)
         snapshot = quotas.snapshot()[0]
         self.assertEqual(snapshot.active, 0)
@@ -56,7 +56,7 @@ class SupervisorTests(unittest.TestCase):
                 payload = json.load(open(sys.argv[2]))
                 print(json.dumps({"status": "ready", "deliverable": {"echo": payload["value"]}}))
             """)
-            result = Supervisor(root=ROOT).run_script(script, {"value": "ok"})
+            result = Supervisor(root=Path(directory)).run_script(script, {"value": "ok"})
         self.assertEqual(result.result.status, Status.READY)
         self.assertEqual(result.result.deliverable["echo"], "ok")
         self.assertEqual(result.isolation, "subprocess-limited")
@@ -68,21 +68,21 @@ class SupervisorTests(unittest.TestCase):
                 time.sleep(5)
             """)
             policy = SandboxPolicy("test-timeout", 0.2, 30, 1024, 1_000_000, 1_000_000, 8, 64)
-            result = Supervisor(root=ROOT).run_script(script, {}, policy=policy)
+            result = Supervisor(root=Path(directory)).run_script(script, {}, policy=policy)
         self.assertEqual(result.result.status, Status.TIMEOUT)
         self.assertEqual(result.result.error["code"], "timeout")
 
     def test_nonzero_worker_is_crashed(self):
         with tempfile.TemporaryDirectory() as directory:
             script = write_script(directory, "raise SystemExit(7)")
-            result = Supervisor(root=ROOT).run_script(script, {})
+            result = Supervisor(root=Path(directory)).run_script(script, {})
         self.assertEqual(result.result.status, Status.WORKER_CRASHED)
         self.assertEqual(result.returncode, 7)
 
     def test_invalid_json_output_is_error(self):
         with tempfile.TemporaryDirectory() as directory:
             script = write_script(directory, "print('not-json')")
-            result = Supervisor(root=ROOT).run_script(script, {})
+            result = Supervisor(root=Path(directory)).run_script(script, {})
         self.assertEqual(result.result.status, Status.ERROR)
         self.assertEqual(result.result.error["code"], "invalid_worker_output")
 
@@ -90,7 +90,7 @@ class SupervisorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             script = write_script(directory, "print('x' * 2000)")
             policy = SandboxPolicy("test-output", 30, 30, 1024, 100, 1_000_000, 8, 64)
-            result = Supervisor(root=ROOT).run_script(script, {}, policy=policy)
+            result = Supervisor(root=Path(directory)).run_script(script, {}, policy=policy)
         self.assertEqual(result.result.status, Status.ERROR)
         self.assertEqual(result.result.error["code"], "output_too_large")
         self.assertGreater(result.stdout_bytes, policy.max_output_bytes)
@@ -99,13 +99,13 @@ class SupervisorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             script = write_script(directory, "print('{}')")
             policy = get_policy("untrusted")
-            result = Supervisor(root=ROOT).run_script(script, {"x": "y" * policy.max_input_bytes}, policy=policy)
+            result = Supervisor(root=Path(directory)).run_script(script, {"x": "y" * policy.max_input_bytes}, policy=policy)
         self.assertEqual(result.result.error["code"], "input_too_large")
         self.assertIsNone(result.returncode)
 
     def test_missing_script_is_error(self):
         with tempfile.TemporaryDirectory() as directory:
-            result = Supervisor(root=ROOT).run_script(Path(directory) / "missing.py", {})
+            result = Supervisor(root=Path(directory)).run_script(Path(directory) / "missing.py", {})
         self.assertEqual(result.result.error["code"], "script_not_found")
 
     def test_environment_does_not_include_secret_markers(self):

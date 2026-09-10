@@ -1,4 +1,4 @@
-name: Validate Content Skills Toolkit
+name: Validate Content Skills Framework
 
 on:
   push:
@@ -9,42 +9,86 @@ permissions:
   contents: read
 
 jobs:
-  validate:
+  fast:
+    name: Fast contracts and unit tests
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
+          cache: pip
       - name: Run unit tests
-        run: python3 -m unittest discover -s tests -v
-
+        run: python -m unittest discover -s tests -v
       - name: Compile Python
-        run: python3 -m compileall -q toolkit
-
+        run: python -m compileall -q toolkit
       - name: Validate catalog and contracts
-        run: python3 -m toolkit validate
+        run: python -m toolkit validate
+      - name: Check diff whitespace
+        run: git diff --check
 
-      - name: Validate documentation for every phase
+  integration-security:
+    name: Integration and security tests
+    runs-on: ubuntu-latest
+    needs: fast
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run security and observability tests
+        run: python -m unittest tests.test_security_observability tests.test_supervisor tests.test_circuit_breaker -v
+      - name: Validate phase documentation
         shell: bash
         run: |
           set -euo pipefail
           for test_file in toolkit/phase-*/tests/test_documentation.py; do
-            python3 "$test_file"
+            python "$test_file"
           done
-
       - name: Validate phase runners
         shell: bash
         run: |
           set -euo pipefail
           for test_file in toolkit/phase-*/tests/test_phase*.py; do
-            python3 "$test_file"
+            python "$test_file"
           done
 
-      - name: Check diff whitespace
-        run: git diff --check
+  load:
+    name: Synthetic metrics and load checks
+    runs-on: ubuntu-latest
+    needs: fast
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run quota, circuit and observability checks
+        run: python -m unittest tests.test_quotas tests.test_circuit_breaker tests.test_security_observability -v
+      - name: Generate metrics smoke report
+        run: |
+          python -c 'from toolkit import ExecutionMetrics; m=ExecutionMetrics(); [m.observe(x, "ready") for x in range(1, 101)]; s=m.snapshot(); print(s)'
+
+  dependency-audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    needs: fast
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install audit tool
+        run: python -m pip install --upgrade pip pip-audit
+      - name: Audit declared dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip-audit -r requirements.txt
+          else
+            pip-audit --local
+          fi

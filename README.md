@@ -46,6 +46,8 @@ Las cuotas se componen por scope mediante `QuotaManager`: host, fase, herramient
 
 La protección de salud se implementa por separado con `CircuitBreakerManager`, que usa los estados `closed`, `open` y `half_open`, ventana de fallos, probe único, cooldown y backoff exponencial. Un circuito abierto bloquea la creación del worker; una cuota excedida no se cuenta como fallo del plugin.
 
+La Fase 8 añade controles contra scripts fuera del `root`, symlinks, fugas de variables sensibles y crecimiento indefinido de métricas. `ExecutionMetrics` expone p50, p95 y p99, mientras CI separa validaciones rápidas, integración/seguridad, carga y auditoría de dependencias.
+
 ## Integraciones externas bajo demanda
 
 Las integraciones están implementadas con carga diferida. Ningún servicio externo ni credencial se consulta cuando el usuario no incluye `integration` o `integrations` en la entrada JSON. Para inspeccionar el catálogo sin cargar servicios, usa `python3 -m toolkit integrations`.

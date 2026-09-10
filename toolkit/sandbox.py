@@ -46,7 +46,11 @@ def safe_environment(*, allow_credentials: bool = False, extra: dict[str, str] |
             if any(marker in key.upper() for marker in ("KEY", "TOKEN", "SECRET", "PASSWORD", "CREDENTIAL")):
                 allowed.pop(key, None)
     if extra:
-        allowed.update({str(key): str(value) for key, value in extra.items()})
+        for key, value in extra.items():
+            key = str(key)
+            if not allow_credentials and any(marker in key.upper() for marker in ("KEY", "TOKEN", "SECRET", "PASSWORD", "CREDENTIAL")):
+                continue
+            allowed[key] = str(value)
     return allowed
 
 

@@ -16,6 +16,7 @@ from .quotas import QuotaManager, QuotaLease
 from .circuit_breaker import CircuitBreakerManager, CircuitPermit
 from .errors import CircuitOpenError, QuotaExceededError
 from .sandbox import SandboxPolicy, get_policy, make_preexec, safe_environment
+from .observability import ExecutionMetrics
 
 
 @dataclass(frozen=True)
@@ -29,11 +30,12 @@ class SupervisedExecution:
 
 
 class Supervisor:
-    def __init__(self, *, root: Path, python_executable: str | None = None, quota_manager: QuotaManager | None = None, circuit_breaker: CircuitBreakerManager | None = None) -> None:
-        self.root = root
+    def __init__(self, *, root: Path, python_executable: str | None = None, quota_manager: QuotaManager | None = None, circuit_breaker: CircuitBreakerManager | None = None, metrics: ExecutionMetrics | None = None) -> None:
+        self.root = root.resolve()
         self.python_executable = python_executable or sys.executable
         self.quota_manager = quota_manager
         self.circuit_breaker = circuit_breaker
+        self.metrics = metrics
 
     def run_script(
         self,
@@ -48,7 +50,13 @@ class Supervisor:
         selected = get_policy(policy) if isinstance(policy, str) else policy
         if len(json.dumps(payload, ensure_ascii=False).encode("utf-8")) > selected.max_input_bytes:
             return self._failure(Status.ERROR, "input_too_large")
+        if script.is_symlink():
+            return self._failure(Status.ERROR, "script_symlink_not_allowed")
         script = script.resolve()
+        try:
+            script.relative_to(self.root)
+        except ValueError:
+            return self._failure(Status.ERROR, "script_outside_root")
         if not script.is_file():
             return self._failure(Status.ERROR, "script_not_found")
         permit: CircuitPermit | None = None
@@ -78,6 +86,8 @@ class Supervisor:
                     permit.failure(execution.result.status)
                 else:
                     permit.success()
+            if self.metrics is not None:
+                self.metrics.observe(execution.duration_ms, execution.result.status)
             return execution
         import time
         started = time.perf_counter()
