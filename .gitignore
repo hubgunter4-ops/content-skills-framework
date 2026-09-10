@@ -6,3 +6,4 @@ dist/
 *.egg-info/
 .content-skills-index.sqlite3
 .content-skills-index.sqlite3.tmp
+.content-skills-desktop.sqlite3
