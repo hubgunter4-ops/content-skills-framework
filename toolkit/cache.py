@@ -130,6 +130,11 @@ class ToolCache:
             self.clear()
             self._invalidations += 1
 
+    def refresh(self) -> None:
+        """Ensure the SQLite source is current before bulk candidate queries."""
+        with self._lock:
+            self._refresh()
+
     def _record(self, tool_id: str) -> IndexedTool | None:
         self._refresh()
         now = time.monotonic()

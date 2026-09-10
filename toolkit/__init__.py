@@ -41,6 +41,17 @@ from .persistent_index import (
     lookup,
     rebuild_index,
 )
+from .phases import (
+    PHASE_DESCRIPTORS,
+    PHASE_ENTRY_POINT_GROUP,
+    PhaseDescriptor,
+    ResourceProfile,
+    discover_phase_entry_points,
+    get_phase,
+    list_phases,
+    tools_for_phase,
+)
+from .router import DeterministicRouter, RequestNormalizer, RouteDecision
 
 __version__ = "0.2.0"
 
@@ -68,6 +79,17 @@ __all__ = [
     "list_index",
     "lookup",
     "rebuild_index",
+    "PHASE_DESCRIPTORS",
+    "PHASE_ENTRY_POINT_GROUP",
+    "PhaseDescriptor",
+    "ResourceProfile",
+    "discover_phase_entry_points",
+    "get_phase",
+    "list_phases",
+    "tools_for_phase",
+    "DeterministicRouter",
+    "RequestNormalizer",
+    "RouteDecision",
     "load_schema",
     "validate_metadata_dict",
     "validate_result_dict",
