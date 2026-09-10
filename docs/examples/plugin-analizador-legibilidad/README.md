@@ -10,6 +10,6 @@ python -m pip install -e .
 python host_demo.py
 ```
 
-El plugin no es ejecutable contra la revisión actual del repositorio porque las clases `ToolMetadata`, `ExecutionRequest` y `ExecutionResult` forman parte de la API futura del framework descrita en la documentación. La intención es fijar el contrato y la estructura de distribución antes de implementarla.
+El plugin usa las clases públicas `ToolMetadata`, `ExecutionRequest` y `ExecutionResult` de la release interna `0.3.0`. El host puede descubrirlo mediante el grupo `content_skills_toolkit.tools`; el índice lee la declaración del entry point sin importar ni ejecutar el plugin durante el descubrimiento.
 
 El plugin no usa red, credenciales, escritura de archivos ni procesos hijos. Su resultado es heurístico y debe ser revisado editorialmente.

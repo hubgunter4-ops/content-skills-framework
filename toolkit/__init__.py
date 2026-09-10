@@ -59,7 +59,7 @@ from .quotas import QuotaLease, QuotaManager, QuotaPolicy, QuotaSnapshot
 from .circuit_breaker import CircuitBreakerManager, CircuitPermit, CircuitPolicy, CircuitSnapshot, CircuitState
 from .observability import ExecutionMetrics, MetricsSnapshot, redact
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
     "CONTRACT_VERSION",

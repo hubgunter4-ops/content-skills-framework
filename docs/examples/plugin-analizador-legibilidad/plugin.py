@@ -5,7 +5,7 @@ import re
 from collections.abc import Mapping
 from typing import Any
 
-from content_skills import ExecutionRequest, ExecutionResult, ToolMetadata
+from toolkit import ExecutionRequest, ExecutionResult, ToolMetadata
 
 
 class AnalizadorDeLegibilidad:
