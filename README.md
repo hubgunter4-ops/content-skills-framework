@@ -40,6 +40,8 @@ python3 -m toolkit run phase-2-datos/validacion-de-datos \
 
 El routing admite un proveedor LLM opcional mediante `StructuredLLMProvider`. El usuario configura el endpoint, modelo, timeout y el nombre de una variable de entorno para la clave; el secreto nunca forma parte del contrato ni del prompt. Los modos son `off`, `suggest` y `required`. El LLM solo propone una selección JSON Schema; el índice, el router y el supervisor futuro conservan la autoridad final. Si el proveedor falla, se usa el selector determinista.
 
+La ejecución aislada usa `Supervisor` con perfiles `trusted-pure`, `trusted-io`, `third-party` y `untrusted`. Cada worker recibe un workspace temporal, entorno filtrado, límites de CPU/memoria/archivos/procesos, timeout y cuotas de stdout/stderr. Este backend se identifica como `subprocess-limited`; no debe confundirse con un contenedor o sandbox de kernel completo.
+
 ## Integraciones externas bajo demanda
 
 Las integraciones están implementadas con carga diferida. Ningún servicio externo ni credencial se consulta cuando el usuario no incluye `integration` o `integrations` en la entrada JSON. Para inspeccionar el catálogo sin cargar servicios, usa `python3 -m toolkit integrations`.

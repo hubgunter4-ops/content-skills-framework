@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 import tempfile
 import textwrap
 import unittest
@@ -18,6 +19,14 @@ def write_script(directory: str, body: str) -> Path:
 
 
 class SupervisorTests(unittest.TestCase):
+    def test_builtin_tool_runs_through_supervisor_protocol(self):
+        script = ROOT / "toolkit/phase-2-datos/validacion-de-datos/run.py"
+        input_path = script.parent / "input.example.json"
+        payload = json.loads(input_path.read_text(encoding="utf-8"))
+        result = Supervisor(root=ROOT).run_script(script, payload)
+        self.assertIn(result.result.status, {Status.READY, Status.NEEDS_INPUT, Status.ERROR})
+        self.assertEqual(result.isolation, "subprocess-limited")
+
     def test_successful_json_worker_uses_temp_workspace(self):
         with tempfile.TemporaryDirectory() as directory:
             script = write_script(directory, """
