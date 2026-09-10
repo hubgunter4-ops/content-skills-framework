@@ -56,6 +56,7 @@ from .llm import LLMCallStats, StructuredLLMProvider, TOOL_SELECTION_SCHEMA
 from .sandbox import POLICIES, SandboxPolicy, get_policy, safe_environment
 from .supervisor import SupervisedExecution, Supervisor
 from .quotas import QuotaLease, QuotaManager, QuotaPolicy, QuotaSnapshot
+from .circuit_breaker import CircuitBreakerManager, CircuitPermit, CircuitPolicy, CircuitSnapshot, CircuitState
 
 __version__ = "0.2.0"
 
@@ -107,6 +108,11 @@ __all__ = [
     "QuotaManager",
     "QuotaPolicy",
     "QuotaSnapshot",
+    "CircuitBreakerManager",
+    "CircuitPermit",
+    "CircuitPolicy",
+    "CircuitSnapshot",
+    "CircuitState",
     "load_schema",
     "validate_metadata_dict",
     "validate_result_dict",

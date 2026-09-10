@@ -7,7 +7,7 @@ import textwrap
 import unittest
 from unittest.mock import patch
 
-from toolkit import QuotaManager, QuotaPolicy, SandboxPolicy, Status, Supervisor, get_policy, safe_environment
+from toolkit import CircuitBreakerManager, CircuitPolicy, QuotaManager, QuotaPolicy, SandboxPolicy, Status, Supervisor, get_policy, safe_environment
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,6 +19,16 @@ def write_script(directory: str, body: str) -> Path:
 
 
 class SupervisorTests(unittest.TestCase):
+    def test_supervisor_blocks_worker_when_circuit_is_open(self):
+        with tempfile.TemporaryDirectory() as directory:
+            script = write_script(directory, "raise SystemExit(3)")
+            breakers = CircuitBreakerManager(CircuitPolicy(failure_threshold=1, cooldown_seconds=0.5))
+            supervisor = Supervisor(root=ROOT, circuit_breaker=breakers)
+            first = supervisor.run_script(script, {}, circuit_key="phase-2-datos/tool")
+            second = supervisor.run_script(script, {}, circuit_key="phase-2-datos/tool")
+        self.assertEqual(first.result.status, Status.WORKER_CRASHED)
+        self.assertEqual(second.result.status, Status.CIRCUIT_OPEN)
+
     def test_supervisor_reserves_and_releases_quota(self):
         with tempfile.TemporaryDirectory() as directory:
             script = write_script(directory, "print('{\"status\": \"ready\"}')")

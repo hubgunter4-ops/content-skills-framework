@@ -13,7 +13,8 @@ from typing import Any, Iterable
 
 from .models import ExecutionResult, Status
 from .quotas import QuotaManager, QuotaLease
-from .errors import QuotaExceededError
+from .circuit_breaker import CircuitBreakerManager, CircuitPermit
+from .errors import CircuitOpenError, QuotaExceededError
 from .sandbox import SandboxPolicy, get_policy, make_preexec, safe_environment
 
 
@@ -28,10 +29,11 @@ class SupervisedExecution:
 
 
 class Supervisor:
-    def __init__(self, *, root: Path, python_executable: str | None = None, quota_manager: QuotaManager | None = None) -> None:
+    def __init__(self, *, root: Path, python_executable: str | None = None, quota_manager: QuotaManager | None = None, circuit_breaker: CircuitBreakerManager | None = None) -> None:
         self.root = root
         self.python_executable = python_executable or sys.executable
         self.quota_manager = quota_manager
+        self.circuit_breaker = circuit_breaker
 
     def run_script(
         self,
@@ -41,6 +43,7 @@ class Supervisor:
         policy: str | SandboxPolicy = "third-party",
         extra_env: dict[str, str] | None = None,
         quota_scopes: Iterable[str] = ("host", "tool"),
+        circuit_key: str | None = None,
     ) -> SupervisedExecution:
         selected = get_policy(policy) if isinstance(policy, str) else policy
         if len(json.dumps(payload, ensure_ascii=False).encode("utf-8")) > selected.max_input_bytes:
@@ -48,20 +51,33 @@ class Supervisor:
         script = script.resolve()
         if not script.is_file():
             return self._failure(Status.ERROR, "script_not_found")
+        permit: CircuitPermit | None = None
+        breaker_key = circuit_key or str(script)
+        if self.circuit_breaker is not None:
+            try:
+                permit = self.circuit_breaker.acquire(breaker_key)
+            except CircuitOpenError as exc:
+                return SupervisedExecution(ExecutionResult(status=Status.CIRCUIT_OPEN, error={"code": "circuit_open", "message": str(exc)}), None, 0.0, 0, 0, "subprocess-limited")
         lease: QuotaLease | None = None
         if self.quota_manager is not None:
             try:
                 lease = self.quota_manager.reserve(quota_scopes, input_bytes=len(json.dumps(payload, ensure_ascii=False).encode("utf-8")))
             except QuotaExceededError as exc:
+                if permit is not None:
+                    permit.cancel()
                 return SupervisedExecution(ExecutionResult(status=Status.QUOTA_EXCEEDED, error={"code": "quota_exceeded", "message": str(exc)}), None, 0.0, 0, 0, "subprocess-limited")
 
         def finish(execution: SupervisedExecution) -> SupervisedExecution:
-            if lease is None:
-                return execution
-            try:
-                lease.release(output_bytes=execution.stdout_bytes + execution.stderr_bytes, duration_seconds=execution.duration_ms / 1000)
-            except QuotaExceededError as exc:
-                return SupervisedExecution(ExecutionResult(status=Status.QUOTA_EXCEEDED, error={"code": "quota_exceeded", "message": str(exc)}), execution.returncode, execution.duration_ms, execution.stdout_bytes, execution.stderr_bytes, execution.isolation)
+            if lease is not None:
+                try:
+                    lease.release(output_bytes=execution.stdout_bytes + execution.stderr_bytes, duration_seconds=execution.duration_ms / 1000)
+                except QuotaExceededError as exc:
+                    execution = SupervisedExecution(ExecutionResult(status=Status.QUOTA_EXCEEDED, error={"code": "quota_exceeded", "message": str(exc)}), execution.returncode, execution.duration_ms, execution.stdout_bytes, execution.stderr_bytes, execution.isolation)
+            if permit is not None:
+                if execution.result.status in {Status.ERROR, Status.TIMEOUT, Status.WORKER_CRASHED}:
+                    permit.failure(execution.result.status)
+                else:
+                    permit.success()
             return execution
         import time
         started = time.perf_counter()
