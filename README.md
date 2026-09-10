@@ -44,6 +44,8 @@ La ejecución aislada usa `Supervisor` con perfiles `trusted-pure`, `trusted-io`
 
 Las cuotas se componen por scope mediante `QuotaManager`: host, fase, herramienta y tenant pueden imponer límites de concurrencia, token bucket, bytes de entrada/salida y duración. Una reserva solo se acepta si todos los scopes están disponibles y el supervisor libera el lease tras éxito, error o timeout.
 
+La protección de salud se implementa por separado con `CircuitBreakerManager`, que usa los estados `closed`, `open` y `half_open`, ventana de fallos, probe único, cooldown y backoff exponencial. Un circuito abierto bloquea la creación del worker; una cuota excedida no se cuenta como fallo del plugin.
+
 ## Integraciones externas bajo demanda
 
 Las integraciones están implementadas con carga diferida. Ningún servicio externo ni credencial se consulta cuando el usuario no incluye `integration` o `integrations` en la entrada JSON. Para inspeccionar el catálogo sin cargar servicios, usa `python3 -m toolkit integrations`.
