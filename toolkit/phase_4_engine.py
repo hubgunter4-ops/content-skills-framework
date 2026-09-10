@@ -33,7 +33,9 @@ def build(skill: dict[str, str], payload: dict[str, Any]) -> tuple[str, list[str
         result = 'Lista de candidatos con URL, licencia, mantenimiento, riesgos y motivo de recomendación.'
         return f"# {name}\n\n{sec('Consulta', text or '[Definir tarea]')}{sec('Flujo de descubrimiento', discovery)}{sec('Resultado', result)}", ['No se descargaron ni instalaron habilidades.']
     if 'búsqueda' in low or 'busqueda' in low or 'search' in low:
-        return f"# Orquestación de búsqueda\n\n{sec('Pregunta', text or '[Pregunta del usuario]')}{sec('Subconsultas', '- Definición y alcance\n- Fuente primaria autorizada\n- Evidencia reciente\n- Contradicciones y límites')}{sec('Consolidación', 'Deduplicar, ponderar autoridad y actualidad, atribuir cada hallazgo y marcar confianza.')}", ['No se consultaron fuentes externas sin integración explícita.']
+        subqueries = '- Definición y alcance\n- Fuente primaria autorizada\n- Evidencia reciente\n- Contradicciones y límites'
+        consolidation = 'Deduplicar, ponderar autoridad y actualidad, atribuir cada hallazgo y marcar confianza.'
+        return f"# Orquestación de búsqueda\n\n{sec('Pregunta', text or '[Pregunta del usuario]')}{sec('Subconsultas', subqueries)}{sec('Consolidación', consolidation)}", ['No se consultaron fuentes externas sin integración explícita.']
     if 'mcp' in low or 'fuentes empresariales' in low:
         return f"# {name}\n\n{sec('Inventario', 'Detectar servidores y herramientas solo después de una solicitud explícita.')}{sec('Configuración propuesta', 'Nombre, endpoint, transporte, autenticación, allowlist de herramientas y límites.')}{sec('Prueba', 'Ejecutar una llamada de lectura en entorno controlado y registrar resultado sin exponer secretos.')}", ['No se conectaron servidores MCP ni APIs.']
     if 'workflow' in low or 'flujo de trabajo' in low or 'n8n' in low or 'agentes' in low or 'paralelo' in low:
