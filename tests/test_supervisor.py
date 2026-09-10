@@ -7,7 +7,7 @@ import textwrap
 import unittest
 from unittest.mock import patch
 
-from toolkit import SandboxPolicy, Status, Supervisor, get_policy, safe_environment
+from toolkit import QuotaManager, QuotaPolicy, SandboxPolicy, Status, Supervisor, get_policy, safe_environment
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,6 +19,18 @@ def write_script(directory: str, body: str) -> Path:
 
 
 class SupervisorTests(unittest.TestCase):
+    def test_supervisor_reserves_and_releases_quota(self):
+        with tempfile.TemporaryDirectory() as directory:
+            script = write_script(directory, "print('{\"status\": \"ready\"}')")
+            policy = QuotaPolicy("worker", max_concurrent=1, burst=1, rate_per_second=10)
+            quotas = QuotaManager({"host": policy})
+            result = Supervisor(root=ROOT, quota_manager=quotas).run_script(script, {}, quota_scopes=("host",))
+        self.assertEqual(result.result.status, Status.READY)
+        snapshot = quotas.snapshot()[0]
+        self.assertEqual(snapshot.active, 0)
+        self.assertEqual(snapshot.accepted, 1)
+        self.assertEqual(snapshot.released, 1)
+
     def test_builtin_tool_runs_through_supervisor_protocol(self):
         script = ROOT / "toolkit/phase-2-datos/validacion-de-datos/run.py"
         input_path = script.parent / "input.example.json"

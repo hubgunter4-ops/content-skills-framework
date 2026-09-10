@@ -55,6 +55,7 @@ from .router import DeterministicRouter, RequestNormalizer, RouteDecision
 from .llm import LLMCallStats, StructuredLLMProvider, TOOL_SELECTION_SCHEMA
 from .sandbox import POLICIES, SandboxPolicy, get_policy, safe_environment
 from .supervisor import SupervisedExecution, Supervisor
+from .quotas import QuotaLease, QuotaManager, QuotaPolicy, QuotaSnapshot
 
 __version__ = "0.2.0"
 
@@ -102,6 +103,10 @@ __all__ = [
     "safe_environment",
     "SupervisedExecution",
     "Supervisor",
+    "QuotaLease",
+    "QuotaManager",
+    "QuotaPolicy",
+    "QuotaSnapshot",
     "load_schema",
     "validate_metadata_dict",
     "validate_result_dict",

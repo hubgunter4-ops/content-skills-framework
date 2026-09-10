@@ -9,9 +9,11 @@ import signal
 import subprocess
 import sys
 import tempfile
-from typing import Any
+from typing import Any, Iterable
 
 from .models import ExecutionResult, Status
+from .quotas import QuotaManager, QuotaLease
+from .errors import QuotaExceededError
 from .sandbox import SandboxPolicy, get_policy, make_preexec, safe_environment
 
 
@@ -26,9 +28,10 @@ class SupervisedExecution:
 
 
 class Supervisor:
-    def __init__(self, *, root: Path, python_executable: str | None = None) -> None:
+    def __init__(self, *, root: Path, python_executable: str | None = None, quota_manager: QuotaManager | None = None) -> None:
         self.root = root
         self.python_executable = python_executable or sys.executable
+        self.quota_manager = quota_manager
 
     def run_script(
         self,
@@ -37,6 +40,7 @@ class Supervisor:
         *,
         policy: str | SandboxPolicy = "third-party",
         extra_env: dict[str, str] | None = None,
+        quota_scopes: Iterable[str] = ("host", "tool"),
     ) -> SupervisedExecution:
         selected = get_policy(policy) if isinstance(policy, str) else policy
         if len(json.dumps(payload, ensure_ascii=False).encode("utf-8")) > selected.max_input_bytes:
@@ -44,6 +48,21 @@ class Supervisor:
         script = script.resolve()
         if not script.is_file():
             return self._failure(Status.ERROR, "script_not_found")
+        lease: QuotaLease | None = None
+        if self.quota_manager is not None:
+            try:
+                lease = self.quota_manager.reserve(quota_scopes, input_bytes=len(json.dumps(payload, ensure_ascii=False).encode("utf-8")))
+            except QuotaExceededError as exc:
+                return SupervisedExecution(ExecutionResult(status=Status.QUOTA_EXCEEDED, error={"code": "quota_exceeded", "message": str(exc)}), None, 0.0, 0, 0, "subprocess-limited")
+
+        def finish(execution: SupervisedExecution) -> SupervisedExecution:
+            if lease is None:
+                return execution
+            try:
+                lease.release(output_bytes=execution.stdout_bytes + execution.stderr_bytes, duration_seconds=execution.duration_ms / 1000)
+            except QuotaExceededError as exc:
+                return SupervisedExecution(ExecutionResult(status=Status.QUOTA_EXCEEDED, error={"code": "quota_exceeded", "message": str(exc)}), execution.returncode, execution.duration_ms, execution.stdout_bytes, execution.stderr_bytes, execution.isolation)
+            return execution
         import time
         started = time.perf_counter()
         with tempfile.TemporaryDirectory(prefix="content-skills-worker-") as directory:
@@ -76,25 +95,25 @@ class Supervisor:
                     finally:
                         process.wait()
                     duration = (time.perf_counter() - started) * 1000
-                    return SupervisedExecution(
+                    return finish(SupervisedExecution(
                         ExecutionResult(status=Status.TIMEOUT, error={"code": "timeout", "message": "worker deadline exceeded"}),
                         None, duration, stdout_file.stat().st_size, stderr_file.stat().st_size, "subprocess-limited",
-                    )
+                    ))
             duration = (time.perf_counter() - started) * 1000
             stdout_size = stdout_file.stat().st_size
             stderr_size = stderr_file.stat().st_size
             if stdout_size > selected.max_output_bytes or stderr_size > selected.max_output_bytes:
-                return SupervisedExecution(
+                return finish(SupervisedExecution(
                     ExecutionResult(status=Status.ERROR, error={"code": "output_too_large", "message": "worker output exceeded limit"}),
                     returncode, duration, stdout_size, stderr_size, "subprocess-limited",
-                )
+                ))
             stdout = stdout_file.read_bytes()
             stderr = stderr_file.read_bytes()
             if returncode != 0:
-                return SupervisedExecution(
+                return finish(SupervisedExecution(
                     ExecutionResult(status=Status.WORKER_CRASHED, error={"code": "worker_exit", "message": stderr.decode("utf-8", "replace")[-1000:]}),
                     returncode, duration, stdout_size, stderr_size, "subprocess-limited",
-                )
+                ))
             try:
                 value = json.loads(stdout.decode("utf-8"))
                 if not isinstance(value, dict):
@@ -109,7 +128,7 @@ class Supervisor:
                 )
             except (UnicodeDecodeError, json.JSONDecodeError, TypeError, ValueError) as exc:
                 result = ExecutionResult(status=Status.ERROR, error={"code": "invalid_worker_output", "message": str(exc)})
-            return SupervisedExecution(result, returncode, duration, stdout_size, stderr_size, "subprocess-limited")
+            return finish(SupervisedExecution(result, returncode, duration, stdout_size, stderr_size, "subprocess-limited"))
 
     @staticmethod
     def _failure(status: str, code: str) -> SupervisedExecution:
