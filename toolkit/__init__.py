@@ -52,6 +52,7 @@ from .phases import (
     tools_for_phase,
 )
 from .router import DeterministicRouter, RequestNormalizer, RouteDecision
+from .llm import LLMCallStats, StructuredLLMProvider, TOOL_SELECTION_SCHEMA
 
 __version__ = "0.2.0"
 
@@ -90,6 +91,9 @@ __all__ = [
     "DeterministicRouter",
     "RequestNormalizer",
     "RouteDecision",
+    "LLMCallStats",
+    "StructuredLLMProvider",
+    "TOOL_SELECTION_SCHEMA",
     "load_schema",
     "validate_metadata_dict",
     "validate_result_dict",

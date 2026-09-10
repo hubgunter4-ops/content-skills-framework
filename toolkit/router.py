@@ -7,6 +7,8 @@ import re
 from typing import Any, Mapping
 
 from .cache import ToolCache
+from .errors import ProviderUnavailableError
+from .llm import StructuredLLMProvider
 from .models import ExecutionPlan, ExecutionStep, NormalizedRequest, ToolCandidate, ToolSelection
 from .phases import tools_for_phase
 
@@ -85,10 +87,11 @@ class RequestNormalizer:
 class DeterministicRouter:
     """Rank indexed tools using metadata terms and explicit constraints."""
 
-    def __init__(self, root: Path, cache: ToolCache) -> None:
+    def __init__(self, root: Path, cache: ToolCache, llm_provider: StructuredLLMProvider | None = None) -> None:
         self.root = root
         self.cache = cache
         self.normalizer = RequestNormalizer()
+        self.llm_provider = llm_provider
 
     def route(self, value: Mapping[str, Any] | str, *, phase: str | None = None, alternative_limit: int = 3) -> RouteDecision:
         request = self.normalizer.normalize(value)
@@ -124,6 +127,16 @@ class DeterministicRouter:
                 selector="deterministic",
             )
             return RouteDecision(request, selection, None)
+        if self.llm_provider is not None and self.llm_provider.config.mode != "off":
+            try:
+                llm_selection = self.llm_provider.decide(request, candidates[:alternative_limit + 1])
+                selected_record = self.cache.resolve(llm_selection.selected_tool) if llm_selection.selected_tool else None
+                if selected_record is not None and selected_record.status == "available":
+                    plan = None if llm_selection.requires_confirmation else ExecutionPlan((ExecutionStep(1, selected_record.tool_id),))
+                    return RouteDecision(request, llm_selection, plan)
+            except ProviderUnavailableError:
+                # Deterministic routing remains the safe, dependency-free fallback.
+                pass
         best = candidates[0]
         ambiguous = len(candidates) > 1 and best.score - candidates[1].score < 0.08
         selection = ToolSelection(
