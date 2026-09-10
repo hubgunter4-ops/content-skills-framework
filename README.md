@@ -38,6 +38,8 @@ python3 -m toolkit run phase-2-datos/validacion-de-datos \
 
 `route` normaliza una petición y muestra la herramienta recomendada, el nivel de confianza, las razones, las alternativas y el plan de ejecución. La decisión es determinista y no ejecuta runners. Puede recibir texto libre o `-i/--input` con un objeto JSON, además de limitarse a una fase con `--phase`.
 
+El routing admite un proveedor LLM opcional mediante `StructuredLLMProvider`. El usuario configura el endpoint, modelo, timeout y el nombre de una variable de entorno para la clave; el secreto nunca forma parte del contrato ni del prompt. Los modos son `off`, `suggest` y `required`. El LLM solo propone una selección JSON Schema; el índice, el router y el supervisor futuro conservan la autoridad final. Si el proveedor falla, se usa el selector determinista.
+
 ## Integraciones externas bajo demanda
 
 Las integraciones están implementadas con carga diferida. Ningún servicio externo ni credencial se consulta cuando el usuario no incluye `integration` o `integrations` en la entrada JSON. Para inspeccionar el catálogo sin cargar servicios, usa `python3 -m toolkit integrations`.
