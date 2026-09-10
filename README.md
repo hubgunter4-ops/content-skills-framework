@@ -48,6 +48,8 @@ La protección de salud se implementa por separado con `CircuitBreakerManager`, 
 
 La Fase 8 añade controles contra scripts fuera del `root`, symlinks, fugas de variables sensibles y crecimiento indefinido de métricas. `ExecutionMetrics` expone p50, p95 y p99, mientras CI separa validaciones rápidas, integración/seguridad, carga y auditoría de dependencias.
 
+La GUI de escritorio se inicia con `python3 desktop/server.py` y abre una interfaz local para escribir peticiones, ver la decisión explicable del router y ejecutar la herramienta mediante cuotas, circuit breaker y supervisor. Los paquetes Debian y Windows se construyen desde `.github/workflows/desktop.yml`; la guía está en [docs/desktop-gui.md](docs/desktop-gui.md).
+
 ## Integraciones externas bajo demanda
 
 Las integraciones están implementadas con carga diferida. Ningún servicio externo ni credencial se consulta cuando el usuario no incluye `integration` o `integrations` en la entrada JSON. Para inspeccionar el catálogo sin cargar servicios, usa `python3 -m toolkit integrations`.

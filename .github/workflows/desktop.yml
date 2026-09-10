@@ -1,0 +1,56 @@
+name: Build desktop packages
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  windows-exe:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PyInstaller
+        run: python -m pip install pyinstaller
+      - name: Build executable
+        shell: bash
+        run: pyinstaller --clean --noconfirm packaging/content_skills_framework.spec
+      - name: Package zip
+        shell: pwsh
+        run: Compress-Archive -Path dist/ContentSkillsFramework.exe -DestinationPath dist/ContentSkillsFramework-windows-x64.zip
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ContentSkillsFramework-windows-x64
+          path: dist/ContentSkillsFramework-windows-x64.zip
+      - name: Attach to GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/ContentSkillsFramework-windows-x64.zip
+
+  linux-deb:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Debian package
+        run: |
+          chmod +x packaging/build-deb.sh
+          ./packaging/build-deb.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ContentSkillsFramework-debian-amd64
+          path: dist/content-skills-framework_*.deb
+      - name: Attach to GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/content-skills-framework_*.deb
