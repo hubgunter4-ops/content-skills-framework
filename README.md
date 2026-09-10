@@ -27,6 +27,7 @@ python3 -m toolkit validate
 python3 -m toolkit integrations
 python3 -m toolkit index --phase phase-2-datos
 python3 -m toolkit index phase-2-datos/validacion-de-datos
+python3 -m toolkit route "Convierte este Markdown a HTML para el equipo editorial"
 python3 -m toolkit run phase-2-datos/validacion-de-datos \
   -i toolkit/phase-2-datos/validacion-de-datos/input.example.json
 ```
@@ -34,6 +35,8 @@ python3 -m toolkit run phase-2-datos/validacion-de-datos \
 `list` muestra siempre `fase/slug`. `show` y `run` aceptan identificadores cualificados y también slugs cortos cuando no hay colisión. Si un slug se repite, el CLI exige indicar la fase. En el menú: `1` lista habilidades, `2` muestra una habilidad, `3` valida la colección y `q` cancela. Las acciones son locales, no envían datos y no modifican archivos salvo que el usuario lo haga explícitamente.
 
 `index` crea o reutiliza un índice SQLite reconstruible. El descubrimiento de entry points lee las declaraciones instaladas, pero no importa ni ejecuta sus objetos. La huella del entorno incluye la versión de Python, los catálogos y documentos locales y las declaraciones de entry points; si cambia, el índice se reconstruye de forma atómica. El archivo predeterminado es `.content-skills-index.sqlite3` y está excluido de Git. Se puede seleccionar otra ubicación con `--db`.
+
+`route` normaliza una petición y muestra la herramienta recomendada, el nivel de confianza, las razones, las alternativas y el plan de ejecución. La decisión es determinista y no ejecuta runners. Puede recibir texto libre o `-i/--input` con un objeto JSON, además de limitarse a una fase con `--phase`.
 
 ## Integraciones externas bajo demanda
 

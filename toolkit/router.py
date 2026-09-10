@@ -11,6 +11,10 @@ from .models import ExecutionPlan, ExecutionStep, NormalizedRequest, ToolCandida
 from .phases import tools_for_phase
 
 _TOKEN_RE = re.compile(r"[\wáéíóúüñ-]+", re.IGNORECASE)
+_STOPWORDS = frozenset({
+    "a", "al", "con", "de", "del", "el", "en", "es", "este", "esta", "para", "por", "que", "se", "un", "una",
+    "y", "o", "the", "a", "an", "and", "for", "in", "of", "to", "this", "with",
+})
 
 
 @dataclass(frozen=True)
@@ -141,11 +145,17 @@ class DeterministicRouter:
         return [self.cache.resolve(spec.identifier) for spec in tools_for_phase(self.root, phase)]
 
     def _score(self, record, request: NormalizedRequest) -> ToolCandidate:
-        query_tokens = set(_TOKEN_RE.findall(" ".join((request.original_text, request.objective, *request.tags)).lower()))
+        query_tokens = {
+            token for token in _TOKEN_RE.findall(" ".join((request.original_text, request.objective, *request.tags)).lower())
+            if len(token) > 2 and token not in _STOPWORDS
+        }
         metadata_text = " ".join((record.tool_id, record.name, record.description, *record.tags)).lower()
-        metadata_tokens = set(_TOKEN_RE.findall(metadata_text))
+        metadata_tokens = {
+            token for token in _TOKEN_RE.findall(metadata_text)
+            if len(token) > 2 and token not in _STOPWORDS
+        }
         overlap = query_tokens & metadata_tokens
-        score = min(0.92, 0.12 + 0.10 * len(overlap))
+        score = min(0.92, 0.10 + 0.13 * len(overlap))
         reasons = []
         if overlap:
             reasons.append("Coincidencia de intención y metadatos: " + ", ".join(sorted(overlap)[:5]))

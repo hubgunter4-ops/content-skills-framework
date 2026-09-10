@@ -10,6 +10,8 @@ from .catalog import load_skills, validate_skills
 from .integrations import catalog as integration_catalog
 from .persistent_index import ensure_index, list_index, lookup
 from .registry import RegistryError, load_registry, resolve_tool, validate_registry
+from .cache import ToolCache
+from .router import DeterministicRouter
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "toolkit" / "phase-1-content-toolkit"
@@ -123,9 +125,23 @@ def run_tool(identifier: str, input_file: str | None) -> int:
     return completed.returncode
 
 
+def route_request(request_text: str | None, input_file: str | None, phase: str | None, db_path: str | None) -> int:
+    if input_file:
+        request: object = json.loads(Path(input_file).read_text(encoding="utf-8"))
+    elif request_text:
+        request = request_text
+    else:
+        print("route requiere texto o -i/--input con JSON")
+        return 2
+    cache = ToolCache(ROOT, Path(db_path) if db_path else DEFAULT_INDEX)
+    decision = DeterministicRouter(ROOT, cache).route(request, phase=phase)
+    print(json.dumps(decision.to_dict(), ensure_ascii=False, indent=2))
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Descubre y valida habilidades locales.")
-    parser.add_argument("command", nargs="?", choices=("list", "show", "run", "validate", "integrations", "index"))
+    parser.add_argument("command", nargs="?", choices=("list", "show", "run", "validate", "integrations", "index", "route"))
     parser.add_argument("slug", nargs="?")
     parser.add_argument("-i", "--input", dest="input_file")
     parser.add_argument("--phase", dest="phase")
@@ -142,6 +158,8 @@ def main() -> int:
         return list_integrations()
     if args.command == "index":
         return index_tools(args.slug, args.phase, args.db_path)
+    if args.command == "route":
+        return route_request(args.slug, args.input_file, args.phase, args.db_path)
     if not args.slug:
         parser.error(f"{args.command} requiere un slug")
     if args.command == "run":
