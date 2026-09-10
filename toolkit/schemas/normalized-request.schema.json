@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://content-skills-framework.local/schemas/normalized-request.schema.json",
+  "title": "NormalizedRequest",
+  "type": "object",
+  "required": ["original_text", "objective", "audience", "content", "format", "language", "input_kind", "constraints", "tags", "user_selected_tool"],
+  "properties": {
+    "original_text": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "audience": {"type": "string", "minLength": 1},
+    "content": {"type": "string"},
+    "format": {"type": "string", "minLength": 1},
+    "language": {"type": "string", "minLength": 1},
+    "input_kind": {"type": "string", "minLength": 1},
+    "constraints": {"type": "object"},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "user_selected_tool": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

@@ -4,9 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "content-skills-toolkit"
-version = "0.1.0"
-description = "Colección modular de habilidades de contenido y documentación"
+version = "0.2.0"
+description = "Framework modular de herramientas, contratos y plugins de contenido"
 requires-python = ">=3.10"
 
 [tool.setuptools.packages.find]
 include = ["toolkit*"]
+
+[tool.setuptools.package-data]
+toolkit = ["schemas/*.json"]

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://content-skills-framework.local/schemas/llm-provider-config.schema.json",
+  "title": "LLMProviderConfig",
+  "type": "object",
+  "required": ["provider", "model", "base_url", "api_key_env", "mode", "timeout_seconds", "data_policy"],
+  "properties": {
+    "provider": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "base_url": {"type": "string", "format": "uri"},
+    "api_key_env": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["off", "suggest", "required"]},
+    "timeout_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "max_input_tokens": {"type": ["integer", "null"], "exclusiveMinimum": 0},
+    "max_output_tokens": {"type": ["integer", "null"], "exclusiveMinimum": 0},
+    "data_policy": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://content-skills-framework.local/schemas/tool-selection.schema.json",
+  "title": "ToolSelection",
+  "type": "object",
+  "required": ["selected_tool", "confidence", "reason", "alternatives", "requires_confirmation", "selector"],
+  "properties": {
+    "selected_tool": {"type": ["string", "null"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "reason": {"type": "array", "items": {"type": "string"}},
+    "alternatives": {"type": "array", "items": {"$ref": "#/$defs/candidate"}},
+    "requires_confirmation": {"type": "boolean"},
+    "selector": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "required": ["tool_id", "score", "reason", "rejected_reason"],
+      "properties": {
+        "tool_id": {"type": "string", "minLength": 1},
+        "score": {"type": "number", "minimum": 0, "maximum": 1},
+        "reason": {"type": "array", "items": {"type": "string"}},
+        "rejected_reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

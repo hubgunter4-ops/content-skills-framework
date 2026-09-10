@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://content-skills-framework.local/schemas/execution-request.schema.json",
+  "title": "ExecutionRequest",
+  "type": "object",
+  "required": ["payload", "request_id", "tool_id", "contract_version"],
+  "properties": {
+    "payload": {"type": "object"},
+    "request_id": {"type": "string", "minLength": 1},
+    "tool_id": {"type": "string", "minLength": 1},
+    "contract_version": {"const": "1.0"},
+    "workspace": {"type": ["string", "null"]},
+    "deadline_seconds": {"type": ["number", "null"], "exclusiveMinimum": 0},
+    "allowed_capabilities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "additionalProperties": false
+}

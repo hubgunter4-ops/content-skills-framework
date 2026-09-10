@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://content-skills-framework.local/schemas/execution-result.schema.json",
+  "title": "ExecutionResult",
+  "type": "object",
+  "required": ["schema_version", "status", "analysis", "deliverable", "warnings", "provenance"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "status": {"enum": ["ready", "needs_input", "not_loaded", "error", "timeout", "quota_exceeded", "circuit_open", "worker_crashed"]},
+    "analysis": {"type": "object"},
+    "deliverable": {"type": "object"},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "provenance": {"type": "object"},
+    "error": {"type": ["object", "null"]}
+  },
+  "additionalProperties": false
+}
