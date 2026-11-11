@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Resultado de busqueda-de-conocimiento-en-git",
+  "type": "object",
+  "required": ["skill", "status", "analysis", "deliverable", "warnings"],
+  "properties": {
+    "skill": {"type": "string"},
+    "status": {"type": "string", "enum": ["ready", "error"]},
+    "analysis": {"type": "string"},
+    "deliverable": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["repo", "file", "start_line", "license", "code"],
+        "properties": {
+          "repo": {"type": "string"},
+          "file": {"type": "string"},
+          "start_line": {"type": "integer"},
+          "license": {"type": "string"},
+          "url": {"type": "string"},
+          "code": {"type": "string"}
+        }
+      }
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}
